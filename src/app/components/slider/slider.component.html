@@ -1,0 +1,118 @@
+@switch(counter){ @case (1) {
+<div class="head-container">
+  <div class="title">
+    <h2 class="gold-font">calefaccion</h2>
+    <h2 class="white-font">refriferamiento</h2>
+  </div>
+</div>
+<div class="body-container">
+  <p>
+    Además de la climatización, nuestros sistemas geotérmicos pueden integrarse
+    para proporcionar agua caliente sanitaria de manera eficiente y ecológica,
+    utilizando la misma tecnología de bombas de calor.
+  </p>
+</div>
+} @case (2) {
+<div class="head-container">
+  <div class="title">
+    <h2 class="gold-font">agua caliente sanitaria</h2>
+    <h2 class="white-font">piscina</h2>
+  </div>
+</div>
+<div class="body-container">
+  <h3 class="white-font">ACS</h3>
+  <p class="white-font">
+    Ofrecemos soluciones para la climatización de piscinas, manteniendo la
+    temperatura del agua en niveles óptimos durante todo el año, utilizando
+    energía geotérmica para un ahorro energético significativo.
+  </p>
+  <h3 class="white-font">climatizacion de piscina</h3>
+  <p>
+    Ofrecemos soluciones para la climatización de piscinas, manteniendo la
+    temperatura del agua en niveles óptimos durante todo el año, utilizando
+    energía geotérmica para un ahorro energético significativo.
+  </p>
+</div>
+} @case (3) {
+<div class="head-container">
+  <div class="title">
+    <h2 class="gold-font">Slider</h2>
+    <h2 class="white-font">Tres 3</h2>
+  </div>
+</div>
+<div class="body-container">
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur atque
+    illum accusantium eius perferendis. Laboriosam adipisci ipsum itaque
+    corrupti delectus incidunt accusamus aperiam quam dolor praesentium.
+    Accusantium maxime earum odit!
+  </p>
+</div>
+} @default {
+<p>default</p>
+} }
+
+<picture>
+  <source media="(min-width:900px)" srcset="/garden-v.jpg">
+  <source media="(min-width:750px)" srcset="/garden-800.jpg">
+  <img src="/garden-400.jpg" alt="garden">
+</picture>
+<div class="arrow-counter-container">
+
+  <div class="arrow-container">
+    <button id="left-arrow" (click)="prevSlide()">
+      <svg
+        class="arrow"
+        width="60px"
+        height="60px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13.26 15.53L9.73999 12L13.26 8.46997"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <button id="right-arrow" class="slide-left" (click)="nextSlide()">
+      <svg
+        class="arrow"
+        width="60px"
+        height="60px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10.74 15.53L14.26 12L10.74 8.46997"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+  <div class="counter">
+    <h3>
+      <strong>0{{ counter }} </strong> /
+    </h3>
+    <p>0{{ slides.length }}</p>
+  </div>
+</div>

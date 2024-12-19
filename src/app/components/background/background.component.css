@@ -1,0 +1,35 @@
+:host{
+    display: none;
+    
+}
+
+.bg{
+    
+    width: 100vw;
+    height: 100vh;
+    transform:  scale(1.3);
+    transition: transform 251ms linear;
+}
+
+path{
+    opacity: 0.10;
+}
+
+path:hover{
+    opacity: 0.6;
+}
+
+@media screen and (min-width:600px){
+    :host{
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -1
+        
+        
+    }
+}

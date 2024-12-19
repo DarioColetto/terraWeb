@@ -1,0 +1,73 @@
+
+
+
+.prueba {
+    height: 100px;
+    width: 300px;
+    background: var(--cyprus);
+}
+
+.logoGrande{
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+}
+
+.logoGrande img{
+    max-width: 40vw;
+    min-width: 300px;
+    height: auto;
+}
+
+.slogan{
+    
+    margin-left: 60%;
+    color: var(--white);
+    font-style: italic;
+    font-weight: normal;
+}
+
+.box-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: flex-start;
+    width: 100%;
+    
+    
+}
+
+.box{
+    max-width: 300px;
+    min-width: 200px;
+}
+
+h3{
+    color: var(--gold);
+}
+
+p{
+    color: var(--white);
+}
+
+mark{
+    color: var(--gold);
+    background: transparent;
+}
+
+@media screen and (max-width: 600px)  {
+
+
+    .logoGrande , .slogan{
+        display: none;
+    }
+
+    .box-container{
+        flex-direction: column;
+        
+    }
+    
+    
+} 
+    

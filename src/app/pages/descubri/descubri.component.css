@@ -1,0 +1,53 @@
+:host{
+    width: 100vw;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-style: normal;
+    margin-left: 4%;
+}
+
+.description{
+    
+    margin-right: 4%;
+    margin-bottom: 24px;
+    width: 50%;
+}
+
+.row-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly ;
+    gap: 20px;
+    color: var(--white);
+    
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+    width: 300px;
+    gap: 10px;
+   
+}
+
+
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+svg{
+    width: 50px;
+    height: 50px;
+    fill: var(--white);
+    
+}

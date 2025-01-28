@@ -1,4 +1,20 @@
-<app-navbar></app-navbar>
-<router-outlet ></router-outlet>
 
-<!-- <app-background></app-background> --> 
+@if (!animationDone) {
+    
+    <app-loader  (animationDone)="loaderAnimationDone($event)"></app-loader>
+
+}@else {
+
+
+
+        <app-background [@fade]></app-background>
+        <app-navbar [@fade]></app-navbar>
+        <app-home [@fade]></app-home>
+        <app-servicio ></app-servicio>
+        <app-descubri></app-descubri>
+        <app-banner></app-banner>
+        <app-contact></app-contact> 
+ 
+
+}
+

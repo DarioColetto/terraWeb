@@ -1,11 +1,13 @@
 :host{
+    position: static;
     width: 100vw;
+    height: auto;
 }
+
 
 .content{
     display: flex;
     flex-direction: column;
-    height: 100%;
     font-style: normal;
     margin-left: 4%;
 }
@@ -19,9 +21,11 @@
 
 .row-wrapper{
     display: flex;
+    margin: auto;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly ;
+    max-width: 80%;
     gap: 20px;
     color: var(--white);
     
@@ -31,11 +35,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     max-width: 350px;
     width: 300px;
     gap: 10px;
+    transition: box-shadow 200ms ease-out;
    
 }
+
+.row:hover{
+
+    box-shadow: 26px 21px 22px 0px var(--deep-green);
+    
+    & > svg{
+    transform: scale(1.2);
+    fill: var(--gold);
+    }    
+}
+
 
 
 ul{
@@ -51,3 +68,23 @@ svg{
     fill: var(--white);
     
 }
+
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    color: var(--white);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+}
+
+.card-foto{
+    background: var(--deep-green);
+    width: 300px;
+    height: 200px;
+}
+

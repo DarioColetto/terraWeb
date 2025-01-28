@@ -1,0 +1,17 @@
+<!-- <div class="logo-container">
+    <img src="/banner/ciatema.jpg" alt="">
+    <img src="/banner/ecobuilding.PNG" alt="">
+    <img src="/banner/kumenewen.PNG" alt="">
+</div> -->
+<div class="slider">
+	<div class="slide-track">
+
+        @for (slide_track of slider; track $index){
+            @for (slide of slide_track; track $index){
+                <div class="slide">
+                    <img [src]="slide"  alt="" />
+                </div>  
+                }
+        }
+	</div>
+</div>

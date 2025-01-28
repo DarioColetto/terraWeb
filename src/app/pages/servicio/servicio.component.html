@@ -1,20 +1,31 @@
 <div id="side-1" class="box">
-  <h1 class="page-title gold-font">nuestro servicio</h1>
-  <div class= "page-subtitle-wrapper">
+  <h1 class="page-title gold-font"
+  appViewportObserver
+  [title]="'servicio'"
+  >
+  nuestro servicio</h1>
+
+ 
+
+  <div class="page-subtitle-wrapper">
     <h2 class="page-subtitle white-font">Climatización</h2>
     <h2 class="page-subtitle gold-font">residencial y comercial</h2>
   </div>
   <div class="content">
-      <p class="description white-font">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, labore
-    incidunt culpa eaque exercitationem odit? Eos, iusto quas quam quasi
-    exercitationem dolore, saepe sequi modi nostrum quae voluptatem quis neque!
-  </p>
+    <p class="description white-font">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, labore
+      incidunt culpa eaque exercitationem odit? Eos, iusto quas quam quasi
+      exercitationem dolore, saepe sequi modi nostrum quae voluptatem quis
+      neque!
+    </p>
 
-  <app-servicio-items></app-servicio-items>
-</div>
+    <app-servicio-items></app-servicio-items>
   </div>
+
+</div>
+
 
 <div id="side-2" class="box">
   <app-slider></app-slider>
 </div>
+

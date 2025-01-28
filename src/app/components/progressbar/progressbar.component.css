@@ -1,0 +1,27 @@
+:host{
+    display: block;
+    width: 100%;}
+
+.progress-bar-container {
+    width: 100%;
+    height: 5px;
+    background-color: #202020;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    
+    background-color: var(--gold);
+    animation: fill 3s ease infinite;
+  }
+
+  /* @keyframes fill {
+    0%{
+      width: 0%
+    }
+    100%{
+      width: 100%
+    }
+  } */

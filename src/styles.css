@@ -13,11 +13,6 @@
    
 }
 
-:host{
-    margin: 0px;
-    padding: 0px;
-}
-
 body{
     margin: 0px;
     padding: 0px;
@@ -38,7 +33,7 @@ p{
 .page-title{
     font-size: 3rem;
     width: auto;
-    margin: 4%;
+    margin: 0  4% 4% 4%;
     height: fit-content;
     text-transform: uppercase;
     font-weight: 400;

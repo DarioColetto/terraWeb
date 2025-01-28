@@ -1,16 +1,24 @@
 
+:host{
+
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
 
 
-.prueba {
-    height: 100px;
-    width: 300px;
-    background: var(--cyprus);
+.logo-wrapper{
+    display: block;
 }
 
 .logoGrande{
     height: fit-content;
     width: fit-content;
-    margin: auto;
+    margin: auto auto;
 }
 
 .logoGrande img{
@@ -54,6 +62,15 @@ p{
 mark{
     color: var(--gold);
     background: transparent;
+}
+
+video{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    z-index: -5;
 }
 
 @media screen and (max-width: 600px)  {

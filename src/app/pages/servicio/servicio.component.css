@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap:nowrap;
-    width: 100%;
+    width: 100vh;
     height: auto;
 }
 
@@ -47,9 +47,7 @@
 @media screen and (min-width: 600px) {
 
     :host{
-        position: absolute;
-        top: 0px;
-        left: 0px;
+        
         display: flex;
         flex-direction: row;
         flex-wrap:wrap;
@@ -69,7 +67,6 @@
     .page-title{
         font-size: 3rem;
         width: auto;
-        margin: 15% 0px 0px 4%;
         height: fit-content;
         text-transform: uppercase;
         font-weight: 400;

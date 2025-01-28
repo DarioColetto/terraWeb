@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CursorComponent } from './cursor.component';
+import { LoaderComponent } from './loader.component';
 
-describe('CursorComponent', () => {
-  let component: CursorComponent;
-  let fixture: ComponentFixture<CursorComponent>;
+describe('LoaderComponent', () => {
+  let component: LoaderComponent;
+  let fixture: ComponentFixture<LoaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CursorComponent]
+      imports: [LoaderComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CursorComponent);
+    fixture = TestBed.createComponent(LoaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

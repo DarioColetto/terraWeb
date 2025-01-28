@@ -1,0 +1,97 @@
+:host{
+
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+
+.logo-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.isologotipo{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+.text-1, .text-2{
+    margin: 0px;
+    padding: 0px;
+    color: var(--white);
+    
+}
+
+.text-1{
+    font-size: 10rem;
+    font-weight: bold;
+}
+
+.text-2{
+    font-size: 8rem;
+    font-weight: 100;
+}
+
+.text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.isologotipo img{
+    max-width: 20vw;
+    height: auto;
+    z-index: 100;
+    align-self: center;
+}
+
+.slogan{
+    
+    margin-left: 60%;
+    color: var(--white);
+    font-style: italic;
+    font-weight: normal;
+}
+
+
+.tracking-in-expand {
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

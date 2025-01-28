@@ -25,7 +25,7 @@ export class BackgroundComponent {
 
     
 
-    this.renderer.setStyle(this.bg.nativeElement, 'transform', `scale(1.3) translate(${this.difX * 0.05}px , ${this.difY * 0.05}px )`)
+    this.renderer.setStyle(this.bg.nativeElement, 'transform', `scale(1.3) translate(${this.difX * 0.015}px , ${this.difY * 0.015}px )`)
   }
 
 }

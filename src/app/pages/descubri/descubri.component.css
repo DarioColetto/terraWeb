@@ -2,8 +2,19 @@
     position: static;
     width: 100vw;
     height: auto;
+    
 }
 
+.head{
+    display: block;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
 
 .content{
     display: flex;
@@ -15,15 +26,17 @@
 .description{
     
     margin-right: 4%;
+    margin-left: 4%;
     margin-bottom: 24px;
-    width: 50%;
+    width: 80%;
+    
 }
 
 .row-wrapper{
     display: flex;
     margin: auto;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly ;
     max-width: 80%;
     gap: 20px;
@@ -44,13 +57,7 @@
 }
 
 .row:hover{
-
     box-shadow: 26px 21px 22px 0px var(--deep-green);
-    
-    & > svg{
-    transform: scale(1.2);
-    fill: var(--gold);
-    }    
 }
 
 
@@ -60,13 +67,34 @@ ul{
     padding: 0px;
 }
 
-
-
-svg{
-    width: 50px;
-    height: 50px;
-    fill: var(--white);
+.dots-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     
+}
+
+.dots-container:hover > :not(:hover){
+    opacity: 0.4;
+}
+
+.dot.card-container:first-child:active{
+    background: var(--gold) ;
+}
+
+.dot{
+    background: var(--white);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+}
+
+.dot:hover{
+    background: var(--deep-green);
+
 }
 
 .card-container{

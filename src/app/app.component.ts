@@ -8,7 +8,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoaderComponent } from './pages/loader/loader.component';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { filter } from 'rxjs';
+import { IconComponent } from './components/icon/icons.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +22,7 @@ import { filter } from 'rxjs';
     BackgroundComponent,
     BannerComponent,
     ContactComponent,
+    IconComponent
   ],
 
   animations:[

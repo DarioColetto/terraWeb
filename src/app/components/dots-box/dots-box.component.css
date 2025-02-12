@@ -1,0 +1,31 @@
+:host{
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.dots-container:hover > :not(:hover){
+    opacity: 0.4;
+}
+
+.dot.card-container:first-child:active{
+    background: var(--gold) ;
+}
+
+.dot{
+    background: var(--white);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+}
+
+.dot:hover{
+    background: var(--deep-green);
+
+}

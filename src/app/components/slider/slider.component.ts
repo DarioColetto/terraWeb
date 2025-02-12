@@ -2,8 +2,6 @@ import { Component,  signal} from '@angular/core';
 import {
   animate,
   group,
-  query,
-  stagger,
   state,
   style,
   transition,
@@ -110,6 +108,7 @@ import { ProgressbarComponent } from '../progressbar/progressbar.component';
 })
 export class SliderComponent {
 
+  
   index = signal<number>(0)
 
 

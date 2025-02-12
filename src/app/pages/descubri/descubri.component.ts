@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { IconComponent } from '../../components/icon/icons.component';
-import { NgClass } from '@angular/common';
 import { cardInfo, CardInfo, data, Info } from './descubri-data';
+import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
 
 
 
 @Component({
   selector: 'app-descubri',
   standalone: true,
-  imports: [IconComponent, NgClass],
+  imports: [IconComponent, DotsBoxComponent],
   templateUrl: './descubri.component.html',
   styleUrl: './descubri.component.css',
 })
@@ -16,16 +16,26 @@ export class DescubriComponent {
   
   data:Info = data;
   cardData:CardInfo = cardInfo 
-  slideIndex = 0
-  dotIndex = 0
 
-  cardIndex = 0
+  dotIndex = 0
   cardDotIndex = 0
+
+  indexSelected1 = 0
+  indexSelected2 = 0
+
 
   changeIndex(index:number){
     this.dotIndex = index
   }
 
+  changeIndex1(value:number){
+    this.indexSelected1= value
+  }
+
+  changeIndex2(value:number){
+    this.indexSelected2 = value
+  }
+  
   changeIndexCard(index:number){
     this.cardDotIndex = index
   }

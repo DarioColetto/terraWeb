@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { HomeComponent } from './pages/home/home.component';
+import { Component, HostBinding } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
@@ -8,7 +7,6 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoaderComponent } from './pages/loader/loader.component';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { IconComponent } from './components/icon/icons.component';
 
 @Component({
   selector: 'app-root',
@@ -16,14 +14,12 @@ import { IconComponent } from './components/icon/icons.component';
   imports: [
     LoaderComponent,
     NavbarComponent,
-    HomeComponent,
     ServicioComponent,
     DescubriComponent,
     BackgroundComponent,
     BannerComponent,
-    ContactComponent,
-    IconComponent
-  ],
+    ContactComponent
+],
 
   animations:[
     trigger('fade',[
@@ -50,6 +46,10 @@ import { IconComponent } from './components/icon/icons.component';
 })
 export class AppComponent {
   title = 'terraWeb';
+
+
+
+
   animationDone = !false
 
   isDisable = true

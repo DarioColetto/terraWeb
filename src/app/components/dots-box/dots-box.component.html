@@ -1,0 +1,5 @@
+@for (dot of dots; track $index){
+    <div class="dot" (click)="[getDotIndex($index), changeState($index)]"
+    [@dotAnimation]="dots[$index]"
+    ></div>
+}

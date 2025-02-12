@@ -5,10 +5,6 @@
     
 }
 
-.head{
-    display: block;
-    width: 100%;
-}
 
 .container{
     display: flex;
@@ -16,21 +12,11 @@
     justify-content: space-around;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    font-style: normal;
-    margin-left: 4%;
+section{
+    min-width: 50%;
+    height: max-content;
 }
 
-.description{
-    
-    margin-right: 4%;
-    margin-left: 4%;
-    margin-bottom: 24px;
-    width: 80%;
-    
-}
 
 .row-wrapper{
     display: flex;
@@ -69,6 +55,8 @@ ul{
 
 .dots-container{
     display: flex;
+    position: relative;
+    bottom: 0px;
     flex-direction: row;
     width: 100%;
     align-items: center;
@@ -98,16 +86,23 @@ ul{
 }
 
 .card-container{
-    display: flex;
+    
     justify-content: space-around;
     color: var(--white);
+    margin: 4%;
 }
 
 .card{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+    display: block;
     gap: 20px;
+}
+
+.card-content{
+    display: flex;
+}
+
+.card-title{
+    width: 100%;
 }
 
 .card-foto{

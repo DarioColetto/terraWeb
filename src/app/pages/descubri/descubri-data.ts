@@ -65,7 +65,7 @@ export const cardInfo: CardInfo = [
           invierte: el calor del edificio es expulsado al subsuelo. Las
           perforaciones suelen tener entre 50 y 200 metros de profundidad,
           dependiendo del sistema y las características del terreno.`,
-    img: '',
+    img: '/garden-400.jpg',
   },
   {
     title: 'Sistema de Distribución',
@@ -76,7 +76,7 @@ export const cardInfo: CardInfo = [
           parte, distribuyen el aire caliente o frío de manera eficiente por
           todo el espacio. Ambos sistemas garantizan una climatización eficiente
           y sostenible.`,
-    img: '',
+    img: '/garden-400.jpg',
   },
   {
     title: 'Bomba de Calor',
@@ -85,6 +85,6 @@ export const cardInfo: CardInfo = [
           constante del terreno durante todo el año. En invierno, extraen el
           calor del suelo para calentar el edificio. En verano, expulsan el
           calor del edificio hacia el subsuelo para enfriar.`,
-    img: '',
+    img: '/garden-400.jpg',
   },
 ];

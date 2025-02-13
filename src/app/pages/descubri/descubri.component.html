@@ -28,8 +28,8 @@
       </div>
       } 
     }
-    <app-dots-box [dotsNumber]="data.length" (indexSelected)="changeIndex1($event)"></app-dots-box>
-    </div>
+  </div>
+  <app-dots-box [dotsNumber]="data.length" (indexSelected)="changeIndex1($event)"></app-dots-box>
   </section>
   <section>
     <div class="page-subtitle-wrapper">
@@ -53,6 +53,6 @@
       }
     </div>
 
-    <app-dots-box [dotsNumber]="cardData.length" (indexSelected)="changeIndex2($event)"></app-dots-box>
+    <app-dots-box class="dots" [dotsNumber]="cardData.length" (indexSelected)="changeIndex2($event)"></app-dots-box>
   </section>
 </div>

@@ -9,13 +9,6 @@
     
 }
 
-.dots-container:hover > :not(:hover){
-    opacity: 0.4;
-}
-
-.dot.card-container:first-child:active{
-    background: var(--gold) ;
-}
 
 .dot{
     background: var(--white);

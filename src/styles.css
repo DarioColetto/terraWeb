@@ -58,7 +58,8 @@ p{
 .description{
     margin-left: 4%;
     margin-right: 4%;
-    display: flex;    
+    display: flex;
+    max-width: 50ch;    
 }
 
 .white-font{

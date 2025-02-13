@@ -4,7 +4,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { ServicioComponent } from './pages/servicio/servicio.component';
 import { DescubriComponent } from './pages/descubri/descubri.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { ContactComponent } from './pages/contact/contact.component';
+
 import { LoaderComponent } from './pages/loader/loader.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 
@@ -18,7 +18,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
     DescubriComponent,
     BackgroundComponent,
     BannerComponent,
-    ContactComponent
 ],
 
   animations:[

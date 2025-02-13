@@ -21,7 +21,7 @@ export class DescubriComponent {
   cardDotIndex = 0
 
   indexSelected1 = 0
-  indexSelected2 = 0
+
 
 
   changeIndex(index:number){
@@ -32,11 +32,5 @@ export class DescubriComponent {
     this.indexSelected1= value
   }
 
-  changeIndex2(value:number){
-    this.indexSelected2 = value
-  }
-  
-  changeIndexCard(index:number){
-    this.cardDotIndex = index
-  }
+
 }

@@ -1,0 +1,32 @@
+.card-container{
+    
+    justify-content: space-around;
+    color: var(--white);
+    margin: 4%;
+}
+
+.card{
+    display: block;
+    gap: 20px;
+}
+
+.card-content{
+    display: flex;
+}
+
+.card-title{
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.card-foto{
+    background: var(--deep-green);
+    width: 300px;
+    height: 200px;
+}
+
+.card-text{
+    margin: 0px 12px 0px 12px;
+    padding: 0px 12px 0px 12px;
+    max-width: 40ch;
+}

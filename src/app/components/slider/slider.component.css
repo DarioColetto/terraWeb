@@ -1,11 +1,11 @@
 :host{
     position: relative;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
-    flex-wrap: wrap;
     overflow: hidden;
+    display: flex;
+    /* flex-wrap: wrap; */
+    
 }
 
 .progress-bar{
@@ -16,24 +16,25 @@
 
 }
 
+.column{
+    flex: 60%;
+    max-width: 60%;
+}
+
 .img-container{
     position: relative;
-    /* display: flex; */
     top: 0px;
-    right: 0px;
+    right:0px;
     width: 40%;
     height: 60%;
     overflow: hidden;
-    background: rebeccapurple;
 }
 
 img{
-    position: relative;
-    top: 0px;
-    right: 0px;
+   
     width: max-content;
     height: auto;
-    animation: slowZoom 5s ease-in 200ms;
+    animation: slowZoom 5s ease-in 200ms forwards;
 }
 
 @keyframes slowZoom {
@@ -45,7 +46,7 @@ img{
 
 .head-container{
     background: #232323;
-    width: 60%;
+    width: 100%;
     height: 30%;
     display: flex;
     flex-direction: column;
@@ -53,9 +54,6 @@ img{
     justify-content: flex-end;
 }
 
-.aux{
-    z-index: 10;
-}
 
 .title{
     position: relative;
@@ -79,42 +77,40 @@ h3{
 
 
 .body-container{
+    display: flex;
     background: var(--deep-green);
-    width: 60%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     
 }
 
 .body-container p{
+
     color: var(--white);
     margin: 0px 10% 0px 10%;
     padding: 12px 0px 0px 0px;
 }
 
 
-
-
 .arrow-counter-container{
-    position: relative;
+    position: absolute;
     bottom: 0px;
     right: 0px;
     display: flex;
+    flex-direction: column;
     width: 40%;
     height: 40%;
-    background: pink;
 }
 
 .arrow-container{
     position: relative;
-
-    height: auto;
-    width: auto;
+    height: fit-content;
+    width: fit-content;
     display: block;
-    padding-left: 10%;
+    margin-top: 24px;
+    margin-left: 24px;
 
 }
-
-
 
 
 button{
@@ -123,36 +119,28 @@ button{
     border: transparent;
 }
 
-svg{
-    display: block;
-    
-    stroke: var(--white);
-}
-
 .arrow:hover{
     stroke: var(--gold);
 }
 
+
 .counter{
     display: flex;
-    align-content: flex-start;
-    align-items: flex-end;
-    padding-left: 10%;
+    width: fit-content;
+    height: fit-content;
+    align-items: baseline;
+    margin-left: 24px;
     gap: 5px;
     color: var(--white);
+    
 }
+
 
 .counter h3{
     font-size: 32px;
     margin: 0px;
     padding: 0px;
 }
-
-
-
-
-
-
 
 
 #left-arrow:hover {
@@ -209,51 +197,18 @@ svg{
   }
 
 
-
- @media screen and (min-width:800px) {
     
 
 
 
 
 
-button{
-    display: block;
-    background: transparent;
-    border: transparent;
-}
 
-.arrow{
-    display: block;
-    stroke: var(--white);
-}
 
-.arrow:hover{
-    stroke: var(--gold);
-}
-
-.counter{
-    display: flex;
-    width: auto;
-    height: auto;
-    
-    align-content: flex-start;
-    align-items: flex-end;
-    
-    padding-left: 10%;
-    gap: 5px;
-    color: var(--white);
-}
-
-.counter h3{
-    font-size: 32px;
-    margin: 0px;
-    padding: 0px;
-}
 
 
 
     
- } 
+ 
 
 

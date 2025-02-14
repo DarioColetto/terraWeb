@@ -1,8 +1,10 @@
 <app-progress-bar class="progress-bar" (isFull)="isBarFull()"></app-progress-bar>
 @for (slide of SLIDES; track $index) {
   @if(slideIndex === $index){
+
+    <div class="column">
     <div class="head-container" >
-      <div class="title" [@slideAnimation]="direction" >     
+      <div class="title" [@slideAnimation]="direction" (@slideAnimation.done)="animationDirectionHandler($event)">     
         <h2 class="gold-font">{{slide.title[0]}}</h2>
         @if(slide.title[1]){
           <h2 class="white-font">{{slide.title[1]}}</h2>
@@ -14,6 +16,7 @@
         {{slide.body}}
       </p>
     </div>
+  </div>
     <div class="img-container">
         <img [@slideAnimation]="direction" [src]="slide.img" alt="garden">
     </div>

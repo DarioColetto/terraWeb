@@ -1,6 +1,7 @@
 import { Component,  signal} from '@angular/core';
 import {
   animate,
+  AnimationEvent,
   group,
   state,
   style,
@@ -20,94 +21,69 @@ import { IconComponent } from "../icon/icons.component";
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
   animations: [
-      trigger('slideAnimation', [
-        // Estado por defecto
-        state('default', style({ transform: 'translateX(0)' })),
+    trigger('slideAnimation', [
+      // Estado por defecto
+      state('default', style({ transform: 'translateX(0)' })),
     
-        // Transición hacia la izquierda
-        transition('void => toLeft', [
+      // Transición hacia la izquierda
+      transition('void => toLeft', [
+        style({
+          transform: 'translateX(-100%)',
+          filter: 'blur(40px)',
+          opacity: 0,
+        }),
+        animate(
+          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
+          style({
+            transform: 'translateX(0)',
+            filter: 'none',
+            opacity: 1,
+          })
+        ),
+      ]),
+    
+      // Transición hacia la derecha
+      transition('void => toRight', [
+        style({
+          transform: 'translateX(100%)', // Confirmar que el punto inicial es 100%
+          filter: 'blur(40px)',
+          opacity: 0,
+        }),
+        animate(
+          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
+          style({
+            transform: 'translateX(0)',
+            filter: 'none',
+            opacity: 1,
+          })
+        ),
+      ]),
+    
+      // Salida hacia la izquierda
+      transition('toLeft => void', [
+        animate(
+          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
           style({
             transform: 'translateX(-100%)',
-            transformOrigin: '100% 50%',
             filter: 'blur(40px)',
             opacity: 0,
-          }),
-          group([
-            animate(
-              '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-              style({
-                transform: 'translateX(0)',
-                transformOrigin: '50% 50%',
-                filter: 'none',
-                opacity: 1,
-              })
-            ),
-
-          ])
-          
-        ]),
-    
-        // Transición hacia la derecha
-        transition('void => toRight', [
-          style({
-            transform: 'translateX(100%)',
-            transformOrigin: '0% 50%',
-            filter: 'blur(40px)',
-            opacity: 0,
-          }),
-          animate(
-            '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-            style({
-              transform: 'translateX(0)',
-              transformOrigin: '50% 50%',
-              filter: 'none',
-              opacity: 1,
-            })
-          ),
-        ]),
-    
-        // Transición de salida hacia la izquierda
-        transition('toLeft => void', [
-          style({
-            transform: 'translateX(0)',
-            transformOrigin: '50% 50%',
-            filter: 'none',
-            opacity: 1,
-          }),
-          animate(
-            '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-            style({
-              transform: 'translateX(-100%)',
-              transformOrigin: '100% 50%',
-              filter: 'blur(40px)',
-              opacity: 0,
-            })
-          ),
-        ]),
-    
-        // Transición de salida hacia la derecha
-        transition('toRight => void', [
-          style({
-            transform: 'translateX(0)',
-            transformOrigin: '50% 50%',
-            filter: 'none',
-            opacity: 1,
-          }),
-          animate(
-            '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-            style({
-              transform: 'translateX(100%)',
-              transformOrigin: '0% 50%',
-              filter: 'blur(40px)',
-              opacity: 0,
-            })
-          ),
-        ]),
+          })
+        ),
       ]),
+    
+      // Salida hacia la derecha
+      transition('toRight => void', [
+        animate(
+          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
+          style({
+            transform: 'translateX(100%)', // Confirmar que se mueve hacia la derecha
+            filter: 'blur(40px)',
+            opacity: 0,
+          })
+        ),
+      ]),
+    ]),
 
-      // trigger('slowZoom',[
-      //   transition(':enter', animate('3s ease 200ms',style({transform: 'scale(1.1)'})))
-      // ])
     ], 
 })
 export class SliderComponent {
@@ -159,8 +135,8 @@ export class SliderComponent {
     //this.nextSlide()
   }
 
-  animationDirectionHandler(index:number){
-    console.log(index)
+  animationDirectionHandler(event:AnimationEvent){
+    console.log(event.toState)
   }
 
 }

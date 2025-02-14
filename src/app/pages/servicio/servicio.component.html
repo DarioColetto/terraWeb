@@ -14,20 +14,7 @@
       energética y disminuyendo la emisión de CO2 al
       planeta.
     </p>
-    
-      <menu class="bar">
-        <a (click)="renderView(0)">
-          <h3 class="gold-font">Como lo hacemos</h3>
-        </a>
-        <span class="separador gold-font">|</span>
-        <a (click)="renderView(1)">
-          <h3 class="gold-font">Como funciona</h3>
-        </a>
-        <span class="separador gold-font">|</span>
-        <a (click)="renderView(2)">
-          <h3 class="gold-font">Elite entre renovables</h3>
-        </a>
-      </menu>
+    <app-link-bar (selectedIndex)="renderView($event)"></app-link-bar>
       <div class="menu-view">
         @switch (view) {
           @case (0) {

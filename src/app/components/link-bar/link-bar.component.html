@@ -1,0 +1,16 @@
+
+    @for (link of links; track $index) {
+
+      <a class="link" 
+      (click)="[getSelectedIndex($index), activate($index)]"
+      (mouseenter)="setHoverState($index)"
+      (mouseleave)="setHoverState($index)"
+      [ngClass]="link.state"
+      >
+        <h3 class="gold-font">{{link.title}}</h3>
+      </a>
+      @if(links[$index+1]){
+        <span class="separador gold-font">|</span>
+      }
+    }
+

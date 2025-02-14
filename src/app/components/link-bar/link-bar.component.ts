@@ -1,0 +1,37 @@
+import { NgClass } from '@angular/common';
+import { Component, output } from '@angular/core';
+
+@Component({
+  selector: 'app-link-bar',
+  standalone: true,
+  imports: [NgClass],
+  templateUrl: './link-bar.component.html',
+  styleUrl: './link-bar.component.css'
+})
+export class LinkBarComponent {
+
+  selectedIndex = output<number>()
+  prevIndex = 0
+  links = [
+    {title:'como lo hacemos', state:'inactive'} , 
+    {title:'como funciona', state:'inactive'},
+    {title:'elite entre renovables', state:'inactive'}
+  ]
+
+  getSelectedIndex(index: number) {
+    this.selectedIndex.emit(index)
+  }
+
+  setHoverState(index:number) {
+    if(this.links[index].state !== 'active'){
+      this.links[index].state =  this.links[index].state === 'hovered'? 'inactive':"hovered";
+    }
+  }
+
+  activate(index:number) {
+    this.links[this.prevIndex].state = 'inactive';
+    this.prevIndex = index;
+    this.links[index].state = 'active';
+  }
+
+}

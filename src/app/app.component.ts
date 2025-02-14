@@ -28,7 +28,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
           opacity:0,
           filter: "blur(10px)"
         }),
-        animate('1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)', 
+        animate('0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000)', 
           style( 
             {
               opacity:1,

@@ -33,7 +33,15 @@ img{
     right: 0px;
     width: max-content;
     height: auto;
+    animation: slowZoom 5s ease-in 200ms;
 }
+
+@keyframes slowZoom {
+    0%{ transform: scale(1);}
+    100%{ transform: scale(1.1);}
+    
+}
+
 
 .head-container{
     background: #232323;

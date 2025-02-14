@@ -104,8 +104,11 @@ import { IconComponent } from "../icon/icons.component";
           ),
         ]),
       ]),
-    ],
-  
+
+      // trigger('slowZoom',[
+      //   transition(':enter', animate('3s ease 200ms',style({transform: 'scale(1.1)'})))
+      // ])
+    ], 
 })
 export class SliderComponent {
 

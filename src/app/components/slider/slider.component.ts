@@ -124,12 +124,14 @@ export class SliderComponent {
       body: `Además de la climatización, nuestros sistemas geotérmicos pueden integrarse
       para proporcionar agua caliente sanitaria de manera eficiente y ecológica,
       utilizando la misma tecnología de bombas de calor.`,
+      img:'/garden-800.jpg'
     },
     {
       title: ['agua caliente sanitaria', 'piscina'],
       body: `Ofrecemos soluciones para la climatización de piscinas, manteniendo la
     temperatura del agua en niveles óptimos durante todo el año, utilizando
     energía geotérmica para un ahorro energético significativo.`,
+      img:'/garden-800.jpg'
     },
     {
       title: ['Slider'],
@@ -137,6 +139,7 @@ export class SliderComponent {
     illum accusantium eius perferendis. Laboriosam adipisci ipsum itaque
     corrupti delectus incidunt accusamus aperiam quam dolor praesentium.
     Accusantium maxime earum odit!`,
+      img:'/garden-800.jpg'
     },
   ];
 
@@ -154,7 +157,7 @@ export class SliderComponent {
   }
 
   isBarFull(){
-    this.nextSlide()
+    //this.nextSlide()
   }
 
   animationDirectionHandler(index:number){

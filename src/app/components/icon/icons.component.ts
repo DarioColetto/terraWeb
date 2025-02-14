@@ -5,7 +5,7 @@ import { IconService } from './icon.service';
   selector: 'app-icon',
   standalone: true,
   imports: [],
-  template: `<span [innerHTML]="svgIcon" [style.color]="color()"></span>`,
+  template: `<span [innerHTML]="svgIcon" [style.color]="color()" [style.stroke]="stroke()"></span>`,
   styles: [`
     span {
       display: inline-flex;
@@ -21,6 +21,7 @@ export class IconComponent {
 
   name = input<string>('');
   color = input<string>('currentColor')
+  stroke = input<string>('');
   svgIcon: any;
 
   constructor(private iconService: IconService) {}

@@ -1,0 +1,103 @@
+@let slide = SLIDES[slideIndex];
+<app-progress-bar class="progress-bar" (isFull)="isBarFull()"></app-progress-bar>
+@if(auxiliar){
+  <div class="head-container" >
+    <div class="title" [@slideAnimation]="direction" >     
+      <h2 class="gold-font">{{slide.title[0]}}</h2>
+      @if(slide.title[1]){
+        <h2 class="white-font">{{slide.title[1]}}</h2>
+      }
+    </div>
+  </div>
+  <div class="body-container">
+    <p [@slideAnimation]="direction">
+      {{slide.body}}
+    </p>
+  </div>
+  <div class="img-container">
+      <img [@slideAnimation]="direction" [src]="slide.img" alt="garden">
+  </div>
+}
+
+@if(!auxiliar){
+  <div class="head-container" >
+    <div class="title aux"  [@slideAnimation]="direction">     
+      <h2 class="gold-font">{{slide.title[0]}}</h2>
+      @if(slide.title[1]){
+        <h2 class="white-font">{{slide.title[1]}}</h2>
+      }
+    </div>
+  </div>
+  <div class="body-container">
+    <p class="aux" [@slideAnimation]="direction">
+      {{slide.body}}
+    </p>
+  </div>
+  <div class="img-container">
+    <img class="aux" [@slideAnimation]="direction" [src]="slide.img" alt="garden">
+</div>
+}
+
+
+
+
+
+<div class="arrow-counter-container">
+
+  <div class="arrow-container">
+    <button id="left-arrow" (click)="prevSlide()">
+      <svg
+        class="arrow"
+        width="60px"
+        height="60px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13.26 15.53L9.73999 12L13.26 8.46997"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <button id="right-arrow" class="slide-left" (click)="nextSlide()">
+      <svg
+        class="arrow"
+        width="60px"
+        height="60px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10.74 15.53L14.26 12L10.74 8.46997"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+  <div class="counter">
+    <h3>
+      <strong>0{{ slideIndex + 1 }} </strong> /
+    </h3>
+    <p>0{{ SLIDES.length }}</p>
+  </div>
+</div>

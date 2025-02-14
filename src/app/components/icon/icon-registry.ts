@@ -52,6 +52,54 @@ export const ICONS: { [key: string]: string } = {
       1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Zm8.252-6.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5
       0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457
       3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z" fill-rule="evenodd"/>
-    </svg>`
+    </svg>`,
+    leftArrow:`
+    <svg
+        class="arrow"
+        width="60px"
+        height="60px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13.26 15.53L9.73999 12L13.26 8.46997"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    `,
+    rightArrow:`
+    <svg
+        class="arrow"
+        width="60px"
+        height="60px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10.74 15.53L14.26 12L10.74 8.46997"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    `
   // Agrega más iconos aquí
 };

@@ -13,7 +13,7 @@ export class LinkBarComponent {
   selectedIndex = output<number>()
   prevIndex = 0
   links = [
-    {title:'como lo hacemos', state:'inactive'} , 
+    {title:'como lo hacemos', state:'active'} , 
     {title:'como funciona', state:'inactive'},
     {title:'elite entre renovables', state:'inactive'}
   ]

@@ -8,6 +8,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { ProgressbarComponent } from '../progressbar/progressbar.component';
+import { IconComponent } from "../icon/icons.component";
 
 
 
@@ -15,7 +16,7 @@ import { ProgressbarComponent } from '../progressbar/progressbar.component';
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [ProgressbarComponent],
+  imports: [ProgressbarComponent, IconComponent],
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
   animations: [
@@ -110,9 +111,6 @@ export class SliderComponent {
 
   
   index = signal<number>(0)
-
-
-  auxiliar = true
   slideIndex = 0;
   fullBar:any;
   direction: 'toLeft' | 'toRight' | 'default' = 'default';
@@ -146,14 +144,12 @@ export class SliderComponent {
   nextSlide() {
     this.slideIndex = (this.slideIndex + 1) % this.SLIDES.length;
     this.direction = 'toRight'
-    this.auxiliar = !this.auxiliar
   }
 
   prevSlide() {
     this.slideIndex =
       (this.slideIndex - 1 + this.SLIDES.length) % this.SLIDES.length;
       this.direction = 'toLeft'
-      this.auxiliar = !this.auxiliar
   }
 
   isBarFull(){

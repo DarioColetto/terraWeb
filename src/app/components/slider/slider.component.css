@@ -42,6 +42,7 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .aux{
@@ -114,7 +115,7 @@ button{
     border: transparent;
 }
 
-.arrow{
+svg{
     display: block;
     
     stroke: var(--white);

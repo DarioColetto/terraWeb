@@ -1,11 +1,7 @@
-import { Component, output } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { SocialComponent } from "../social/social.component";
-import { CotanctCardComponent } from "../cotanct-card/cotanct-card.component";
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-navbar',
-    imports: [RouterLink, SocialComponent, CotanctCardComponent],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
 })

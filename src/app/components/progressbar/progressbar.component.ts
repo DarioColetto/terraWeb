@@ -4,7 +4,6 @@ import { Component, NgZone, output, signal } from '@angular/core';
 
 @Component({
     selector: 'app-progress-bar',
-    imports: [],
     templateUrl: './progressbar.component.html',
     styleUrls: ['./progressbar.component.css'],
     animations: [

@@ -2,21 +2,17 @@ import { Component,  signal} from '@angular/core';
 import {
   animate,
   AnimationEvent,
-  group,
   state,
   style,
   transition,
   trigger,
 } from '@angular/animations';
-import { ProgressbarComponent } from '../progressbar/progressbar.component';
-import { IconComponent } from "../icon/icons.component";
 
 
 
 
 @Component({
     selector: 'app-slider',
-    imports: [ProgressbarComponent, IconComponent],
     templateUrl: './slider.component.html',
     styleUrls: ['./slider.component.css'],
     animations: [

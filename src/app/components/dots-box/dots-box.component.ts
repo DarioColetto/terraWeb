@@ -3,7 +3,6 @@ import { Component, input, output } from '@angular/core';
 
 @Component({
     selector: 'app-dots-box',
-    imports: [],
     templateUrl: './dots-box.component.html',
     styleUrl: './dots-box.component.css',
     animations: [

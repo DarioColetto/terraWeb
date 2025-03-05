@@ -1,18 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { BackgroundComponent } from './components/background/background.component';
-import { ServicioComponent } from './pages/servicio/servicio.component';
-import { LoaderComponent } from './pages/loader/loader.component';
+import { Component } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
     selector: 'app-root',
-    imports: [
-        LoaderComponent,
-        NavbarComponent,
-        ServicioComponent,
-        BackgroundComponent
-    ],
+
     animations: [
         trigger('fade', [
             transition(':enter', [

@@ -7,11 +7,15 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { ProgressbarComponent } from '../progressbar/progressbar.component';
+import { IconComponent } from '../icon/icons.component';
 
 
 
 
 @Component({
+  standalone:true,
+  imports:[ProgressbarComponent, IconComponent],
     selector: 'app-slider',
     templateUrl: './slider.component.html',
     styleUrls: ['./slider.component.css'],

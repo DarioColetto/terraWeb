@@ -11,9 +11,9 @@ import {
 
 @Component({
     selector: 'app-loader',
-    imports: [],
     templateUrl: './loader.component.html',
     styleUrl: './loader.component.css',
+    standalone:true,
     animations: [
         trigger('container', [
             transition(':enter', [

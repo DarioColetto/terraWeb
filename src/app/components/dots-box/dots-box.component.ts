@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, input, output } from '@angular/core';
 
 @Component({
+   standalone:true,
     selector: 'app-dots-box',
     templateUrl: './dots-box.component.html',
     styleUrl: './dots-box.component.css',

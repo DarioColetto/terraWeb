@@ -3,6 +3,7 @@ import { Component, NgZone, output, signal } from '@angular/core';
 
 
 @Component({
+  standalone:true,
     selector: 'app-progress-bar',
     templateUrl: './progressbar.component.html',
     styleUrls: ['./progressbar.component.css'],

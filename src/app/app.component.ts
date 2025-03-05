@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
-
+import { LoaderComponent } from './pages/loader/loader.component';
+import { BackgroundComponent } from './components/background/background.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ServicioComponent } from './pages/servicio/servicio.component';
 @Component({
     selector: 'app-root',
-
+    imports:[LoaderComponent, BackgroundComponent,  NavbarComponent,ServicioComponent  ],
     animations: [
         trigger('fade', [
             transition(':enter', [
@@ -19,7 +22,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
         ])
     ],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+    styleUrl: './app.component.css',
+    standalone:true
 })
 export class AppComponent {
   title = 'terraWeb';

@@ -4,6 +4,7 @@ import { DotsBoxComponent } from "../dots-box/dots-box.component";
 
 @Component({
     selector: 'app-comofunciona',
+    standalone:true,
     imports: [DotsBoxComponent],
     templateUrl: './comofunciona.component.html',
     styleUrl: './comofunciona.component.css'

@@ -1,9 +1,12 @@
+import { NgClass } from '@angular/common';
 import { Component, output } from '@angular/core';
 
 @Component({
     selector: 'app-link-bar',
     templateUrl: './link-bar.component.html',
-    styleUrl: './link-bar.component.css'
+    styleUrl: './link-bar.component.css',
+    imports:[NgClass],
+    standalone:true
 })
 export class LinkBarComponent {
 

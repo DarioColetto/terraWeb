@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { LinkBarComponent } from '../../components/link-bar/link-bar.component';
+import { ServicioItemsComponent } from '../../components/servicio-items/servicio-items.component';
+import { ComofuncionaComponent } from '../../components/comofunciona/comofunciona.component';
+import { DescubriComponent } from '../descubri/descubri.component';
+import { SliderComponent } from '../../components/slider/slider.component';
 
 @Component({
     selector: 'app-servicio',
     templateUrl: './servicio.component.html',
     styleUrl: './servicio.component.css',
+    standalone:true,
+    imports:[LinkBarComponent, ServicioItemsComponent, ComofuncionaComponent,DescubriComponent, SliderComponent],
     animations: [
         trigger('fade', [
             transition(':enter', [

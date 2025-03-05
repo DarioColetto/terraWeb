@@ -3,6 +3,7 @@ import { IconService } from './icon.service';
 
 @Component({
     selector: 'app-icon',
+    standalone:true,
     imports: [],
     template: `<span [innerHTML]="svgIcon" [style.color]="color()" [style.stroke]="stroke()"></span>`,
     styles: [`

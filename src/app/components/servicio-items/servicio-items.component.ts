@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app-servicio-items',
-  standalone: true,
-  imports: [],
-  templateUrl: './servicio-items.component.html',
-  styleUrl: './servicio-items.component.css'
+    selector: 'app-servicio-items',
+    imports: [],
+    templateUrl: './servicio-items.component.html',
+    styleUrl: './servicio-items.component.css'
 })
 export class ServicioItemsComponent {
 

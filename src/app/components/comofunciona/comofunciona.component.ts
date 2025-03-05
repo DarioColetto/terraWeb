@@ -3,11 +3,10 @@ import { CardInfo, cardInfo } from './descubri-data';
 import { DotsBoxComponent } from "../dots-box/dots-box.component";
 
 @Component({
-  selector: 'app-comofunciona',
-  standalone: true,
-  imports: [DotsBoxComponent],
-  templateUrl: './comofunciona.component.html',
-  styleUrl: './comofunciona.component.css'
+    selector: 'app-comofunciona',
+    imports: [DotsBoxComponent],
+    templateUrl: './comofunciona.component.html',
+    styleUrl: './comofunciona.component.css'
 })
 export class ComofuncionaComponent {
 

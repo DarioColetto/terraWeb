@@ -2,18 +2,17 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, input, output } from '@angular/core';
 
 @Component({
-  selector: 'app-dots-box',
-  standalone: true,
-  imports: [],
-  templateUrl: './dots-box.component.html',
-  styleUrl: './dots-box.component.css',
-  animations:[
-    trigger('dotAnimation', [
-      state('default', style({backgroundColor:'var(--deep-green)'})),
-      state('selected' ,style({backgroundColor:'var(--gold)'})),
-      transition('* <=> selected', animate('0.4s ease-out'))
-    ])
-  ]
+    selector: 'app-dots-box',
+    imports: [],
+    templateUrl: './dots-box.component.html',
+    styleUrl: './dots-box.component.css',
+    animations: [
+        trigger('dotAnimation', [
+            state('default', style({ backgroundColor: 'var(--deep-green)' })),
+            state('selected', style({ backgroundColor: 'var(--gold)' })),
+            transition('* <=> selected', animate('0.4s ease-out'))
+        ])
+    ]
 })
 export class DotsBoxComponent {
 

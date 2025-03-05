@@ -2,11 +2,10 @@ import { Component, input} from '@angular/core';
 import { IconService } from './icon.service';
 
 @Component({
-  selector: 'app-icon',
-  standalone: true,
-  imports: [],
-  template: `<span [innerHTML]="svgIcon" [style.color]="color()" [style.stroke]="stroke()"></span>`,
-  styles: [`
+    selector: 'app-icon',
+    imports: [],
+    template: `<span [innerHTML]="svgIcon" [style.color]="color()" [style.stroke]="stroke()"></span>`,
+    styles: [`
     span {
       display: inline-flex;
       align-items: center;

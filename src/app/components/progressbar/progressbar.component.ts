@@ -3,19 +3,18 @@ import { Component, NgZone, output, signal } from '@angular/core';
 
 
 @Component({
-  selector: 'app-progress-bar',
-  standalone: true,
-  imports: [],
-  templateUrl: './progressbar.component.html',
-  styleUrls: ['./progressbar.component.css'],
-  animations: [
-    trigger('fill', [
-      state('empty', style({ width: '0%' })),
-      state('full', style({ width: '100%' })),
-      transition('empty => full', [animate('3s ease')]),
-      transition('full => empty', [animate('0.1s ease')]),
-    ]),
-  ],
+    selector: 'app-progress-bar',
+    imports: [],
+    templateUrl: './progressbar.component.html',
+    styleUrls: ['./progressbar.component.css'],
+    animations: [
+        trigger('fill', [
+            state('empty', style({ width: '0%' })),
+            state('full', style({ width: '100%' })),
+            transition('empty => full', [animate('3s ease')]),
+            transition('full => empty', [animate('0.1s ease')]),
+        ]),
+    ]
 })
 export class ProgressbarComponent {
   state = signal<'empty' | 'full'>('empty');

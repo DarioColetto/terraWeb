@@ -1,11 +1,10 @@
 import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-background',
-  standalone: true,
-  imports: [],
-  templateUrl: './background.component.html',
-  styleUrl: './background.component.css'
+    selector: 'app-background',
+    imports: [],
+    templateUrl: './background.component.html',
+    styleUrl: './background.component.css'
 })
 export class BackgroundComponent {
 

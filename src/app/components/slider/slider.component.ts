@@ -15,76 +15,58 @@ import { IconComponent } from "../icon/icons.component";
 
 
 @Component({
-  selector: 'app-slider',
-  standalone: true,
-  imports: [ProgressbarComponent, IconComponent],
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css'],
-  animations: [
-    trigger('slideAnimation', [
-      // Estado por defecto
-      state('default', style({ transform: 'translateX(0)' })),
-    
-      // Transición hacia la izquierda
-      transition('void => toLeft', [
-        style({
-          transform: 'translateX(-100%)',
-          filter: 'blur(40px)',
-          opacity: 0,
-        }),
-        animate(
-          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(0)',
-            filter: 'none',
-            opacity: 1,
-          })
-        ),
-      ]),
-    
-      // Transición hacia la derecha
-      transition('void => toRight', [
-        style({
-          transform: 'translateX(100%)', // Confirmar que el punto inicial es 100%
-          filter: 'blur(40px)',
-          opacity: 0,
-        }),
-        animate(
-          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(0)',
-            filter: 'none',
-            opacity: 1,
-          })
-        ),
-      ]),
-    
-      // Salida hacia la izquierda
-      transition('toLeft => void', [
-        animate(
-          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(-100%)',
-            filter: 'blur(40px)',
-            opacity: 0,
-          })
-        ),
-      ]),
-    
-      // Salida hacia la derecha
-      transition('toRight => void', [
-        animate(
-          '0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(100%)', // Confirmar que se mueve hacia la derecha
-            filter: 'blur(40px)',
-            opacity: 0,
-          })
-        ),
-      ]),
-    ]),
-
-    ], 
+    selector: 'app-slider',
+    imports: [ProgressbarComponent, IconComponent],
+    templateUrl: './slider.component.html',
+    styleUrls: ['./slider.component.css'],
+    animations: [
+        trigger('slideAnimation', [
+            // Estado por defecto
+            state('default', style({ transform: 'translateX(0)' })),
+            // Transición hacia la izquierda
+            transition('void => toLeft', [
+                style({
+                    transform: 'translateX(-100%)',
+                    filter: 'blur(40px)',
+                    opacity: 0,
+                }),
+                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                    transform: 'translateX(0)',
+                    filter: 'none',
+                    opacity: 1,
+                })),
+            ]),
+            // Transición hacia la derecha
+            transition('void => toRight', [
+                style({
+                    transform: 'translateX(100%)', // Confirmar que el punto inicial es 100%
+                    filter: 'blur(40px)',
+                    opacity: 0,
+                }),
+                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                    transform: 'translateX(0)',
+                    filter: 'none',
+                    opacity: 1,
+                })),
+            ]),
+            // Salida hacia la izquierda
+            transition('toLeft => void', [
+                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                    transform: 'translateX(-100%)',
+                    filter: 'blur(40px)',
+                    opacity: 0,
+                })),
+            ]),
+            // Salida hacia la derecha
+            transition('toRight => void', [
+                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                    transform: 'translateX(100%)', // Confirmar que se mueve hacia la derecha
+                    filter: 'blur(40px)',
+                    opacity: 0,
+                })),
+            ]),
+        ]),
+    ]
 })
 export class SliderComponent {
 

@@ -4,11 +4,10 @@ import { SocialComponent } from "../social/social.component";
 import { CotanctCardComponent } from "../cotanct-card/cotanct-card.component";
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [RouterLink, SocialComponent, CotanctCardComponent],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+    selector: 'app-navbar',
+    imports: [RouterLink, SocialComponent, CotanctCardComponent],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 

@@ -6,11 +6,10 @@ import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
 
 
 @Component({
-  selector: 'app-descubri',
-  standalone: true,
-  imports: [IconComponent, DotsBoxComponent],
-  templateUrl: './descubri.component.html',
-  styleUrl: './descubri.component.css',
+    selector: 'app-descubri',
+    imports: [IconComponent, DotsBoxComponent],
+    templateUrl: './descubri.component.html',
+    styleUrl: './descubri.component.css'
 })
 export class DescubriComponent {
   

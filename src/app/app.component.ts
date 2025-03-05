@@ -2,9 +2,6 @@ import { Component, HostBinding } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
-import { DescubriComponent } from './pages/descubri/descubri.component';
-import { BannerComponent } from './components/banner/banner.component';
-
 import { LoaderComponent } from './pages/loader/loader.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 
@@ -15,9 +12,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
     LoaderComponent,
     NavbarComponent,
     ServicioComponent,
-    DescubriComponent,
-    BackgroundComponent,
-    BannerComponent,
+    BackgroundComponent
 ],
 
   animations:[
@@ -48,8 +43,8 @@ export class AppComponent {
 
 
 
-
-  animationDone = !false
+  //Change to  'true' to skip the loader animation
+  animationDone = true
 
   isDisable = true
 

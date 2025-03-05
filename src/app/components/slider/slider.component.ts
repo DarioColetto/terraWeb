@@ -132,7 +132,7 @@ export class SliderComponent {
   }
 
   isBarFull(){
-    //this.nextSlide()
+    this.nextSlide()
   }
 
   animationDirectionHandler(event:AnimationEvent){

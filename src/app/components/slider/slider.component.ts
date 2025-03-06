@@ -118,7 +118,7 @@ export class SliderComponent {
   }
 
   animationDirectionHandler(event:AnimationEvent){
-    console.log(event.toState)
+    //console.log(event.toState)
   }
 
 }

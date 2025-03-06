@@ -1,22 +1,21 @@
-
-
-<a id="logo" class="link" >
-  <img  class="logo-img"  src="isotipo.png" alt="logo" />
+<a id="logo" class="link">
+  <img class="logo-img" src="isotipo.png" alt="logo" />
 </a>
 
-<ul class="link-wrapper">
- 
-  <a id="home-link" class="link" routerLink="/home" >
-    <p class="white-font underline tracking-in-expand">home</p>
+
+<span class="link-wrapper">
+
+  @for (link of links; track $index) {
+
+  <a class="link" (click)="[getSelectedIndex($index), activate($index)]" (mouseenter)="setHoverState($index)"
+    (mouseleave)="setHoverState($index)" [ngClass]="link.state">
+    <span class="white-font underline tracking-in-expand">{{link.title[0]}}</span>
+    @if (link.title[1]) {
+    <span class="gold-font underline tracking-in-expand">{{link.title[1]}}</span>
+    }
   </a>
-  <a class="link" routerLink="/servicio" >
-    <p class="white-font underline tracking-in-expand">Nuestro</p>
-    <p class="gold-font underline tracking-in-expand">Servico</p>
-  </a>
-  <a class="link" routerLink="/descubri">
-    <p class="white-font underline tracking-in-expand">Descubri</p>
-    <p class="gold-font underline tracking-in-expand">Geotermia</p>
-  </a>
+
+  }
+</span>
 <app-social></app-social>
 <app-cotanct-card></app-cotanct-card>
-

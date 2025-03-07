@@ -2,9 +2,14 @@
 @if (!animationDone) {
     <app-loader  (animationDone)="loaderAnimationDone($event)"></app-loader>
 }@else {
-        <app-background [@fade]></app-background>
-        <app-navbar [@fade]></app-navbar>
+    <app-background [@fade]></app-background>
+    <app-navbar [@fade]></app-navbar>
+    <div class="container">        
         <app-servicio ></app-servicio>
+    </div>
+    <div class="container">
+        <app-descubri></app-descubri>
+    </div>
         <!-- <app-banner></app-banner> -->
 }
 

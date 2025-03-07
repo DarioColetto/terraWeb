@@ -4,9 +4,10 @@ import { LoaderComponent } from './pages/loader/loader.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
+import { DescubriComponent } from './pages/descubri/descubri.component';
 @Component({
     selector: 'app-root',
-    imports:[LoaderComponent, BackgroundComponent,  NavbarComponent,ServicioComponent  ],
+    imports:[LoaderComponent, BackgroundComponent,  NavbarComponent,ServicioComponent, DescubriComponent  ],
     animations: [
         trigger('fade', [
             transition(':enter', [

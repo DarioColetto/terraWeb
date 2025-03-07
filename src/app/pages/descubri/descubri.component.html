@@ -1,4 +1,13 @@
 
+<h1 class="page-title gold-font" appViewportObserver [title]="'servicio'">
+  Descubri Geotermia
+</h1>
+<div class="image-container">
+  <img  class="image" [src]="images[indexSelected1 ]" alt="">
+</div>
+<div class="page-subtitle-wrapper">
+  <h2 class="page-subtitle white-font">Elite entre renovables</h2>
+</div>
     <p class="description white-font">
       No produce gases de efecto invernadero Favorece la reducción de la huella de
       carbono, ayudando a mitigar el cambio climático.
@@ -7,19 +16,21 @@
       @for (row of data; track $index) { 
         @if (indexSelected1 === $index) {
       <div class="row">
-        <app-icon [name]="row.icon"></app-icon>
-        <h4>{{ row.title }}</h4>
-        <ul>
+        
+        <h3>{{ row.title }}
+         
+        </h3>
+        <div>
           @for (item of row.items; track $index) {
-          <li>
+          <span>
             <p>{{ item }}</p>
-          </li>
+          </span>
           }
-        </ul>
+        </div>
       </div>
       } 
     }
   </div>
-  <app-dots-box [dotsNumber]="data.length" (indexSelected)="changeIndex1($event)"></app-dots-box>
+  <app-dots-box class="dots-box" [dotsNumber]="data.length" (indexSelected)="changeIndex1($event)"></app-dots-box>
 
 

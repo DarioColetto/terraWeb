@@ -1,25 +1,21 @@
 import { Component } from '@angular/core';
 import { CardInfo, cardInfo } from './descubri-data';
-import { DotsBoxComponent } from "../dots-box/dots-box.component";
+import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
+import { LinkBarComponent } from '../../components/link-bar/link-bar.component';
 
 @Component({
     selector: 'app-comofunciona',
     standalone:true,
-    imports: [DotsBoxComponent],
+    imports: [DotsBoxComponent, LinkBarComponent],
     templateUrl: './comofunciona.component.html',
     styleUrl: './comofunciona.component.css'
 })
 export class ComofuncionaComponent {
 
   cardData:CardInfo = cardInfo 
-  indexSelected2 = 0
-  cardDotIndex = 0
+  view = 0;
 
-  changeIndex2(value:number){
-    this.indexSelected2 = value
-  }
-  
-  changeIndexCard(index:number){
-    this.cardDotIndex = index
+  renderView(index: number) {
+    this.view = index;
   }
 }

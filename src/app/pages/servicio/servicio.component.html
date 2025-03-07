@@ -14,17 +14,14 @@
       energética y disminuyendo la emisión de CO2 al
       planeta.
     </p>
-    <app-link-bar (selectedIndex)="renderView($event)"></app-link-bar>
+    <h3 class="page-subtitle gold-font">Etapas incluidas</h3>
       <div class="menu-view">
         @switch (view) {
           @case (0) {
             <app-servicio-items @fade></app-servicio-items>
           }
           @case (1) {
-            <app-comofunciona @fade></app-comofunciona>
-          }
-          @case (2) {
-            <app-descubri @fade></app-descubri>
+           
           }
         }
       </div>

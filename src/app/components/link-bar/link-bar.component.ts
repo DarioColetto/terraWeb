@@ -13,9 +13,9 @@ export class LinkBarComponent {
   selectedIndex = output<number>()
   prevIndex = 0
   links = [
-    {title:'como lo hacemos', state:'active'} , 
-    {title:'como funciona', state:'inactive'},
-    {title:'elite entre renovables', state:'inactive'}
+    {title:'sistema de Recoleccion', state:'active'} , 
+    {title:'sistema de distribucion', state:'inactive'},
+    {title:'bomba de calor', state:'inactive'}
   ]
 
   getSelectedIndex(index: number) {

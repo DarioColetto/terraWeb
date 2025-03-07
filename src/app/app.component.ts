@@ -5,9 +5,11 @@ import { BackgroundComponent } from './components/background/background.componen
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
 import { DescubriComponent } from './pages/descubri/descubri.component';
+import { ComofuncionaComponent } from './pages/comofunciona/comofunciona.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 @Component({
     selector: 'app-root',
-    imports:[LoaderComponent, BackgroundComponent,  NavbarComponent,ServicioComponent, DescubriComponent  ],
+    imports:[LoaderComponent, BackgroundComponent,  NavbarComponent,ServicioComponent, DescubriComponent, ComofuncionaComponent, ContactoComponent ],
     animations: [
         trigger('fade', [
             transition(':enter', [

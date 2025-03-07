@@ -1,0 +1,21 @@
+:host{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.center{
+    display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    
+}
+
+.seguinos{
+    color: var(--white);
+    width: fit-content;
+    font-size: 1.7rem;
+}

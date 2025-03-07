@@ -5,7 +5,7 @@ import { NgClass } from '@angular/common';
 
 @Component({
     standalone:true,
-    imports:[SocialComponent, CotanctCardComponent,NgClass],
+    imports:[SocialComponent,NgClass],
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
@@ -26,7 +26,8 @@ export class NavbarComponent {
   links = [
     {title: ['home'], state:'active'} , 
     {title:['nuestro', 'servicio'], state:'inactive'},
-    {title: ['descubri', 'geotermia'], state:'inactive'}
+    {title: ['descubri', 'geotermia'], state:'inactive'},
+    {title: ['contacto'], state:'inactive'}
   ]
 
   getSelectedIndex(index: number) {

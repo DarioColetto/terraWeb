@@ -60,14 +60,10 @@ section {
   max-width: 350px;
   width: 300px;
   gap: 10px;
-  transition: box-shadow 200msease-out;
   align-items: flex-start;
-  transition: box-shadow 200ms ease-out;
+
 }
 
-.row:hover {
-  box-shadow: 26px 21px 22px 0px var(--deep-green);
-}
 
 h3 {
   font-size: 1.4rem;

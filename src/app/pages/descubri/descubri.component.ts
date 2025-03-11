@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IconComponent } from '../../components/icon/icons.component';
 import { cardInfo, CardInfo, data, Info } from './descubri-data';
 import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
 import { ComofuncionaComponent } from "../comofunciona/comofunciona.component";
@@ -9,7 +8,7 @@ import { ComofuncionaComponent } from "../comofunciona/comofunciona.component";
 @Component({
     selector: 'app-descubri',
     standalone:true,
-    imports: [IconComponent, DotsBoxComponent, ComofuncionaComponent, DescubriComponent],
+    imports: [DotsBoxComponent],
     templateUrl: './descubri.component.html',
     styleUrl: './descubri.component.css'
 })

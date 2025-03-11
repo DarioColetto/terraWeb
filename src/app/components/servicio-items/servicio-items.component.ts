@@ -1,3 +1,4 @@
+import { animate, animateChild, AnimationEvent, group, query, sequence, stagger, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 
 
@@ -7,7 +8,57 @@ import { Component } from '@angular/core';
     standalone:true,
     imports: [],
     templateUrl: './servicio-items.component.html',
-    styleUrl: './servicio-items.component.css'
+    styleUrl: './servicio-items.component.css',
+    animations: [
+      trigger('container', [
+        transition(':enter', [
+          query('.row', [
+            style({ opacity: 0, transform: 'translateY(20px)' }),
+            stagger('200ms', [
+              animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+              query('@*', animateChild(), { optional: true })  // Ejecuta las animaciones de los hijos en orden
+            ])
+          ], { optional: true }),
+          query('.line-container', animateChild(), { optional: true }) 
+        ])
+      ]),
+    
+      trigger('fadeIn', [
+        transition(':enter', [
+          style({ opacity: 0 }),
+          animate('300ms ease-in', style({ opacity: 1 }))
+        ])
+      ]),
+    
+      trigger('leftInH', [
+        transition(':enter', [
+          style({ opacity: 0, transform: 'translateX(-50px)' }),
+          animate('200ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+        ])
+      ]),
+      
+      trigger('leftInP', [
+        transition(':enter', [
+          style({ opacity: 0, transform: 'translateX(-50px)' }),
+          animate('500ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+        ])
+      ]),
+    
+      trigger('rowAnimation', [
+        transition(':enter', [
+          // Primero el SVG
+          sequence([ // Se asegura de que h4 termine antes de animar p
+            query('svg', animateChild()), 
+            query('h4', animateChild()),
+            query('p', animateChild())
+          ])
+        ])
+      ])
+
+    ]
+      
+    
+    
 })
 export class ServicioItemsComponent {
 
@@ -21,4 +72,9 @@ export class ServicioItemsComponent {
     {title :'ACTIVACION',  descripcion: 'Puesta en marcha y prueba del sistema al inicio del verano y al inicio del invierno' } 
   ] 
 
+
+
+  animationControl(event:AnimationEvent){
+    console.log(event.triggerName)
+  }
 }

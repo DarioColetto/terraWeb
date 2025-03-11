@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="line-container">
+<div @container class="container">
+    <div @fadeIn class="line-container">
       <svg
         class="line"
         height="100%"
@@ -16,35 +16,32 @@
       </svg>
     </div>
   
-    <div class="circles">
+    <div  class="column">
       @for (item of items; track $index) {
-      <div class="row">
-        <svg
-          class="circle"
-          [attr.height]="circle_canvas_size"
-          [attr.width]="circle_canvas_size"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle [attr.r]="circle_radius" cx="50%" cy="50%" />
-          <text
-            x="50%"
-            y="50%"
-            dominant-baseline="middle"
-            text-anchor="middle"
-            font-size="20"
+        <div @rowAnimation class="row">
+          <svg @fadeIn
+            class="circle"
+            [attr.height]="circle_canvas_size"
+            [attr.width]="circle_canvas_size"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            {{ $index + 1 }}
-          </text>
-        </svg>
-  
-        <div class="text-content">
-          <h4  >{{ item.title }}</h4>
-          <p >{{ item.descripcion}}</p>
-          
+            <circle [attr.r]="circle_radius" cx="50%" cy="50%" />
+            <text
+              x="50%"
+              y="50%"
+              dominant-baseline="middle"
+              text-anchor="middle"
+              font-size="20"
+            >
+              {{ $index + 1 }}
+            </text>
+          </svg>
+    
+          <div class="text-content">
+            <h4 @leftInH>{{ item.title }}</h4>
+            <p @leftInP>{{ item.descripcion }}</p>
+          </div>
         </div>
-      </div>
-  
       }
     </div>
   </div>
-

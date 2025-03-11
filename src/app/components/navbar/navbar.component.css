@@ -1,6 +1,6 @@
 :host {
   background: var(--cyprus);
-  position: static;
+  position: sticky;
   z-index: 100;
   top: 0px;
   left: 0px;
@@ -36,6 +36,7 @@
   align-items: center;
   font-size: 1.2rem;
   position: relative;
+  text-decoration: none;
 }
 
 .active::after , .hovered::after{

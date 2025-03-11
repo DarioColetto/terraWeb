@@ -24,10 +24,10 @@ export class NavbarComponent {
   prevIndex = 0
 
   links = [
-    {title: ['home'], state:'active'} , 
-    {title:['nuestro', 'servicio'], state:'inactive'},
-    {title: ['descubri', 'geotermia'], state:'inactive'},
-    {title: ['contacto'], state:'inactive'}
+    {title: ['home'], href:'#home', state:'active'} , 
+    {title:['nuestro', 'servicio'], href:'#servicio',  state:'inactive'},
+    {title: ['descubri', 'geotermia'], href:'#descubri', state:'inactive'},
+    {title: ['contacto'], href:'#contacto', state:'inactive'}
   ]
 
   getSelectedIndex(index: number) {

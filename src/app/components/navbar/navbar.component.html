@@ -7,7 +7,7 @@
 
   @for (link of links; track $index) {
 
-  <a class="link" (click)="[getSelectedIndex($index), activate($index)]" (mouseenter)="setHoverState($index)"
+  <a class="link" [href]="link.href" (click)="[getSelectedIndex($index), activate($index)]" (mouseenter)="setHoverState($index)"
     (mouseleave)="setHoverState($index)" [ngClass]="link.state">
     <span class="white-font underline tracking-in-expand">{{link.title[0]}}</span>
     @if (link.title[1]) {

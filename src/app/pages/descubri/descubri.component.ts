@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { cardInfo, CardInfo, data, Info } from './descubri-data';
+import { data, Info } from './descubri-data';
 import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
-import { ComofuncionaComponent } from "../comofunciona/comofunciona.component";
+import { animate, animateChild, query, style, transition, trigger } from '@angular/animations';
 
 
 
@@ -10,12 +10,26 @@ import { ComofuncionaComponent } from "../comofunciona/comofunciona.component";
     standalone:true,
     imports: [DotsBoxComponent],
     templateUrl: './descubri.component.html',
-    styleUrl: './descubri.component.css'
+    styleUrl: './descubri.component.css',
+    animations:[
+
+      trigger('animate', [
+        transition(':enter',[
+          query('@*', animateChild(), { optional: true })
+        ])
+      ]),
+
+            trigger('fadeIn', [
+              transition(':enter', [
+                style({ opacity: 0, transform:'scale(1)' }),
+                animate('500ms ease-in', style({ opacity: 1, transform:'scale(1.01)' }))
+              ])
+            ]),
+    ]
 })
 export class DescubriComponent {
   
   data:Info = data;
-  cardData:CardInfo = cardInfo 
 
   images = [
     '/paisajes/imagen1.jpg', 
@@ -25,19 +39,14 @@ export class DescubriComponent {
     '/paisajes/imagen5.jpg',
    ]
 
-  dotIndex = 0
-  cardDotIndex = 0
 
-  indexSelected1 = 0
+  indexSelected = 0
+  onAnimation = 'fadeIn'
 
+  changeIndex(value:number){
+    this.indexSelected= value
 
-
-  changeIndex(index:number){
-    this.dotIndex = index
-  }
-
-  changeIndex1(value:number){
-    this.indexSelected1= value
+    this.onAnimation = 'animate'
   }
 
 

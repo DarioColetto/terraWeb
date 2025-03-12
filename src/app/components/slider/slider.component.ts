@@ -113,12 +113,9 @@ export class SliderComponent {
       this.direction = 'toLeft'
   }
 
-  isBarFull(){
+  isBarFull(event:boolean){
     this.nextSlide()
   }
 
-  animationDirectionHandler(event:AnimationEvent){
-    //console.log(event.toState)
-  }
 
 }

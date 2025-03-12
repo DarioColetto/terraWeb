@@ -60,7 +60,7 @@ export class ProgressbarComponent {
   }
 
   onAnimation(event:AnimationEvent){
-    if(event.toState === 'full'){
+    if(event.fromState === 'empty'){
       this.isFull.emit(true)
     }
     

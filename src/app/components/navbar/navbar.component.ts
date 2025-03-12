@@ -25,7 +25,7 @@ export class NavbarComponent {
 
   links = [
     {title: ['home'], href:'#home', state:'active'} , 
-    {title:['nuestro', 'servicio'], href:'#servicio',  state:'inactive'},
+    {title:['nuestro', 'servicio'], href:'#',  state:'inactive'},
     {title: ['descubri', 'geotermia'], href:'#descubri', state:'inactive'},
     {title: ['contacto'], href:'#contacto', state:'inactive'}
   ]

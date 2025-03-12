@@ -1,18 +1,12 @@
 :host {
   position: relative;
+  top: 0px;
+  left: 0px;
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.container {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  width: 100%;
-  height: 100%;
-}
 
 .image-container {
   position: absolute;
@@ -22,11 +16,13 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: white;
 }
 
 .image {
   width: 100%;
   height: auto;
+  transform: scale(1.01);
 }
 
 section {
@@ -36,9 +32,8 @@ section {
 
 .row-wrapper {
     position: relative;
-    left: 20%;
-    top: 20%;
-    width: 300px;
+    margin: auto;
+    width: 400px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -51,6 +46,7 @@ section {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 24px;
+  
 }
 
 .row {

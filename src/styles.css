@@ -39,6 +39,11 @@ p{
     height: fit-content;
     text-transform: uppercase;
     font-weight: 400;
+    
+}
+
+.page-title:not(:first-child){
+    padding-top: 82px;
 }
 
 .page-subtitle-wrapper{

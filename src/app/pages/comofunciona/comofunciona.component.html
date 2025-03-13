@@ -1,10 +1,12 @@
+<div @triggerAnimations>
 
-<h1 class="page-title gold-font"></h1>
 
-  <div class="page-subtitle-wrapper">
+<h1 @fade class="page-title gold-font">.</h1>
+
+  <div @fade class="page-subtitle-wrapper">
     <h2 class="page-subtitle white-font">Como funciona</h2>
   </div>
-    <p class="description white-font">
+    <p @fade class="description white-font">
       La geotermia es el uso del calor natural de la Tierra para generar energía
       para producir electricidad o para calefaccionar edificios
     </p>
@@ -15,13 +17,21 @@
           <div class="card">
             
             <div class="card-content">
-              <img class="card-foto" [src]="card.img" alt="" />
-              <div class="card-text">{{ card.content }}</div>
+    
+              <div @fade class="card-text">{{ card.content }}</div>
             </div>
           </div>
         }
       }
     </div>
+    
+    @for (video of videoLinks; track $index) {
+      @if ($index === view) {
+        <video class="video" autoplay>
+          <source [src]="video" type="video/mp4" >
+        </video>
+      }
+    }
 
 
-
+  </div>

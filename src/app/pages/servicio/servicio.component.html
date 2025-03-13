@@ -1,23 +1,23 @@
-<div class="box">
+<div @triggerAnimations class="box">
   <h1 class="page-title gold-font" appViewportObserver [title]="'servicio'">
     nuestro servicio
   </h1>
 
-  <div class="page-subtitle-wrapper">
+  <div @fade class="page-subtitle-wrapper">
     <h2 class="page-subtitle white-font">Climatización</h2>
     <h2 class="page-subtitle gold-font">residencial y comercial</h2>
   </div>
   
-    <p class="description white-font">
+    <p @fade class="description white-font">
       Ofrecemos una alternativa sostenible para calefaccionar,
       refrigerar y obtener agua caliente sanitaria brindando eficiencia
       energética y disminuyendo la emisión de CO2 al
       planeta.
     </p>
-    <h3 class="page-subtitle gold-font">Etapas incluidas</h3>
+    <h3 @fade class="page-subtitle gold-font">Etapas incluidas</h3>
      
 
-      <app-servicio-items ></app-servicio-items>
+      <app-servicio-items @fade></app-servicio-items>
 
 
     </div>

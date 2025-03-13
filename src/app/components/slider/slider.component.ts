@@ -1,7 +1,6 @@
 import { Component,  signal} from '@angular/core';
 import {
   animate,
-  AnimationEvent,
   state,
   style,
   transition,

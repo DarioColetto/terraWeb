@@ -2,18 +2,32 @@
 @if (!animationDone) {
     <app-loader  (animationDone)="loaderAnimationDone($event)"></app-loader>
 }@else {
-    <app-background [@fade]></app-background>
-    <app-navbar [@fade]></app-navbar>
+    <app-background ></app-background>
+    <app-navbar ></app-navbar>
     <main>
         <div id="servicio" class="container">        
-            <app-servicio ></app-servicio>
+            <app-servicio></app-servicio>
         </div>
-        <div id="descubri" class="container">
-            <app-descubri></app-descubri>
-        </div>
-        <div id="" class="container">
-            <app-comofunciona></app-comofunciona>
-        </div>
+        @defer (on viewport) {
+            <div id="descubri" class="container">
+                <app-descubri></app-descubri>
+            </div>
+        }@loading (minimum 1s){
+            <div>IS loading</div>
+        }@placeholder {
+            <div>Large component placeholder</div>
+        }
+
+        @defer (on viewport) {
+            <div id="descubri" class="container">
+                <app-comofunciona></app-comofunciona>
+            </div>
+        }@loading (minimum 1s){
+            <div>IS loading</div>
+        }@placeholder {
+            <div>Large component placeholder</div>
+        }
+
         <div id="contacto" class="container">
             <app-contacto></app-contacto>
         </div>

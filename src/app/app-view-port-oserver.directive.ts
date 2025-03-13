@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, inject,  input,  Input, output, Output,  PLATFORM_ID  } from '@angular/core';
+import { Directive, ElementRef, inject,  input,  output, PLATFORM_ID  } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { TitlevisibleService } from './titlevisible.service';
 
@@ -13,7 +13,7 @@ export class ViewportObserverDirective{
   isVisible = output<string>()
    
 
-  private observer: IntersectionObserver | undefined;
+  private observer!: IntersectionObserver ;
   private platformId: Object = inject(PLATFORM_ID)
   private titleVisbleService  = inject(TitlevisibleService)
 
@@ -29,6 +29,7 @@ export class ViewportObserverDirective{
       ([entry]) => {
         if(entry.isIntersecting){
         this.titleVisbleService.updateTitle(this.title());
+        console.log(entry.target)
         }
       },
       {

@@ -1,11 +1,9 @@
 import { Component, output } from '@angular/core';
-import { SocialComponent } from '../social/social.component';
-import { CotanctCardComponent } from '../cotanct-card/cotanct-card.component';
 import { NgClass } from '@angular/common';
 
 @Component({
     standalone:true,
-    imports:[SocialComponent,NgClass],
+    imports:[NgClass],
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'

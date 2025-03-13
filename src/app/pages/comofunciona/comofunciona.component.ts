@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CardInfo, cardInfo } from './comofunciona-data';
 import { LinkBarComponent } from '../../components/link-bar/link-bar.component';
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
+import { fade, triggerAnimations } from '../../animations';
 
 @Component({
   selector: 'app-comofunciona',
@@ -9,20 +10,13 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
   imports: [LinkBarComponent],
   templateUrl: './comofunciona.component.html',
   styleUrl: './comofunciona.component.css',
-  animations: [
-    trigger('fadeInGrow', [
-      transition(':enter', [
-        query(':enter', [
-          style({ opacity: 0 }),
-          stagger('50ms', [animate('500ms', style({ opacity: 1 }))]),
-        ]),
-      ]),
-    ]),
-  ],
+  animations: [ triggerAnimations, fade],
 })
 export class ComofuncionaComponent {
   cardData: CardInfo = cardInfo;
   view = 0;
+
+  videoLinks = ['/videos/video1.mp4','/videos/video2.mp4', '/videos/video3.mp4']
 
   renderView(index: number) {
     this.view = index;

@@ -1,3 +1,8 @@
+:host{
+    position: relative;
+    height: 100%;
+}
+
 .card-container{
     
     justify-content: space-around;
@@ -20,14 +25,17 @@
     margin-bottom: 12px;
 }
 
-.card-foto{
-    background: var(--deep-green);
-    width: 300px;
-    height: 200px;
-}
 
 .card-text{
     margin: 0px 12px 0px 12px;
     padding: 0px 12px 0px 12px;
     max-width: 40ch;
+}
+
+.video{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: auto;
+    z-index: -10;
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { data, Info } from './descubri-data';
 import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
 import { animate, animateChild, query, style, transition, trigger } from '@angular/animations';
+import { fade, triggerAnimations } from '../../animations';
 
 
 
@@ -12,6 +13,8 @@ import { animate, animateChild, query, style, transition, trigger } from '@angul
     templateUrl: './descubri.component.html',
     styleUrl: './descubri.component.css',
     animations:[
+
+      triggerAnimations, fade,
 
       trigger('animate', [
         transition(':enter',[

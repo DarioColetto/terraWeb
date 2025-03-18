@@ -16,17 +16,15 @@
       No produce gases de efecto invernadero Favorece la reducción de la huella de
       carbono, ayudando a mitigar el cambio climático.
     </p>
-    <div class="row-wrapper">
+    <div @triggerAnimations class="row-wrapper">
       @for (row of data; track $index) { 
         @if (indexSelected === $index) {
       <div class="row">
         
-        <h3>{{ row.title }}
-         
-        </h3>
+        <h3 @fade>{{ row.title }} </h3>
         <div>
           @for (item of row.items; track $index) {
-          <span>
+          <span @fade>
             <p>{{ item }}</p>
           </span>
           }

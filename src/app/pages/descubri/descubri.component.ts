@@ -45,9 +45,9 @@ export class DescubriComponent {
 
   changeIndex(value:number){
     this.indexSelected= value
-
     this.onAnimation = 'animate'
   }
+
 
 
 }

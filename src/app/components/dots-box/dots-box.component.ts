@@ -10,7 +10,7 @@ import { Component, input, output } from '@angular/core';
         trigger('dotAnimation', [
             state('default', style({ backgroundColor: 'var(--deep-green)' })),
             state('selected', style({ backgroundColor: 'var(--gold)' })),
-            transition('* <=> selected', animate('0.4s ease-out'))
+            transition('* <=> selected', animate('0.6s ease-out'))
         ])
     ]
 })
@@ -20,10 +20,13 @@ export class DotsBoxComponent {
   indexSelected = output<number>()
   dots!: any[];
   prevIndex = 0
+  intervalId: any;
+  index = 0
 
   ngOnInit(){
     this.dots = this.generateDots()
     this.dots[0] = 'selected'
+    this.startAutoChange();
   }
 
   private generateDots(){
@@ -33,6 +36,8 @@ export class DotsBoxComponent {
 
   getDotIndex(index:number){
     this.indexSelected.emit(index)
+    this.index = index
+    this.reloadInterval();
   }
 
   changeState(index:number){
@@ -43,5 +48,24 @@ export class DotsBoxComponent {
     
   }
   
+  startAutoChange() {
+    this.intervalId = setInterval(() => {
+      this.changeIndexAuto();
+    }, 3000);
+  }
 
+  changeIndexAuto() {
+    this.index = (this.index + 1) % this.dots.length;
+    this.changeState(this.index)
+    this.indexSelected.emit(this.index)
+    
+  }
+  reloadInterval() {
+    clearInterval(this.intervalId);
+    this.startAutoChange();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
 }

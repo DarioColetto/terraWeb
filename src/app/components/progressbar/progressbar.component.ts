@@ -1,5 +1,5 @@
-import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
-import { Component, NgZone, output, signal } from '@angular/core';
+import { animate, AnimationEvent, style, transition, trigger } from '@angular/animations';
+import { Component, output, signal } from '@angular/core';
 
 
 @Component({
@@ -8,62 +8,23 @@ import { Component, NgZone, output, signal } from '@angular/core';
     templateUrl: './progressbar.component.html',
     styleUrls: ['./progressbar.component.css'],
     animations: [
-        trigger('fill', [
-            state('empty', style({ width: '0%' })),
-            state('full', style({ width: '100%' })),
-            transition('empty => full', [animate('3s ease')]),
-            transition('full => empty', [animate('0.1s ease')]),
-        ]),
+      trigger('fill', [
+        transition(':enter', [
+          style({ width: '0%' }), // Define el estado inicial
+          animate('3s ease', style({ width: '100%' })) // Define la animación
+        ])
+      ])
     ]
 })
 export class ProgressbarComponent {
-  state = signal<'empty' | 'full'>('empty');
-  intervalId: any;
-  currentInterval = 200;
-  isFull = output<boolean>()
+  isFull = output<boolean>(); 
+  show = signal(true); 
 
-  constructor(private ngZone: NgZone) {}
-
-  ngOnInit() {
-    this.startAlternatingInterval();
-  }
-
-  ngOnDestroy(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-  }
-
-  private startAlternatingInterval() {
-    this.ngZone.runOutsideAngular(() => {
-      const toggleStateAndAdjustInterval = () => {
-        this.ngZone.run(() => {
-          // Toggle between 'empty' and 'full'
-          this.state.set(this.state() === 'empty' ? 'full' : 'empty');
-        });
-
-        // Adjust interval to alternate
-        this.currentInterval = this.currentInterval === 200 ? 4000 : 200;
-        this.resetInterval(toggleStateAndAdjustInterval);
-      };
-
-      // Start the first interval
-      this.intervalId = setInterval(toggleStateAndAdjustInterval, this.currentInterval);
-    });
-  }
-
-  private resetInterval(callback: () => void) {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-    }
-    this.intervalId = setInterval(callback, this.currentInterval);
-  }
-
-  onAnimation(event:AnimationEvent){
-    if(event.fromState === 'empty'){
-      this.isFull.emit(true)
-    }
-    
-
+  onAnimation() {
+    this.show.set(false); 
+    setTimeout(() => {
+      this.isFull.emit(true); 
+      this.show.set(true)
+    }, 500);
   }
 }

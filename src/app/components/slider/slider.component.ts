@@ -114,6 +114,7 @@ export class SliderComponent {
 
   isBarFull(event:boolean){
     this.nextSlide()
+    
   }
 
 

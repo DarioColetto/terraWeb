@@ -12,11 +12,17 @@ export class LinkBarComponent {
 
   selectedIndex = output<number>()
   prevIndex = 0
+  intervalId: any;
+  index = 0
   links = [
     {title:'sistema de Recoleccion', state:'active'} , 
     {title:'sistema de distribucion', state:'inactive'},
     {title:'bomba de calor', state:'inactive'}
   ]
+
+  ngOnInit(){
+    this.startAutoChange();
+  }
 
   getSelectedIndex(index: number) {
     this.selectedIndex.emit(index)
@@ -31,7 +37,30 @@ export class LinkBarComponent {
   activate(index:number) {
     this.links[this.prevIndex].state = 'inactive';
     this.prevIndex = index;
+    this.index = index
     this.links[index].state = 'active';
+  }
+
+
+  startAutoChange() {
+    this.intervalId = setInterval(() => {
+      this.changeIndexAuto();
+    }, 7000);
+  }
+
+  changeIndexAuto() {
+    this.index = (this.index + 1) % this.links.length;
+    this.activate(this.index)
+    this.selectedIndex.emit(this.index)
+    
+  }
+  reloadInterval() {
+    clearInterval(this.intervalId);
+    this.startAutoChange();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
   }
 
 }

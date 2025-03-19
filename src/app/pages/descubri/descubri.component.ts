@@ -46,8 +46,8 @@ export class DescubriComponent {
   indexSelected = 0
   onAnimation = 'fadeIn'
 
-  changeIndex(value:number){
-    this.indexSelected= value
+  changeIndex(index:number){
+    this.indexSelected = index
     this.onAnimation = 'animate'
   }
 

@@ -16,7 +16,7 @@ import { Component, input, output } from '@angular/core';
 })
 export class DotsBoxComponent {
 
-  dotsNumber = input<number>(0)
+  itemsNumber = input<number>(0)
   indexSelected = output<number>()
   dots!: any[];
   prevIndex = 0
@@ -30,7 +30,7 @@ export class DotsBoxComponent {
   }
 
   private generateDots(){
-    return Array(this.dotsNumber()).fill('default')
+    return Array(this.itemsNumber()).fill('default')
   }
 
 
@@ -51,7 +51,7 @@ export class DotsBoxComponent {
   startAutoChange() {
     this.intervalId = setInterval(() => {
       this.changeIndexAuto();
-    }, 3000);
+    }, 5000);
   }
 
   changeIndexAuto() {

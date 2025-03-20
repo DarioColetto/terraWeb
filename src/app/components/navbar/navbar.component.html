@@ -1,9 +1,10 @@
-<a id="logo" class="link">
+
+<a id="logo" class="link" (click)="toggleMenu()">
   <img class="logo-img" src="isotipo.png" alt="logo" />
 </a>
 
 
-<span class="link-wrapper">
+<span [ngClass]="hide" class="link-wrapper">
 
   @for (link of links; track $index) {
 
@@ -17,4 +18,5 @@
 
   }
 </span>
+
 <!-- <app-social></app-social> -->

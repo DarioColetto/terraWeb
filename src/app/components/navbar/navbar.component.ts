@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, HostBinding, output } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,16 +10,10 @@ import { NgClass } from '@angular/common';
 })
 export class NavbarComponent {
 
-  
-  // opened:boolean = true
-  
-
-  // open() {
-  //   this.opened = !this.opened
-  // }
-
   selectedIndex = output<number>()
   prevIndex = 0
+  hide = ''
+  
 
   links = [
     {title: ['home'], href:'#home', state:'active'} , 
@@ -42,6 +36,10 @@ export class NavbarComponent {
     this.links[this.prevIndex].state = 'inactive';
     this.prevIndex = index;
     this.links[index].state = 'active';
+  }
+
+  toggleMenu(){
+    this.hide = this.hide === ''? 'hide' : ''
   }
 
 

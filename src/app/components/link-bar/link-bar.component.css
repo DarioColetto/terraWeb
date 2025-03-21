@@ -30,7 +30,6 @@
       padding: 0px;
       margin: auto;
       text-align: center;
-      font-size: 1.2rem;  
       text-transform: uppercase;
       font-weight: 400;
     }
@@ -85,4 +84,10 @@
         opacity: 0;
         transform: scaleX(0);
     }
+}
+
+@media screen and (max-width:600px){
+  :host{
+    flex-direction: column
+  };
 }

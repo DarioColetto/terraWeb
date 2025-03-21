@@ -200,12 +200,10 @@ button{
 
 
     
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px){
 
     :host{
-        flex-direction: column;
+        display: block;
     }
 
     .column, .img-container, .progress-bar{

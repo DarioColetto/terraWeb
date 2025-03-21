@@ -55,9 +55,12 @@ h4{
     text-transform: uppercase;
 }
 
+p{
+    max-width: 35ch;
+}
 
 
-@media screen and (min-width:600px) {
+@media screen and (max-width:900px) {
     
     .text-content{
         width: 70%;

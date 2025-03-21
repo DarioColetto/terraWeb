@@ -12,7 +12,7 @@ export class NavbarComponent {
 
   selectedIndex = output<number>()
   prevIndex = 0
-  hide = ''
+  hide = 'hide'
   
 
   links = [

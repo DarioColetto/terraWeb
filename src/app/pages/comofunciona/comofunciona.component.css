@@ -1,6 +1,7 @@
 :host{
     position: relative;
     height: 100%;
+    
 }
 
 .card-container{
@@ -32,10 +33,34 @@
     max-width: 40ch;
 }
 
-.video{
+.video-container{
     position: absolute;
     top: 0px;
+    z-index: -10;
+}
+
+.video{
+ 
     width: 100%;
     height: auto;
-    z-index: -10;
+   
+}
+
+@media screen and (max-width:600px){
+    :host{
+        display: block;
+    }
+
+    .video-container{
+        height: 100dvh;
+        width: 100vw;
+        overflow: hidden;
+
+    }
+
+    .video{
+        height: 100dvh;
+        width: auto;
+        
+    }
 }

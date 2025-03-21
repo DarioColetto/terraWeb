@@ -12,6 +12,12 @@
     font-style: normal;
    
     scroll-behavior: smooth;
+
+    --xl: 1200px;
+    --l: 992px;
+    --m: 768px;
+    --s: 576px;
+  
    
 }
 
@@ -28,7 +34,7 @@ h2, h4, p{
 }
 
 p{
-    font-size: 14px;
+    font-size: clamp(12px, 15px ,3rem) ;
 }
 
 
@@ -39,7 +45,7 @@ p{
     height: fit-content;
     text-transform: uppercase;
     font-weight: 400;
-    
+    padding-top: 82px;
 }
 
 .page-title:not(:first-child){

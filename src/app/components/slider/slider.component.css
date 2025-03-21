@@ -202,9 +202,24 @@ button{
     
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 600px) {
 
-    
+    :host{
+        flex-direction: column;
+    }
+
+    .column, .img-container, .progress-bar{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .head-container{
+        height: 10dvh;
+    }
+
+    .body-container{
+        height: 20dvh;
+    }
 }
 
 

@@ -18,7 +18,17 @@
 
 
 
+@media screen and (max-width:600px) {
+  :host{
+    display: block;
+    height: auto
+  }
 
+  .box{
+    width: 100%;
+  }
+
+}
 
 
 

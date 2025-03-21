@@ -24,9 +24,9 @@
         <h3 @fade>{{ row.title }} </h3>
         <div>
           @for (item of row.items; track $index) {
-          <span @fade>
-            <p>{{ item }}</p>
-          </span>
+          <div @fade>
+            <span class="content">{{ item }}</span>
+          </div>
           }
         </div>
       </div>

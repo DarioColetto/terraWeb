@@ -1,27 +1,7 @@
-:host{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    /* flex-wrap: wrap; */
-    
-}
 
-.progress-bar{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 60%;
 
-}
 
-.column{
-    flex: 60%;
-    max-width: 60%;
-    height: 100%;
-    background: var(--deep-green);
-}
+
 
 .img-container{
     position: relative;
@@ -48,29 +28,9 @@ img{
 
 .head-container{
     background: #232323;
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    justify-content: flex-end;
-}
-
-
-.title{
-    position: relative;
-    width: 100%;
-    height: auto; 
-    margin: 0px 0px 12px 0px; 
-}
+  
     
-
-h2 ,h3{
-    text-transform: uppercase;
-    margin: 0px 0px 0px 10%;
-    font-family: "PT Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  
 }
 
 h3{
@@ -78,20 +38,8 @@ h3{
 }
 
 
-.body-container{
-    display: flex;
-    
-    width: 100%;
-    
-    
-}
 
-.body-container p{
 
-    color: var(--white);
-    margin: 0px 10% 0px 10%;
-    padding: 12px 0px 0px 0px;
-}
 
 
 .arrow-counter-container{
@@ -198,27 +146,6 @@ button{
     }
   }
 
-
-    
-@media only screen and (max-width: 900px){
-
-    :host{
-        display: block;
-    }
-
-    .column, .img-container, .progress-bar{
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .head-container{
-        height: 10dvh;
-    }
-
-    .body-container{
-        height: 20dvh;
-    }
-}
 
 
 

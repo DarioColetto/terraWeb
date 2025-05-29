@@ -1,5 +1,5 @@
-<div class="progress-bar-container">
-    @if(show()){
-        <div class="progress-bar" @fill (@fill.done)="onAnimation()"></div>
+
+@if(show()){
+    <div class="fill" @fill (@fill.done)="onAnimation()"></div>
     }
-</div>
+

@@ -1,4 +1,4 @@
-
+<!-- 
 <a id="logo" class="link" (click)="toggleMenu()">
   <img class="logo-img" src="isotipo.png" alt="logo" />
 </a>
@@ -17,6 +17,32 @@
   </a>
 
   }
-</span>
+</span> -->
+<nav class="navbar sticky-top">
 
-<!-- <app-social></app-social> -->
+ <div class="container-fluid">
+
+  <a class="navbar-brand" href="#">
+    <img class="logo-img" src="isotipo.png" alt="logo" width="30" height="30">
+  </a>
+  <ul class="navbar-nav flex-row  me-auto mb-2 mb-lg-0">
+
+    @for (link of links; track $index) {
+
+    <li class="nav-item p-2 mx-2 link" (click)="activate($index)" (mouseenter)="setHoverState($index)"
+      (mouseleave)="setHoverState($index)" [ngClass]="link.state">
+      <a class="nav-link p-0" aria-current="page" [href]="link.href">
+        <div class="text-uppercase white-font underline tracking-in-expand">{{link.title[0]}}</div>
+        @if (link.title[1]) {
+        <div class="text-uppercase gold-font underline tracking-in-expand">{{link.title[1]}}</div>
+        }
+      </a>
+    </li>
+
+    }
+
+
+  </ul>
+
+</div>
+</nav>

@@ -10,21 +10,18 @@ import { NgClass } from '@angular/common';
 })
 export class NavbarComponent {
 
-  selectedIndex = output<number>()
+
   prevIndex = 0
   hide = 'hide'
   
 
   links = [
-    {title: ['home'], href:'#home', state:'active'} , 
+
     {title:['nuestro', 'servicio'], href:'#',  state:'inactive'},
     {title: ['descubri', 'geotermia'], href:'#descubri', state:'inactive'},
     {title: ['contacto'], href:'#contacto', state:'inactive'}
   ]
 
-  getSelectedIndex(index: number) {
-    this.selectedIndex.emit(index)
-  }
 
   setHoverState(index:number) {
     if(this.links[index].state !== 'active'){
@@ -37,10 +34,11 @@ export class NavbarComponent {
     this.prevIndex = index;
     this.links[index].state = 'active';
   }
-
-  toggleMenu(){
-    this.hide = this.hide === ''? 'hide' : ''
-  }
-
-
+  
 }
+
+
+
+
+
+

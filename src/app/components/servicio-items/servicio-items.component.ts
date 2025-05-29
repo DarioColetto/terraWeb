@@ -62,8 +62,8 @@ import { Component } from '@angular/core';
 })
 export class ServicioItemsComponent {
 
-  circle_canvas_size = 80;
-  circle_radius = 25;;
+  circle_canvas_size = 50;
+  circle_radius = this.circle_canvas_size/2;
   line_start = this.circle_canvas_size / 2;
   line_end = this.circle_canvas_size / 2;
 

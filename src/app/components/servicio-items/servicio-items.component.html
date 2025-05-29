@@ -1,5 +1,5 @@
 <div @container class="container">
-    <div @fadeIn class="line-container">
+    <!-- <div @fadeIn class="line-container">
       <svg
         class="line"
         height="100%"
@@ -14,11 +14,14 @@
           style="stroke: #d1aa65; stroke-width: 4"
         />
       </svg>
-    </div>
+    </div> -->
   
-    <div  class="column">
+    <div  class="container">
       @for (item of items; track $index) {
-        <div @rowAnimation class="row">
+        <div @rowAnimation class="row my-4">
+          <div class="col-auto ">
+
+         
           <svg @fadeIn
             class="circle"
             [attr.height]="circle_canvas_size"
@@ -36,10 +39,10 @@
               {{ $index + 1 }}
             </text>
           </svg>
-    
-          <div class="text-content">
-            <h4 @leftInH>{{ item.title }}</h4>
-            <p  @leftInP>{{ item.descripcion }}</p>
+     </div>
+          <div class="col ">
+            <h4 class="fs-6 text-uppercase"  @leftInH>{{ item.title }}</h4>
+            <p  class="fw-lighter" @leftInP>{{ item.descripcion }}</p>
           </div>
         </div>
       }

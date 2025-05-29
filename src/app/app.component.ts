@@ -7,6 +7,7 @@ import { ServicioComponent } from './pages/servicio/servicio.component';
 import { DescubriComponent } from './pages/descubri/descubri.component';
 import { ComofuncionaComponent } from './pages/comofunciona/comofunciona.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { HomeComponent } from "./pages/home/home.component";
 @Component({
   selector: 'app-root',
   imports: [
@@ -16,7 +17,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     ServicioComponent,
     DescubriComponent,
     ComofuncionaComponent,
-    ContactoComponent
+    ContactoComponent,
+    HomeComponent
 ],
   animations: [
     trigger('fade', [

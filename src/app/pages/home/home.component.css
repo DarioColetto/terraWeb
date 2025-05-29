@@ -1,58 +1,25 @@
 
-:host{
 
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-content: stretch;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    
-}
-
-
-.logo-wrapper{
-    display: block;
-}
 
 .logoGrande{
-    height: fit-content;
-    width: fit-content;
-    margin: auto auto;
-}
-
-.logoGrande img{
     max-width: 40vw;
     min-width: 300px;
     height: auto;
 }
 
-.slogan{
-    
-    margin-left: 60%;
-    color: var(--white);
-    font-style: italic;
-    font-weight: normal;
-}
 
-.box-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-items: flex-start;
-    width: 100%;
-    
-    
-}
-
-.box{
-    max-width: 300px;
-    min-width: 200px;
-}
 
 h3{
     color: var(--gold);
+    margin: 0px;
+}
+
+.content{
+    background: #012c2f8e;
+}
+
+.active{
+    background: #012c2f8e;
 }
 
 p{

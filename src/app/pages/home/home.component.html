@@ -11,27 +11,60 @@
   } -->
 
 
-<div class="logo-wrapper">
-    <div class="logoGrande">
+<div class="row d-flex justify-content-center mt-3 mb-5">
+
         <img class="logoGrande" src="/isologotipo.png" alt="">
-    </div>
-    <h3 class="slogan"><q>
-        El camino a tu corazon es la llave a  la Geotermia
-    </q></h3>
+
 </div>
 
 
-<section class="box-container">
-    <hgroup class="box">
-        <h3>Que es</h3>
-        <p>La geotermia es el uso del calor natural de la Tierra para generar energía para producir electricidad o para calefaccionar edificios</p>
-    </hgroup>
-    <hgroup class="box">
-        <h3>Que hacemos</h3>
-        <p>Instalamos bombas de calor para climatización geotérmica. </p>
-    </hgroup>
-    <hgroup class="box">
-        <h3>Energia Limpia</h3>
-        <p>Ofrecemos una alternativa <mark>sostenible</mark>  para calefaccionar, refrigerar y obtener agua caliente sanitaria brindando eficiencia energética y <mark>disminuyendo</mark> la emisión de <mark>CO2</mark> al planeta.</p>
-    </hgroup>
+<section class="container">
+    <div class="row">
+        <h3 class="col-1"></h3>
+        <h3 class="col text-center rounded-top title active" (click)="switchText(0)">Geotermia</h3>
+        <h3 class="col text-center rounded-top title" (click)="switchText(1)">Climatización</h3>
+        <h3 class="col text-center rounded-top title" (click)="switchText(2)">Asi lo hacemos</h3>
+        <h3 class="col-1"></h3>
+    </div>
+    <div class="row content rounded">
+        <div class="container p-5">
+
+        
+        @switch (indexSelected) {
+        @case (0) {
+        <p>Del griego geo: tierra, y thermos: calor, la geotermia es la energía en forma de calor que proviene del
+            interior de la Tierra y se libera constantemente en la superficie. Géiseres, volcanes y termas son algunas
+            de sus manifestaciones más visibles, pero no las únicas. El ser humano aprendió a aprovechar esta energía
+            renovable, y nosotros a instalarlo para tu confort...</p>
+        }
+        @case (1) {
+        <p>Nos especializamos en la instalación de sistemas de climatización geotérmica para hogares e industrias.
+            Nuestra tecnología permite brindar calefacción, refrigeración y agua caliente sanitaria en un solo sistema
+            eficiente y sostenible. </p>
+            <br>
+        <p>A diferencia de los sistemas tradicionales, la geotermia utiliza energía termica renovable del subsuelo para
+            funcionar las 24 horas, los 7 días de la semana, con un consumo eléctrico hasta 4 veces menor. Esta
+            eficiencia energética también reduce considerablemente la emisión de CO₂, cuidando el ambiente mientras
+            mejora tu confort.</p>
+        }
+        @case (2) {
+        <p>En TerraEnergy diseñamos e instalamos sistemas geotérmicos adaptados a cada proyecto. Comenzamos con la
+            realización de perforaciones cuyo número y profundidad dependen de la superficie del edificio y su
+            envolvente térmica (capacidad de conservar temperatura).
+        </p>
+        <br>
+        <p>
+            Por estas perforaciones se instalan sondas geotérmicas, que capturan de forma constante la temperatura
+            estable del subsuelo, generalmente entre 12 y 17°C.
+        </p>
+
+        <br>
+        <p>
+            Esa energía térmica es utilizada por una bomba de calor geotérmica, ubicada en la sala de máquinas, que
+            ajusta la temperatura según las necesidades del hogar o industria: calefacción, refrigeración y agua
+            caliente sanitaria. Todo desde un sistema integrado, eficiente y sostenible.</p>
+        }
+        }
+        </div>
+    </div>
 </section>

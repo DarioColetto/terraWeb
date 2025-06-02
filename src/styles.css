@@ -41,16 +41,12 @@ p{
 .page-title{
     font-size: clamp(1.5rem, 2.5vw ,5rem) ;
     width: auto;
-
-    height: fit-content;
     text-transform: uppercase;
     font-weight: 400;
-    padding-top: 82px;
+    
 }
 
-.page-title:not(:first-child){
-    padding-top: 82px;
-}
+
 
 .page-subtitle-wrapper{
     margin-top: 15px;

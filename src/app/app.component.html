@@ -1,19 +1,35 @@
-
 @if (!animationDone) {
-    <app-loader  (animationDone)="loaderAnimationDone($event)"></app-loader>
+<app-loader (animationDone)="loaderAnimationDone($event)"></app-loader>
 }@else {
-    <app-background ></app-background>
-    <app-navbar ></app-navbar>
-    <main class="container-fluid">
-        <app-home class="container-fluid vh-100"></app-home>
-        <app-servicio id="servicio" class="container-fluid"> </app-servicio>
-    
+<app-background></app-background>
+<app-navbar></app-navbar>
+<main class="container-fluid p-0">
+    <app-home class="container-fluid vh-100"></app-home>
+    <div class="container-fluid d-flex justify-content-center h-auto my-4" >
+        <div class="vl"></div>
+    </div>
+    <h1 class="gold-font fs-1 text-center text-uppercase">
+        Descubri Geotermia
+    </h1>
+    <app-descubri class="container-fluid p-0"></app-descubri>
+    <div class="container-fluid d-flex justify-content-center h-auto my-4" >
+        <div class="vl"></div>
+    </div>
+    <h1 class="gold-font fs-1 text-center text-uppercase">
+        nuestro servicio
+    </h1>
+    <app-servicio id="servicio" class="container-fluid"> </app-servicio>
+    <div class="container-fluid d-flex justify-content-center h-auto my-4" >
+        <div class="vl"></div>
+    </div>
+    <h1 class="gold-font fs-1 text-center text-uppercase">
+        como funciona
+    </h1>
+    <app-comofunciona ></app-comofunciona>
 
-        <!--
+    <!--
         @defer (on viewport) {
-            <div id="descubri" class="container">
-                <app-descubri></app-descubri>
-            </div>
+
         }@loading (minimum 1s){
             <div>IS loading</div>
         }@placeholder {
@@ -33,8 +49,7 @@
         <div id="contacto" class="container">
             <app-contacto></app-contacto>
         </div> -->
-    </main>
-    <!-- <div class="simple-linear" ></div> -->
-        <!-- <app-banner></app-banner> -->
+</main>
+<!-- <div class="simple-linear" ></div> -->
+<!-- <app-banner></app-banner> -->
 }
-

@@ -1,4 +1,4 @@
-:host {
+/* :host {
   position: relative;
   top: 0px;
   left: 0px;
@@ -96,5 +96,75 @@ h3 {
 
   .dots-box{
     bottom: 20%;
+  }
+} */
+:host{
+  display:block;
+}
+
+.card{
+  height: 200px;
+  background: var(--cyprus);
+}
+
+.card-body{
+  overflow: hidden;
+ 
+}
+
+
+.card-text{
+  transform: translateY(-300px);
+   background: var(--cyprus);
+   opacity: 0;
+   width: 100%;
+    height: 80%;
+}
+
+.card:hover .card-text{
+  	-webkit-animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+li{
+  font-size: small;
+}
+
+
+@-webkit-keyframes slide-in-blurred-bottom {
+  0% {
+
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-bottom {
+  0% {
+
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
   }
 }

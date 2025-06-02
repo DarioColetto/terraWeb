@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="image-container">
   @for (img of images; track $index) {
     @if ($index ===indexSelected) {
@@ -35,4 +35,53 @@
   </div>
   <app-dots-box class="dots-box" [itemsNumber]="data.length" (indexSelected)="changeIndex($event)"></app-dots-box>
 
+ -->
 
+<div id="carouselExampleAutoplaying" class="carousel slide w-100" data-bs-ride="carousel" >
+  <div class="carousel-inner position-relative">
+    <div class="carousel-item active position-relative" >
+      <img src="/paisajes/imagen1.jpg" class="d-block w-100 " alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>FUENTE INAGOTABLE</h5>
+        <ul>
+          <li>Utiliza el calor natural de la Tierra</li>
+          <li>Fuente de energía renovable y sostenible</li>
+          <li>Generacion de frio o calor segun se requiera</li>
+        </ul>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/paisajes/imagen2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>EConomía</h5>
+        <ul>
+          <li>Ahorro de hasta el 70% en boletas</li>
+          <li>Altos rendimientos a bajo consumo eléctrico
+          </li>
+          <li>Mantenimiento cada 2 a 5 años</li>
+        </ul>
+      </div>
+    </div>
+        <div class="carousel-item">
+      <img src="/paisajes/imagen4.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Estética</h5>
+        <ul>
+          <li>Losa radiante bajo suelo o piscina</li>
+          <li>Fan coils escondidos en techos o paredes</li>
+          <li>Bomba de calor en sala de maquinas</li>
+        </ul>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>

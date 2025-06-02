@@ -11,23 +11,25 @@
   } -->
 
 
-<div class="row d-flex justify-content-center mt-3 mb-5">
+<div class="d-flex justify-content-center my-3">
 
         <img class="logoGrande" src="/isologotipo.png" alt="">
 
 </div>
 
+<div class="space" style="height: 15%;"> </div>
 
-<section class="container">
+
+<section class="container w-75 ">
     <div class="row">
         <h3 class="col-1"></h3>
-        <h3 class="col text-center rounded-top title active" (click)="switchText(0)">Geotermia</h3>
-        <h3 class="col text-center rounded-top title" (click)="switchText(1)">Climatización</h3>
-        <h3 class="col text-center rounded-top title" (click)="switchText(2)">Asi lo hacemos</h3>
+        <h3 class="col fs-4 text-uppercase fw-light  text-center rounded-top title active" (click)="switchText(0)">Geotermia</h3>
+        <h3 class="col fs-4 text-uppercase fw-light text-center rounded-top title" (click)="switchText(1)">Climatización</h3>
+        <h3 class="col fs-4 text-uppercase  fw-light text-center rounded-top title" (click)="switchText(2)">Asi lo hacemos</h3>
         <h3 class="col-1"></h3>
     </div>
     <div class="row content rounded">
-        <div class="container p-5">
+        <div class="container p-3">
 
         
         @switch (indexSelected) {

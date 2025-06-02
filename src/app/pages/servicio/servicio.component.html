@@ -1,61 +1,41 @@
-<div class="row">
-  <h1 class="page-title gold-font" appViewportObserver [title]="'servicio'">
-    nuestro servicio
-  </h1>
-</div>
 
-<div class="row">
-  <div @triggerAnimations>
-    <div @fade class="row page-subtitle-wrapper">
+
+<div class="row justify-content-center">
+  <div @triggerAnimations class="container justify-content-center">
+    <div @fade class="row text-center  page-subtitle-wrapper">
       <h2 class="page-subtitle white-font">Climatización</h2>
       <h2 class="page-subtitle gold-font">residencial y comercial</h2>
     </div>
 
-    
 
-    
-    <p @fade class="my-4 white-font">
-      La geotermia es la mas eficiente de las energias renovables para climatización. Esto es debido a que no depende
-      del clima, vientos, luz solar, etc., sino de la temperatura subterránea constante y sin interrupciones que otorga
-      nuestro planeta.
-      <br>
-      A partir de esta temperatura, la cual estipulamos en un promedio de 15°C, la bomba de calor aumenta o disminuye
-      esta temperatura, dependiendo de los requerimientos del usuario.
-      <br>
-      Además, es posible utilizar esta temperatura para el agua sanitaria. Por medio de un tanque acumulador, el cual se
-      calentara de forma paralela, con la temperatura proporcionada por la bomba, obteniendo agua caliente en la red,
-      prácticamente gratuita.
-      <br>
-      De esta manera tanto hogares como comercios o industrias, pueden gozar de un sistema de climatización renovable,
-      sostenible y sin interrupciones.
-    </p>
+
+    <div class="container w-75 justify-content-center">
+
+
+      <p @fade class="my-4 white-font  ">
+        La geotermia es la mas eficiente de las energias renovables para climatización. Esto es debido a que no depende
+        del clima, vientos, luz solar, etc., sino de la temperatura subterránea constante y sin interrupciones que
+        otorga
+        nuestro planeta.
+        <br>
+        A partir de esta temperatura, la cual estipulamos en un promedio de 15°C, la bomba de calor aumenta o disminuye
+        esta temperatura, dependiendo de los requerimientos del usuario.
+        <br>
+        Además, es posible utilizar esta temperatura para el agua sanitaria. Por medio de un tanque acumulador, el cual
+        se
+        calentara de forma paralela, con la temperatura proporcionada por la bomba, obteniendo agua caliente en la red,
+        prácticamente gratuita.
+        <br>
+        De esta manera tanto hogares como comercios o industrias, pueden gozar de un sistema de climatización renovable,
+        sostenible y sin interrupciones.
+      </p>
     </div>
-    <app-servicio-items class="w-50"  @fade></app-servicio-items>
+  </div>
+  <app-servicio-items class="w-50" @fade></app-servicio-items>
 
-  
+
   <!-- <div class="col">
     <app-slider class="row"></app-slider>
   </div> -->
 
-</div>
-<div id="carouselExampleAutoplaying" class="carousel slide w-100 h-50" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/garden.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>

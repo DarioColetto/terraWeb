@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ServicioItemsComponent } from '../../components/servicio-items/servicio-items.component';
-import { SliderComponent } from '../../components/slider/slider.component';
 import { fade, triggerAnimations } from '../../animations';
 
 @Component({
@@ -8,7 +7,7 @@ import { fade, triggerAnimations } from '../../animations';
     templateUrl: './servicio.component.html',
     styleUrl: './servicio.component.css',
     standalone:true,
-    imports:[ServicioItemsComponent, SliderComponent],
+    imports:[ServicioItemsComponent],
     animations: [triggerAnimations,fade]
 })
 export class ServicioComponent {

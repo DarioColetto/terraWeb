@@ -1,55 +1,43 @@
-@if (!animationDone) {
-<app-loader (animationDone)="loaderAnimationDone($event)"></app-loader>
-}@else {
-<app-background></app-background>
 <app-navbar></app-navbar>
 <main class="container-fluid p-0">
-    <app-home class="container-fluid vh-100"></app-home>
-    <div class="container-fluid d-flex justify-content-center h-auto my-4" >
+    <div class="d-flex justify-content-center my-3">
+
+        <img class="logoGrande" src="/isologotipo.png" alt="">
+
+    </div>
+    <div class="container-fluid d-flex justify-content-center h-auto my-3">
         <div class="vl"></div>
     </div>
+    <app-home class="container-fluid p-0 my-3"></app-home>
+    <div class="container-fluid d-flex justify-content-center h-auto my-3">
+        <div class="vl"></div>
+    </div>
+
     <h1 class="gold-font fs-1 text-center text-uppercase">
         Descubri Geotermia
     </h1>
     <app-descubri class="container-fluid p-0"></app-descubri>
-    <div class="container-fluid d-flex justify-content-center h-auto my-4" >
+    <div class="container-fluid d-flex justify-content-center h-auto my-4">
         <div class="vl"></div>
     </div>
     <h1 class="gold-font fs-1 text-center text-uppercase">
         nuestro servicio
     </h1>
     <app-servicio id="servicio" class="container-fluid"> </app-servicio>
-    <div class="container-fluid d-flex justify-content-center h-auto my-4" >
+    <div class="container-fluid d-flex justify-content-center h-auto my-4">
         <div class="vl"></div>
     </div>
     <h1 class="gold-font fs-1 text-center text-uppercase">
         como funciona
     </h1>
-    <app-comofunciona ></app-comofunciona>
-
-    <!--
-        @defer (on viewport) {
-
-        }@loading (minimum 1s){
-            <div>IS loading</div>
-        }@placeholder {
-            <div>Large component placeholder</div>
-        }
-
-        @defer (on viewport) {
-            <div id="comofunciona" class="container">
-                <app-comofunciona></app-comofunciona>
-            </div>
-        }@loading (minimum 1s){
-            <div>IS loading</div>
-        }@placeholder {
-            <div>Large component placeholder</div>
-        }
-
-        <div id="contacto" class="container">
+    <app-comofunciona class="container-fluid"></app-comofunciona>
+    <div class="container-fluid d-flex justify-content-center h-auto my-4">
+        <div class="vl"></div>
+    </div>
+         <h1 class="gold-font fs-1 text-center text-uppercase">
+        contacto
+    </h1>
+    <div id="contacto" class="container">
             <app-contacto></app-contacto>
-        </div> -->
+        </div>
 </main>
-<!-- <div class="simple-linear" ></div> -->
-<!-- <app-banner></app-banner> -->
-}

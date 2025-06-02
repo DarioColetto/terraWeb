@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { data, Info } from './descubri-data';
-import { DotsBoxComponent } from "../../components/dots-box/dots-box.component";
 import { animate, animateChild, query, style, transition, trigger } from '@angular/animations';
 import { fade, triggerAnimations } from '../../animations';
 
@@ -9,7 +8,7 @@ import { fade, triggerAnimations } from '../../animations';
 @Component({
     selector: 'app-descubri',
     standalone:true,
-    imports: [DotsBoxComponent],
+    imports: [],
     templateUrl: './descubri.component.html',
     styleUrl: './descubri.component.css',
     animations:[

@@ -1,43 +1,4 @@
-<!-- 
-<div class="image-container">
-  @for (img of images; track $index) {
-    @if ($index ===indexSelected) {
-      <img  @fadeIn class="image" [src]="images[indexSelected ]" alt="">
-    }
-  }
-</div>
-<h1 class="page-title gold-font" appViewportObserver [title]="'servicio'">
-  Descubri Geotermia
-</h1>
-<div class="page-subtitle-wrapper">
-  <h2 class="page-subtitle white-font">Elite entre renovables</h2>
-</div>
-    <p class="description white-font">
-      No produce gases de efecto invernadero Favorece la reducción de la huella de
-      carbono, ayudando a mitigar el cambio climático.
-    </p>
-    <div @triggerAnimations class="row-wrapper">
-      @for (row of data; track $index) { 
-        @if (indexSelected === $index) {
-      <div class="row">
-        
-        <h3 @fade>{{ row.title }} </h3>
-        <div>
-          @for (item of row.items; track $index) {
-          <div @fade>
-            <span class="content">{{ item }}</span>
-          </div>
-          }
-        </div>
-      </div>
-      } 
-    }
-  </div>
-  <app-dots-box class="dots-box" [itemsNumber]="data.length" (indexSelected)="changeIndex($event)"></app-dots-box>
-
- -->
-
-<div id="carouselExampleAutoplaying" class="carousel slide w-100" data-bs-ride="carousel" >
+<div id="carouselExampleAutoplaying" class="carousel slide w-100 h-50" data-bs-ride="carousel" >
   <div class="carousel-inner position-relative">
     <div class="carousel-item active position-relative" >
       <img src="/paisajes/imagen1.jpg" class="d-block w-100 " alt="...">

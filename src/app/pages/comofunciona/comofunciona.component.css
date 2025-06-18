@@ -17,9 +17,19 @@
   transform-style: preserve-3d;
 }
 
+
+
+.card-text{
+    transform: translateY(100px);
+    transition: transform 0.8s 5ms;
+}
+
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
+  & .card-text{
+    transform: translateY(0px);
+  }
 }
 
 /* Position the front and back side */
@@ -39,9 +49,9 @@
 
 /* Style the back side */
 .flip-card-back {
-  background-color: var(--cyprus);
+  background-color: rgb(23, 32, 23);
   color: white;
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 .text-small{
@@ -55,3 +65,4 @@
 .card-title{
     color: white
 }
+

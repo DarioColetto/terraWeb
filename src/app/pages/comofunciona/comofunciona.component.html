@@ -1,32 +1,32 @@
-<div @triggerAnimations class="container position-relative p-0">
+<div @triggerAnimations>
   
-  <app-link-bar class="container p-0" (selectedIndex)="renderView($event)"></app-link-bar>
+  <!-- <app-link-bar class="container p-0" (selectedIndex)="renderView($event)"></app-link-bar> -->
   
-  <div class="card-container postion-asboute top-0 start-0">
+  <div class="d-flex flex-row justify-content-evenly">
     @for (card of cardData; track $index) {
-    @if (view === $index){
-    <div>
+  
 
-      <div>
-
-        <div @fade class="white-font my-4">{{ card.content }}</div>
+  <div class="card flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img class="img-fluid position-absolute top-0 start-0" src="/garden-400.jpg" alt="Avatar" >
+      <div class="position-absolute top-0 start-0 h-100 w-100 my-auto">
+        
+        <h5 class="card-title position-absolute top-50 start-50 translate-middle">{{card.title}}</h5>
       </div>
     </div>
+    <div class="flip-card-back">
+      <p @fade  class="card-text text-small p-3">{{ card.content }}</p>
+     
+    </div>
+  </div>
+</div>
+
     }
-    }
+    
   </div>
 
-  <div class="container-fluid p-0 postion-asboute top-0 start-0">
-    @for (video of videoLinks; track $index) {
-    @if ($index === view) {
-
-    <video class="video" autoplay>
-      <source [src]="video" type="video/mp4">
-    </video>
 
 
-    }
-    }
 
-  </div> 
 </div>

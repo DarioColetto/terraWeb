@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { data, Info } from './descubri-data';
 import { animate, animateChild, query, style, transition, trigger } from '@angular/animations';
 import { fade, triggerAnimations } from '../../animations';
+import { IconComponent } from "../../components/icon/icons.component";
 
 
 
 @Component({
     selector: 'app-descubri',
     standalone:true,
-    imports: [],
+    imports: [IconComponent],
     templateUrl: './descubri.component.html',
     styleUrl: './descubri.component.css',
     animations:[

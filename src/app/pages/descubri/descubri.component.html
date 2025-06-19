@@ -1,4 +1,45 @@
-<div id="carouselExampleAutoplaying" class="carousel slide w-100 h-50" data-bs-ride="carousel">
+<div class="container-fluid ">
+<div class="row row-cols-2 gx-0 vh-100" >
+
+  @for (item of data; track $index) {
+    <div class="box col h-50 position-relative">
+
+      <div class="cover position-absolute top-0 start-0  w-100 h-100 overflow-hidden">
+        <img  class="object-fit-cover" src="/garden-400.jpg" alt="">
+        
+        <div class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center" > 
+
+          <app-icon 
+          [name]="item.icon" color="white"
+          > </app-icon>
+          <h5 class="">{{item.title}}</h5>
+        </div>
+      </div>
+   
+      <div  class="content p-2 position-absolute top-50 start-50 translate-middle w-100 h-100 d-flex flex-column justify-content-center">
+
+        <ul >
+          @for (bullets of item.items; track $index) {
+            <li class="my-auto">{{bullets}}</li>
+          }
+  
+        </ul>
+      </div>
+
+
+
+    </div>
+    
+
+  }
+
+</div>
+
+</div>
+
+
+
+<!-- <div id="carouselExampleAutoplaying" class="carousel slide w-100 h-50" data-bs-ride="carousel">
   <div class="carousel-inner position-relative vh-50">
     <div class="carousel-item active position-relative ">
       <div class=" w-50" >
@@ -51,4 +92,4 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</div>
+</div> -->

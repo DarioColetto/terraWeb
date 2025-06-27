@@ -8,6 +8,7 @@ import { DescubriComponent } from './pages/descubri/descubri.component';
 import { ComofuncionaComponent } from './pages/comofunciona/comofunciona.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from "./pages/home/home.component";
+import { SocialComponent } from './components/social/social.component';
 @Component({
   selector: 'app-root',
   imports: [
@@ -18,7 +19,8 @@ import { HomeComponent } from "./pages/home/home.component";
     DescubriComponent,
     ComofuncionaComponent,
     ContactoComponent,
-    HomeComponent
+    HomeComponent,
+    SocialComponent
 ],
   animations: [
     trigger('fade', [

@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-    indexSelected = 0;
+    indexSelected?: null | number = null;
 
-    switchText(index: number){
+    switchText(index: number | null){
         this.toggleClass(index);
         this.indexSelected = index;
        
@@ -19,7 +19,7 @@ export class HomeComponent {
 
     //A funtion that toggles the class active and let the other elemetnts without the class active
     // It receives the index of the element to toggle
-    toggleClass(index: number) {
+    toggleClass(index: number | null) {
         const elements = document.querySelectorAll('.title');
         elements.forEach((element, i) => {
             if (i === index) {

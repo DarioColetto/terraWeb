@@ -15,3 +15,36 @@
   border-left: 2px solid var(--gold);
   height: 200px;
 }
+
+.social-vertical{
+  position: fixed;
+  top: 30%;
+  right: 0px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.whatsapp {
+  position: fixed;
+  opacity: 0.7;
+  right: 0px;
+  bottom: 0px;
+  transform: translate(-40%, -40%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.whatsapp svg {
+  fill: white;
+} 
+
+.whatsapp:hover {
+  opacity: 1;
+  transform: scale(1.1) translate(-40%, -40%);
+}

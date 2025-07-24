@@ -1,95 +1,101 @@
-<div class="container-fluid ">
-<div class="row row-cols-2 gx-0 vh-100" >
 
-  @for (item of data; track $index) {
-    <div class="box col h-50 position-relative">
+<div class="box-container" >
 
-      <div class="cover position-absolute top-0 start-0  w-100 h-100 overflow-hidden">
-        <img  class="object-fit-cover" src="/garden-400.jpg" alt="">
-        
-        <div class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center" > 
-
-          <app-icon 
-          [name]="item.icon" color="white"
-          > </app-icon>
-          <h5 class="">{{item.title}}</h5>
+    <div class="box">
+      <div class="cover">
+        <img  class="img-cover" src="/garden-400.jpg" alt="">
+        <div class="titleBox" > 
+          <app-icon [name]="'hoja'" color="white"></app-icon>
+          <h5 class="">Fuente inagotable</h5>
         </div>
       </div>
-   
-      <div  class="content p-2 position-absolute top-50 start-50 translate-middle w-100 h-100 d-flex flex-column justify-content-center">
-
+      <div  class="content">
         <ul >
-          @for (bullets of item.items; track $index) {
-            <li class="my-auto">{{bullets}}</li>
-          }
-  
+            <li class="my-auto">Utiliza el calor natural de la Tierra</li>
+            <li class="my-auto">Fuente de energía renovable y sostenible</li>
+            <li class="my-auto">Generacion de frio o calor segun se requiera</li>        
         </ul>
       </div>
+    </div>
 
+    <div class="box">
+      <div class="cover">
+        <img class="img-cover" src="/garden-400.jpg" alt="">
+        <div class="titleBox" > 
+          <app-icon [name]="'efficiency'" color="white"></app-icon>
+          <h5 class="">Eficiencia Energetica</h5>
+        </div>
+      </div>
+      <div  class="content">
+        <ul >
+            <li class="my-auto">Disponibilidad 24/7</li>
+            <li class="my-auto">1 unidad eléctrica equivale a 4 unidades térmicas</li>
+            <li class="my-auto">Combinable con paneles solares</li>        
+        </ul>
+      </div>
+    </div>
 
+    <div class="box">
+      <div class="cover">
+        <img  class="img-cover" src="/garden-400.jpg" alt="">
+        <div class="titleBox" > 
+          <app-icon [name]="'saving'" color="white"></app-icon>
+          <h5 class="">Economía</h5>
+        </div>
+      </div>
+      <div  class="content">
+        <ul >
+            <li class="my-auto">Ahorro de hasta el 70% en boletas</li>
+            <li class="my-auto">Altos rendimientos a bajo consumo</li>
+            <li class="my-auto">Mantenimiento cada 2 a 5 años</li>        
+        </ul>
+      </div>
+    </div>
 
+    <div class="box">
+      <div class="cover">
+        <img  class="img-cover" src="/garden-400.jpg" alt="">
+        <div class="titleBox" > 
+          <app-icon [name]="'home'" color="white"></app-icon>
+          <h5 class="">Estética</h5>
+        </div>
+      </div>
+      <div  class="content">
+        <ul >
+            <li class="my-auto">Losa radiante bajo suelo o piscina</li>
+            <li class="my-auto">Fan coils escondidos en techos o paredes</li>
+            <li class="my-auto">Bomba de calor en sala de maquinas</li>        
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="cover">
+        <img  class="img-cover" src="/garden-400.jpg" alt="">
+        <div class="titleBox" > 
+          <app-icon [name]="'eco'" color="white"></app-icon>
+          <h5 class="">Energia limpia</h5>
+        </div>
+      </div>
+      <div  class="content">
+        <ul >
+            <li class="my-auto">No produce gases de efecto invernadero</li>
+            <li class="my-auto">Favorece la reducción de la huella de carbono</li>
+            <li class="my-auto">Mitigación del cambio climático</li>        
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <div >
+        Aquí va un texto de ejemplo para la última caja. Puedes personalizarlo según tus necesidades.
+      </div>
     </div>
     
 
-  }
+  
 
 </div>
 
-</div>
 
 
-
-<!-- <div id="carouselExampleAutoplaying" class="carousel slide w-100 h-50" data-bs-ride="carousel">
-  <div class="carousel-inner position-relative vh-50">
-    <div class="carousel-item active position-relative ">
-      <div class=" w-50" >
-        <img src="/paisajes/imagen1.jpg" class="w-100" alt="...">
-      </div>
-      <div class="white-font position-absolute top-50 start-50 translate-middle w-75">
-        <h5>FUENTE INAGOTABLE</h5>
-        <ul>
-          <li>Utiliza el calor natural de la Tierra</li>
-          <li>Fuente de energía renovable y sostenible</li>
-          <li>Generacion de frio o calor segun se requiera</li>
-        </ul>
-      </div>
-    </div>
-    <div class="carousel-item active position-relative">
-      <div class="d-block w-100 h-100 overflow-y-hidden" >
-        <img src="/paisajes/imagen5.jpg" class="w-100 h-auto" alt="...">
-      </div>
-      <div class="white-font position-absolute top-50 start-50 translate-middle w-75">
-        <h5>Economía</h5>
-        <ul>
-          <li>Ahorro de hasta el 70% en boletas</li>
-          <li>Altos rendimientos a bajo consumo eléctrico
-          </li>
-          <li>Mantenimiento cada 2 a 5 años</li>
-        </ul>
-      </div>
-    </div>
-    <div class="carousel-item active position-relative">
-      <div class="d-block w-100 h-100" >
-      <img src="/paisajes/imagen4.jpg" class="w-100 h-auto" alt="...">
-      </div>
-      <div class="white-font position-absolute top-50 start-50 translate-middle w-75">
-        <h5>Estética</h5>
-        <ul>
-          <li>Losa radiante bajo suelo o piscina</li>
-          <li>Fan coils escondidos en techos o paredes</li>
-          <li>Bomba de calor en sala de maquinas</li>
-        </ul>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div> -->

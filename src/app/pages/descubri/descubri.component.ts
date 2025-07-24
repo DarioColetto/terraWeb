@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { data, Info } from './descubri-data';
+
 import { animate, animateChild, query, style, transition, trigger } from '@angular/animations';
 import { fade, triggerAnimations } from '../../animations';
 import { IconComponent } from "../../components/icon/icons.component";
@@ -32,17 +32,7 @@ import { IconComponent } from "../../components/icon/icons.component";
 })
 export class DescubriComponent {
   
-  data:Info = data;
-
-  images = [
-    '/paisajes/imagen1.jpg', 
-    '/paisajes/imagen2.jpg',  
-    '/paisajes/imagen3.jpg',
-    '/paisajes/imagen4.jpg',
-    '/paisajes/imagen5.jpg',
-   ]
-
-
+ 
   indexSelected = 0
   onAnimation = 'fadeIn'
 

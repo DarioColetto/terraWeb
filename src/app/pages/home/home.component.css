@@ -1,29 +1,31 @@
 
-/* section{
-    background: rgba(32, 32, 32, 0.61);
-} */
 
 .logoGrande{
-    /* max-width: 40vw;
-    min-width: 300px; */
-    height: 13vw;
-    
-
+    width: auto;
+    height: 200px;
 }
 
+.background-img{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -1;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
 
 h3{
     color: var(--gold);
     margin: 0px;
-    
-
-
 }
 
 .content{
-     background: #05050533;
-         box-shadow: 0px 0px 10px black;
-   /* height: 300px; */
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+
 }
 
 .active{
@@ -31,7 +33,8 @@ h3{
 }
 
 p{
-    color: var(--gold);
+    color: var(--white);
+  
 }
 
 mark{
@@ -39,27 +42,87 @@ mark{
     background: transparent;
 }
 
-video{
+.flex-center{
     position: absolute;
-    top: 0px;
+    bottom: 0%;
     left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: auto;
-    z-index: -5;
+    height: 30%;
 }
+
+
+.box-titles{
+    width: 70%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: clamp(1.2rem, 2vw ,3rem) ;
+
+}
+
+.logo-box {
+      opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+.logo-box.hide {
+    opacity: 0;
+}
+
+.background-img.contrast{
+    filter: blur(2px) contrast(105%);
+    
+}
+
+.content {
+    opacity: 1;
+}
+
+
+
+@media screen and (max-width: 900px)  {
+
+    .background-img{
+        height: 100%;
+    }
+
+
+
+    
+} 
 
 @media screen and (max-width: 600px)  {
 
-
-    .logoGrande , .slogan{
+        .logoGrande , .slogan{
         display: none;
     }
 
-    .box-container{
-        flex-direction: column;
-        
+    .flex-center{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        align-items: flex-end;
     }
+
+
+    .box-titles{
+        width: 100%;
+   
+        display: flex;
+        flex-direction: column;
+            align-items: center;
+            padding: 40px;
+    }
+
+    .content{
+    width: 100%;
+    left: 0px;
+}
     
-    
-} 
+}
     

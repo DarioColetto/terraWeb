@@ -1,7 +1,8 @@
 
 
 nav{
-  background: rgba(36, 36, 36, 0.7);
+  background: var(--cyprus);
+  
 }
 
 .logo-img {

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-home',
-    imports: [],
+    imports: [NgClass],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
     providers: []
@@ -10,6 +11,8 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
     indexSelected?: null | number = null;
+    hideLogo: boolean = false;
+   
 
     switchText(index: number | null){
         this.toggleClass(index);
@@ -31,5 +34,15 @@ export class HomeComponent {
 
     }
 
+
+
+    
+hideLogoHandler(event: MouseEvent, isEnter: boolean) {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('title')) {
+    }
+    
+    this.hideLogo = isEnter;
+}
    
 }

@@ -1,18 +1,14 @@
 
 
-<div class="row justify-content-center">
-  <div @triggerAnimations class="container justify-content-center">
-    <div @fade class="row text-center  page-subtitle-wrapper">
+<div class="box">
+  <div @triggerAnimations >
+    <div @fade   class="page-subtitle-wrapper">
       <h2 class="page-subtitle white-font">Climatización</h2>
       <h2 class="page-subtitle gold-font">residencial y comercial</h2>
     </div>
 
-
-
-    <div class="container w-75 justify-content-center">
-
-
-      <p @fade class="my-4 white-font  ">
+    <div >
+      <p @fade >
         La geotermia es la mas eficiente de las energias renovables para climatización. Esto es debido a que no depende
         del clima, vientos, luz solar, etc., sino de la temperatura subterránea constante y sin interrupciones que
         otorga
@@ -31,16 +27,10 @@
       </p>
     </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col">
-    <app-servicio-items  @fade></app-servicio-items>
-    </div>
-    <div class="col">
-      <app-slider ></app-slider>
-    </div>
-  </div>
+<div class="box">
 
-
+    <app-slider ></app-slider>
 
 </div>

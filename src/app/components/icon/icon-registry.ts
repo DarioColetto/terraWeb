@@ -17,14 +17,14 @@ export const ICONS: { [key: string]: string } = {
 
   home: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-510ZM160-160v-375l-72 55-47-63 439-337 440 336-48 64-392-300-240 184v356h120v80H160Zm437 80L428-250l56-57 113 113 227-226 56 57L597-80Z"/></svg>`,
 
-  leftArrow: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+  leftArrow: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none"  xmlns="http://www.w3.org/2000/svg">
     <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
       stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M13.26 15.53L9.73999 12L13.26 8.46997"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`,
 
-  rightArrow: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+  rightArrow: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none"  xmlns="http://www.w3.org/2000/svg">
     <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
       stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M10.74 15.53L14.26 12L10.74 8.46997"

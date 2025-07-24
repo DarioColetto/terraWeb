@@ -9,7 +9,11 @@ import {
 import { ProgressbarComponent } from '../progressbar/progressbar.component';
 import { IconComponent } from '../icon/icons.component';
 
-
+ interface Slide {
+    title: string[];  
+    body: string[];
+    img: string;
+  }
 
 
 @Component({
@@ -74,42 +78,40 @@ export class SliderComponent {
   slideIndex = 0;
   fullBar:any;
   direction: 'toLeft' | 'toRight' | 'default' = 'default';
-  
+ 
+ 
 
   SLIDES = [
     {
-      title: ['calefaccion', 'refrigeramiento'],
-      body: `Además de la climatización, nuestros sistemas geotérmicos pueden integrarse
-      para proporcionar agua caliente sanitaria de manera eficiente y ecológica,
-      utilizando la misma tecnología de bombas de calor.`,
+      title: ['calefaccion'],
+      body: ['Mediante Losa Radiante', 'Ambientes unificados o diferenciados','Temperatura máxima recomendada en calor radiante: 21°C'],
       img:'/garden-800.jpg'
     },
     {
-      title: ['agua caliente sanitaria', 'piscina'],
-      body: `Ofrecemos soluciones para la climatización de piscinas, manteniendo la
-    temperatura del agua en niveles óptimos durante todo el año, utilizando
-    energía geotérmica para un ahorro energético significativo.`,
+      title: ['REFRESCAMIENTO'],
+      body: ['Mediante Losa Radiante y/o Fan Coils','Ambientes unificados o diferenciados','Temperatura mínima recomendada en Frio aereo: 24°C'],
       img:'/garden-800.jpg'
     },
     {
-      title: ['Slider'],
-      body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur atque
-    illum accusantium eius perferendis. Laboriosam adipisci ipsum itaque
-    corrupti delectus incidunt accusamus aperiam quam dolor praesentium.
-    Accusantium maxime earum odit!`,
+      title: ['AGUA CALIENTE SANITARIA'],
+      body: ['Mediante Tanque Acumulador Termico', 'Agua caliente a 40°C, extensible hasta 70°C', 'Sistema secundario ante emergencias'],
       img:'/garden-800.jpg'
     },
   ];
 
+   slide = signal<Slide>(this.SLIDES[0]);
+
   nextSlide() {
     this.slideIndex = (this.slideIndex + 1) % this.SLIDES.length;
     this.direction = 'toRight'
+    this.slide.set(this.SLIDES[this.slideIndex]);
   }
 
   prevSlide() {
     this.slideIndex =
       (this.slideIndex - 1 + this.SLIDES.length) % this.SLIDES.length;
       this.direction = 'toLeft'
+      this.slide.set(this.SLIDES[this.slideIndex]);
   }
 
   isBarFull(event:boolean){

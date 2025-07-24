@@ -1,0 +1,13 @@
+:host{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: auto;
+    margin: 2rem auto;
+} 
+ 
+ .vl {
+  border-left: 2px solid var(--gold);
+  height:  12vw;
+}

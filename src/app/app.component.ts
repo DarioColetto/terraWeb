@@ -9,6 +9,8 @@ import { ComofuncionaComponent } from './pages/comofunciona/comofunciona.compone
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from "./pages/home/home.component";
 import { SocialComponent } from './components/social/social.component';
+import { VerticalSeparatorComponent } from './components/vertical-separator/vertical-separator.component';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -20,7 +22,8 @@ import { SocialComponent } from './components/social/social.component';
     ComofuncionaComponent,
     ContactoComponent,
     HomeComponent,
-    SocialComponent
+    SocialComponent,
+    VerticalSeparatorComponent
 ],
   animations: [
     trigger('fade', [

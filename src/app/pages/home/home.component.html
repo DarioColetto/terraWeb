@@ -1,90 +1,70 @@
-
 <img class="background-img" src="/home.jpg" alt="" [ngClass]="{'contrast': hideLogo}">
-
-<div class="container-fluid position-relative d-flex flex-column vh-100 pt-5">
-
-    <div class="logo-box d-flex justify-content-center align-items-center my-5" [ngClass]="{'hide': hideLogo}">
-        <img class="logoGrande img-fluid" src="/isologotipo.png" alt="" >
-    </div>
+<img class="logoGrande" src="/isologotipo.png" alt="" [ngClass]="{'hide': hideLogo}">
 
 
-        
-    
-    @if (indexSelected !== null) {
-    <div class="content" >
-        <div class="container p-3">
-
-            @switch (indexSelected) {
-            @case (0) {
-            <p >Del griego geo: tierra, y thermos: calor, la geotermia es la energía en forma de calor que proviene
-                del
-                interior de la Tierra y se libera constantemente en la superficie. Géiseres, volcanes y termas son
-                algunas
-                de sus manifestaciones más visibles, pero no las únicas. El ser humano aprendió a aprovechar esta
-                energía
-                renovable, y nosotros a instalarlo para tu confort...</p>
-            }
-            @case (1) {
-            <p>Nos especializamos en la instalación de sistemas de climatización geotérmica para hogares e
-                industrias.
-                Nuestra tecnología permite brindar calefacción, refrigeración y agua caliente sanitaria en un solo
-                sistema
-                eficiente y sostenible. </p>
-            <br>
-            <p>A diferencia de los sistemas tradicionales, la geotermia utiliza energía termica renovable del
-                subsuelo para
-                funcionar las 24 horas, los 7 días de la semana, con un consumo eléctrico hasta 4 veces menor. Esta
-                eficiencia energética también reduce considerablemente la emisión de CO₂, cuidando el ambiente
-                mientras
-                mejora tu confort.</p>
-            }
-            @case (2) {
-            <p>En TerraEnergy diseñamos e instalamos sistemas geotérmicos adaptados a cada proyecto. Comenzamos con
-                la
-                realización de perforaciones cuyo número y profundidad dependen de la superficie del edificio y su
-                envolvente térmica (capacidad de conservar temperatura).
-            </p>
-            <br>
-            <p>
-                Por estas perforaciones se instalan sondas geotérmicas, que capturan de forma constante la
-                temperatura
-                estable del subsuelo, generalmente entre 12 y 17°C.
-            </p>
-
-            <br>
-            <p>
-                Esa energía térmica es utilizada por una bomba de calor geotérmica, ubicada en la sala de máquinas,
-                que
-                ajusta la temperatura según las necesidades del hogar o industria: calefacción, refrigeración y agua
-                caliente sanitaria. Todo desde un sistema integrado, eficiente y sostenible.</p>
-            }
-            @default {
-            <span style="display: none;"></span>}
-            }
-        </div>
-    </div>
+@if (indexSelected !== null) {
+<div class="content">
+    @switch (indexSelected) {
+    @case (0) {
+    <p>Del griego geo: tierra, y thermos: calor, la geotermia es la energía en forma de calor que proviene
+        del
+        interior de la Tierra y se libera constantemente en la superficie. Géiseres, volcanes y termas son
+        algunas
+        de sus manifestaciones más visibles, pero no las únicas. El ser humano aprendió a aprovechar esta
+        energía
+        renovable, y nosotros a instalarlo para tu confort...</p>
     }
-   
+    @case (1) {
+    <p>Nos especializamos en la instalación de sistemas de climatización geotérmica para hogares e
+        industrias.
+        Nuestra tecnología permite brindar calefacción, refrigeración y agua caliente sanitaria en un solo
+        sistema
+        eficiente y sostenible. </p>
+    <br>
+    <p>A diferencia de los sistemas tradicionales, la geotermia utiliza energía termica renovable del
+        subsuelo para
+        funcionar las 24 horas, los 7 días de la semana, con un consumo eléctrico hasta 4 veces menor. Esta
+        eficiencia energética también reduce considerablemente la emisión de CO₂, cuidando el ambiente
+        mientras
+        mejora tu confort.</p>
+    }
+    @case (2) {
+    <p>En TerraEnergy diseñamos e instalamos sistemas geotérmicos adaptados a cada proyecto. Comenzamos con
+        la
+        realización de perforaciones cuyo número y profundidad dependen de la superficie del edificio y su
+        envolvente térmica (capacidad de conservar temperatura).
+    </p>
+    <br>
+    <p>
+        Por estas perforaciones se instalan sondas geotérmicas, que capturan de forma constante la
+        temperatura
+        estable del subsuelo, generalmente entre 12 y 17°C.
+    </p>
 
-    
-    <div class="flex-center">
-<div class="box-titles" 
-     (mouseover)="hideLogoHandler($event, true)" 
-     (mouseout)="hideLogoHandler($event, false)">
-    
-            <h3 class=" fs-4 text-upper  fw-light  text-end rounded-top title active" (click)="switchText(0)"
-                (mouseover)="switchText(0)" (mouseout)="switchText(null)">
-    
-                Geotermia</h3>
-            <h3 class="fs-4 text-upper fw-light text-center rounded-top title" (click)="switchText(1)"
-                (mouseover)="switchText(1)" (mouseout)="switchText(null)">
-                Climatización</h3>
-            <h3 class=" fs-4 text-upper  fw-light text-start rounded-top title" (click)="switchText(2)"
-                (mouseover)="switchText(2)" (mouseout)="switchText(null)">Asi lo
-                hacemos</h3>
-    
-        </div>
-    
-    </div>
+    <br>
+    <p>
+        Esa energía térmica es utilizada por una bomba de calor geotérmica, ubicada en la sala de máquinas,
+        que
+        ajusta la temperatura según las necesidades del hogar o industria: calefacción, refrigeración y agua
+        caliente sanitaria. Todo desde un sistema integrado, eficiente y sostenible.</p>
+    }
+    @default {
+    <span style="display: none;"></span>}
+    }
+</div>
 
+}
+
+
+<div class="box-titles" (mouseover)="hideLogoHandler($event, true)" (mouseout)="hideLogoHandler($event, false)">
+
+    <h3 class=" fs-4 text-upper   text-end rounded-top title active" (click)="switchText(0)" (mouseover)="switchText(0)"
+        (mouseout)="switchText(null)">
+        Geotermia</h3>
+    <h3 class="fs-4 text-upper  text-center rounded-top title" (click)="switchText(1)" (mouseover)="switchText(1)"
+        (mouseout)="switchText(null)">
+        Climatización</h3>
+    <h3 class=" fs-4 text-upper   text-start rounded-top title" (click)="switchText(2)" (mouseover)="switchText(2)"
+        (mouseout)="switchText(null)">Asi lo
+        hacemos</h3>
 </div>

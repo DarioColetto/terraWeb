@@ -35,8 +35,15 @@ p{
     height: auto
   }
 
-  .box{
+
+  .box:nth-child(1) {
     width: 100%;
+    height: auto;
+  }
+
+  .box:nth-child(2){
+    width: 100%;
+    height: 60vh;
   }
 
 }

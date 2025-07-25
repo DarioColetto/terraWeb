@@ -9,11 +9,13 @@
 }
 
 .head-container {
+  position: relative;
   background: rgba(0, 0, 0, 0.76);
   height: 15%;
   display: flex;
   align-items: flex-end;
   padding: 20px;
+  z-index: 10;
 }
 
 h2{
@@ -35,7 +37,7 @@ h2{
   display: flex;
   align-items: center;
   justify-content: center;
-
+  z-index: 10;
 }
 
 ul{
@@ -49,6 +51,7 @@ ul{
 /*Para que los elemnos puedan superponerse de manera correcta cuando se activa el efeco de fading*/
 ul,h2{
   position: absolute;
+ 
 }
 
 
@@ -72,9 +75,9 @@ img{
    
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 0%;
+    transform: translateX(-50%);
     height: auto;
-    z-index: -1;
     animation: slowZoom 5s ease-in 200ms forwards;
     
 }
@@ -104,6 +107,7 @@ h3{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 
 }
 
@@ -127,6 +131,7 @@ button{
     margin-left: 24px;
     gap: 5px;
     color: var(--white);
+    z-index: 10;
     
 }
 
@@ -143,53 +148,6 @@ button{
 	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
 }
 
-@-webkit-keyframes slide-left {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(-5px);
-              transform: translateX(-5px);
-    }
-  }
-  @keyframes slide-left {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(-5px);
-              transform: translateX(-5px);
-    }
-  }
-
-
-#right-arrow:hover {
-	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-}
-
-@-webkit-keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(5px);
-              transform: translateX(5px);
-    }
-  }
-  @keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(5px);
-              transform: translateX(5px);
-    }
-  }
 
 
 

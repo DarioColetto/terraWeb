@@ -1,65 +1,71 @@
-<img src="/garden.jpg" alt="garden" />
+@if(!this.auxActive){
+<img
+  [src]="SLIDES[indexA].img"
+  alt=""
+  [@slideAnimation]="direction"
+  (@slideAnimation.done)="onAnimationDone($event)"
+/>
+}@else {
+<img [src]="SLIDES[indexB].img" alt="" [@slideAnimation]="direction" />
+}
 
-  <!-- <app-progress-bar (isFull)="isBarFull($event)"></app-progress-bar> -->
-  <div class="head-container">
-    @if(!auxActive){
-      <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">{{slide().title}}</h2>
-    }@else{
-      <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">{{slide().title}}</h2>
+<!-- <app-progress-bar (isFull)="isBarFull($event)"></app-progress-bar> -->
+<div class="head-container">
+  @if(!this.auxActive){
+  <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">
+    {{ SLIDES[indexA].title }}
+  </h2>
+  }@else{
+  <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">
+    {{ SLIDES[indexB].title }}
+  </h2>
+  }
+</div>
+
+<div class="content">
+  @if(!this.auxActive){
+  <ul [@slideAnimation]="direction">
+    @for (item of SLIDES[indexA].body; track $index) {
+    <li>{{ item }}</li>
     }
-  </div>
+  </ul>
+  }@else {
+  <ul [@slideAnimation]="direction">
+    @for (item of SLIDES[indexB].body; track $index) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  }
+</div>
 
-  <div class="content">
-    @if(!auxActive){
-      <ul [@slideAnimation]="direction">
-        @for (item of slide().body; track $index) {
-          <li>{{item}}</li>
-        }
-      </ul>
-    }@else {
-            <ul [@slideAnimation]="direction">
-        @for (item of slide().body; track $index) {
-          <li>{{item}}</li>
-        }
-      </ul>
-        }
-    
+<div class="arrow-container">
+  <button
+    id="left-arrow"
+    (click)="prevSlide()"
+    role="button"
+    aria-label="prevSlide"
+  >
+    <app-icon [name]="'leftArrow'" [stroke]="'white'"></app-icon>
+  </button>
+  <button
+    id="right-arrow"
+    class="slide-left"
+    (click)="nextSlide()"
+    role="button"
+    aria-label="nextSlide"
+  >
+    <app-icon [name]="'rightArrow'" [stroke]="'white'"></app-icon>
+  </button>
+</div>
 
-  </div>
+<div class="counter">
+  <h3>
+    <strong>0{{ index + 1 }} </strong> /
+  </h3>
+  <p>0{{ SLIDES.length }}</p>
+</div>
 
-
-    <div class="arrow-container">
-      <button
-        id="left-arrow"
-        (click)="prevSlide()"
-        role="button"
-        aria-label="prevSlide"
-      >
-        <app-icon [name]="'leftArrow'" [stroke]="'white'"></app-icon>
-      </button>
-      <button
-        id="right-arrow"
-        class="slide-left"
-        (click)="nextSlide()"
-        role="button"
-        aria-label="nextSlide"
-      >
-        <app-icon [name]="'rightArrow'" [stroke]="'white'"></app-icon>
-      </button>
-    </div>
- 
-  
-  <div class="counter">
-    <h3>
-      <strong>0{{ slideIndex + 1 }} </strong> /
-    </h3>
-    <p>0{{ SLIDES.length }}</p>
-  </div>
-
-
-
-
- <!-- @for (slide of SLIDES; track $index) {
+<!-- @for (slide of SLIDES; track $index) {
   @if(slideIndex === $index){
     
     <div class="column">

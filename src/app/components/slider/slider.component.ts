@@ -25,7 +25,7 @@ import { IconComponent } from '../icon/icons.component';
     animations: [
         trigger('slideAnimation', [
             // Estado por defecto
-            state('default', style({ transform: 'translateX(0)' })),
+            //state('default', style({ transform: 'translateX(0)' })),
             // Transición hacia la izquierda
             transition('void => toLeft', [
                 style({
@@ -33,7 +33,7 @@ import { IconComponent } from '../icon/icons.component';
                     filter: 'blur(40px)',
                     opacity: 0,
                 }),
-                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                animate('1s 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
                     transform: 'translateX(0)',
                     filter: 'none',
                     opacity: 1,
@@ -46,7 +46,7 @@ import { IconComponent } from '../icon/icons.component';
                     filter: 'blur(40px)',
                     opacity: 0,
                 }),
-                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                animate('1s 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
                     transform: 'translateX(0)',
                     filter: 'none',
                     opacity: 1,
@@ -54,7 +54,7 @@ import { IconComponent } from '../icon/icons.component';
             ]),
             // Salida hacia la izquierda
             transition('toLeft => void', [
-                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                animate('1s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
                     transform: 'translateX(-100%)',
                     filter: 'blur(40px)',
                     opacity: 0,
@@ -62,7 +62,7 @@ import { IconComponent } from '../icon/icons.component';
             ]),
             // Salida hacia la derecha
             transition('toRight => void', [
-                animate('0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
+                animate('1s cubic-bezier(0.230, 1.000, 0.320, 1.000)', style({
                     transform: 'translateX(100%)', // Confirmar que se mueve hacia la derecha
                     filter: 'blur(40px)',
                     opacity: 0,
@@ -77,7 +77,8 @@ export class SliderComponent {
   index = signal<number>(0)
   slideIndex = 0;
   fullBar:any;
-  direction: 'toLeft' | 'toRight' | 'default' = 'default';
+  direction: 'toLeft' | 'toRight'  = 'toRight';
+  auxActive:boolean = false;
  
  
 
@@ -105,6 +106,7 @@ export class SliderComponent {
     this.slideIndex = (this.slideIndex + 1) % this.SLIDES.length;
     this.direction = 'toRight'
     this.slide.set(this.SLIDES[this.slideIndex]);
+    this.auxActive = !this.auxActive;
   }
 
   prevSlide() {
@@ -112,6 +114,7 @@ export class SliderComponent {
       (this.slideIndex - 1 + this.SLIDES.length) % this.SLIDES.length;
       this.direction = 'toLeft'
       this.slide.set(this.SLIDES[this.slideIndex]);
+      this.auxActive = !this.auxActive;
   }
 
   isBarFull(event:boolean){

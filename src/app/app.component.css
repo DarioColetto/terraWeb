@@ -24,19 +24,17 @@
   position: fixed;
   top: 25%;
   right: 0px;
-  /* transform: translateY(-50%); */
   display: flex;
   flex-direction: column;
   gap: 10px;
  
 }
 
-.social-vertical svg {
-  width: 50px;
-  height: 50px;
-  fill: var(--gold);
+.hide{
+  display: none;
   transition: all 0.3s ease-in-out;
 }
+
 
 .whatsapp {
   position: fixed;

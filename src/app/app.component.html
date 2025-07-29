@@ -16,23 +16,23 @@
 </div>
 
 <main>
-  <app-social class="social-vertical" colorFill="white"></app-social>
+  <app-social class="social-vertical" colorFill="white" [class.hide]="hideSocial"></app-social>
   <app-home></app-home>
   <app-vertical-separator></app-vertical-separator>
   <h1>Descubri Geotermia</h1>
   <app-vertical-separator></app-vertical-separator>
-  <app-descubri></app-descubri>
+  <app-descubri appViewportObserver [title]="'descubri'" (isVisible)="onTitleVisible($event)"></app-descubri>
   <app-vertical-separator></app-vertical-separator>
   <h1>nuestro servicio</h1>
   <app-vertical-separator></app-vertical-separator>
   <app-servicio id="servicio"> </app-servicio>
   <app-vertical-separator></app-vertical-separator>
   <h1>como funciona</h1>
+  <app-vertical-separator ></app-vertical-separator>
+  <app-comofunciona appViewportObserver [title]="'funci'" [rootMargin]="'-100px'" [threshold]="0.8" (isVisible)="onHideSocial($event)"></app-comofunciona>
   <app-vertical-separator></app-vertical-separator>
-  <app-comofunciona ></app-comofunciona>
-  <app-vertical-separator></app-vertical-separator>
-  <h1>contacto</h1>
-  <div id="contacto" class="container">
-    <app-contacto></app-contacto>
-  </div>
+  <h1 appViewportObserver [title]="'conta'" [rootMargin]="'-100px'" [threshold]="0.8" (isVisible)="onHideSocial($event)">contacto</h1>
+  
+    <app-contacto ></app-contacto>
+ 
 </main>

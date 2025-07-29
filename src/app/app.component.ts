@@ -10,6 +10,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from "./pages/home/home.component";
 import { SocialComponent } from './components/social/social.component';
 import { VerticalSeparatorComponent } from './components/vertical-separator/vertical-separator.component';
+import { ViewportObserverDirective } from './app-view-port-oserver.directive';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,9 @@ import { VerticalSeparatorComponent } from './components/vertical-separator/vert
     ContactoComponent,
     HomeComponent,
     SocialComponent,
-    VerticalSeparatorComponent
+    VerticalSeparatorComponent,
+    ViewportObserverDirective,
+    NgClass
 ],
   animations: [
     trigger('fade', [
@@ -54,11 +58,28 @@ export class AppComponent {
 
   isDisable = true;
 
+  hideSocial: boolean = false;
+
   loaderAnimationDone(done: boolean) {
     this.animationDone = done;
   }
 
   onScroll(event: Event) {
     console.log(event);
+  }
+
+  onTitleVisible(title: string) {
+    console.log(`Title is visible: ${title}`);
+    
+    // You can add additional logic here if needed
+  }
+
+  onHideSocial(title: string){
+    console.log(`Title is visible: ${title}`);
+      if(title ==='conta'){
+        this.hideSocial = true;
+      }else{
+        this.hideSocial = false;
+      }
   }
 }

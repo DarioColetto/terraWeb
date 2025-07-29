@@ -78,9 +78,9 @@ interface Slide {
       ]),
 
       // Salida hacia izquierda (cuando cambia a otro estado)
-      transition('toLeft => *', [
+      transition('toLeft => void', [
         animate(
-          '1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
+          '1.5s 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
           style({
             transform: 'translateX(-100%)',
             filter: 'blur(40px)',
@@ -91,9 +91,9 @@ interface Slide {
       ]),
 
       // Salida hacia derecha (cuando cambia a otro estado)
-      transition('toRight => *', [
+      transition('toRight => void', [
         animate(
-          '1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
+          '1.5s 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
           style({
             transform: 'translateX(100%)',
             filter: 'blur(40px)',

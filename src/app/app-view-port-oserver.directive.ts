@@ -1,51 +1,52 @@
-import { Directive, ElementRef, inject,  input,  output, PLATFORM_ID  } from '@angular/core';
+import { 
+  Directive, 
+  ElementRef, 
+  inject, 
+  input, 
+  output, 
+  PLATFORM_ID,
+  AfterViewInit,
+  OnDestroy 
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { TitlevisibleService } from './titlevisible.service';
+
 
 @Directive({
   selector: '[appViewportObserver]',
   standalone: true
 })
-export class ViewportObserverDirective{
-
+export class ViewportObserverDirective implements AfterViewInit, OnDestroy {
   rootMargin = input<string>('0px');
-  title = input<string>('')
-  isVisible = output<string>()
-   
-
-  private observer!: IntersectionObserver ;
-  private platformId: Object = inject(PLATFORM_ID)
-  private titleVisbleService  = inject(TitlevisibleService)
-
-  constructor(
-    private el: ElementRef
-  ) {}
-
+  threshold = input<number | number[]>(0.9);
+  title = input<string>('');
   
+  isVisible = output<string>();
+  
+  private observer: IntersectionObserver | null = null;
+  private platformId: Object = inject(PLATFORM_ID);
+  private el = inject(ElementRef);
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-    this.observer = new IntersectionObserver(
-      ([entry]) => {
-        if(entry.isIntersecting){
-        this.titleVisbleService.updateTitle(this.title());
-        console.log(entry.target)
+      this.observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            this.isVisible.emit(this.title());
+      
+          }
+        },
+        {
+          root: null,
+          rootMargin: this.rootMargin(),
+          threshold: this.threshold(),
         }
-      },
-      {
-        root: null, // Observe within the viewport
-        rootMargin: '0px',
-        threshold: 1.0,
-      }
-    );
-  
-    this.observer.observe(this.el.nativeElement);
+      );
+      
+      this.observer.observe(this.el.nativeElement);
+    }
   }
-}
 
-  // ngOnDestroy(): void {
-  //   if (this.observer) {
-  //     this.observer.disconnect();
-  //   }
-  // }
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
 }

@@ -1,4 +1,6 @@
-
+:host{
+  height: 10vh;
+}
 
 nav{
   background: var(--cyprus);
@@ -7,6 +9,8 @@ nav{
   left: 0px;
   width: 100%;
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
@@ -14,15 +18,38 @@ nav{
   width: 50px;
 }
 
-
+.link-box{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
 
 .link{
 
-
   font-size: 1rem;
   position: relative;
+  padding: 0.5rem;
+  margin: 0px 0.5rem;
 
+}
+a{
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--white);
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
+a div:nth-child(even){
+  color: var(--gold);
 }
 
 
@@ -83,9 +110,14 @@ nav{
 }
 
 
-@media screen and (max-width: 900px){
 
-  .link-wrapper{
+@media screen and (max-width: 600px){
+
+  nav{
+    background: transparent;
+  }
+
+  .link-box{
     flex-direction: column;
     justify-content: center;
     position: fixed;
@@ -96,13 +128,14 @@ nav{
     width: 100dvw;
     -webkit-backdrop-filter: blur(3px); 
     backdrop-filter: blur(3px);
-    
+    display: none;
   }
 
-  #logo{
-    position: relative;
+  a .logo-img{
+    position: absolute;
     z-index: 100;
     top: 0px;
+    left: 0px;
     background: var(--cyprus);
     border-radius: 50%;
     margin: 5px;
@@ -112,8 +145,7 @@ nav{
 
 
 
-
-  .hide{
-    display: none;
+  .expanded{
+    display: flex;
   }
 }

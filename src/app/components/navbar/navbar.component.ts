@@ -1,4 +1,4 @@
-import { Component, HostBinding, output } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -12,13 +12,13 @@ export class NavbarComponent {
 
 
   prevIndex = 0
-  hide = 'hide'
+  isExpanded = false;
   
 
   links = [
-
-    {title:['nuestro', 'servicio'], href:'#',  state:'inactive'},
+    {title: ['home'], href:'#', state:'active'},
     {title: ['descubri', 'geotermia'], href:'#descubri', state:'inactive'},
+    {title:['nuestro', 'servicio'], href:'#servicio',  state:'inactive'},
     {title: ['contacto'], href:'#contacto', state:'inactive'}
   ]
 
@@ -33,6 +33,13 @@ export class NavbarComponent {
     this.links[this.prevIndex].state = 'inactive';
     this.prevIndex = index;
     this.links[index].state = 'active';
+  }
+
+   
+
+  expandNavbar(event:any) {
+    event.stopPropagation();
+    this.isExpanded = !this.isExpanded;
   }
   
 }

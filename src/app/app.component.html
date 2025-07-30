@@ -17,22 +17,24 @@
 
 <main>
   <app-social class="social-vertical" colorFill="white" [class.hide]="hideSocial"></app-social>
-  <app-home></app-home>
+  <app-home id="home"></app-home>
   <app-vertical-separator></app-vertical-separator>
   <h1>Descubri Geotermia</h1>
   <app-vertical-separator></app-vertical-separator>
-  <app-descubri appViewportObserver [title]="'descubri'" (isVisible)="onTitleVisible($event)"></app-descubri>
+  <app-descubri id="descubri" class="zIndex-2" appViewportObserver [title]="'descubri'" (isVisible)="onTitleVisible($event)"></app-descubri>
   <app-vertical-separator></app-vertical-separator>
   <h1>nuestro servicio</h1>
   <app-vertical-separator></app-vertical-separator>
   <app-servicio id="servicio"> </app-servicio>
   <app-vertical-separator></app-vertical-separator>
   <h1>como funciona</h1>
+  <div appViewportObserver [title]="'funci'" [rootMargin]="'0px'" [threshold]="0.9" (isVisible)="onHideSocial($event)"></div>
   <app-vertical-separator ></app-vertical-separator>
-  <app-comofunciona appViewportObserver [title]="'funci'" [rootMargin]="'-100px'" [threshold]="0.8" (isVisible)="onHideSocial($event)"></app-comofunciona>
+  <app-comofunciona id="comofunciona"></app-comofunciona>
+  <div appViewportObserver [title]="'conta'" [rootMargin]="'0px'" [threshold]="0.9" (isVisible)="onHideSocial($event)"></div>
   <app-vertical-separator></app-vertical-separator>
-  <h1 appViewportObserver [title]="'conta'" [rootMargin]="'-100px'" [threshold]="0.8" (isVisible)="onHideSocial($event)">contacto</h1>
+  <h1 >contacto</h1>
   
-    <app-contacto ></app-contacto>
+    <app-contacto id="contacto"></app-contacto>
  
 </main>

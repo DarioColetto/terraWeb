@@ -1,48 +1,25 @@
-<!-- 
-<a id="logo" class="link" (click)="toggleMenu()">
-  <img class="logo-img" src="isotipo.png" alt="logo" />
-</a>
-
-
-<span [ngClass]="hide" class="link-wrapper">
-
-  @for (link of links; track $index) {
-
-  <a class="link" [href]="link.href" (click)="[getSelectedIndex($index), activate($index)]" (mouseenter)="setHoverState($index)"
-    (mouseleave)="setHoverState($index)" [ngClass]="link.state">
-    <span class="white-font underline tracking-in-expand">{{link.title[0]}}</span>
-    @if (link.title[1]) {
-    <span class="gold-font underline tracking-in-expand">{{link.title[1]}}</span>
-    }
+<nav (click)="expandNavbar($event)">
+  <a class="link">
+    <img class="logo-img" src="isotipo.png" alt="logo" width="30" height="30" />
   </a>
-
-  }
-</span> -->
-<nav class="navbar p-0">
-
- <div class="container-fluid">
-
-  <a class="navbar-brand" href="#">
-    <img class="logo-img" src="isotipo.png" alt="logo" width="30" height="30">
-  </a>
-  <ul class="navbar-nav flex-row  me-auto mb-2 mb-lg-0">
-
+  <ul class="link-box expand" [class]="{'expanded':isExpanded}"> 
     @for (link of links; track $index) {
 
-    <li class="nav-item p-2 mx-2 link" (click)="activate($index)" (mouseenter)="setHoverState($index)"
-      (mouseleave)="setHoverState($index)" [ngClass]="link.state">
-      <a class="nav-link p-0" aria-current="page" [href]="link.href">
-        <div class="text-uppercase white-font underline tracking-in-expand">{{link.title[0]}}</div>
+    <li
+      class="link"
+      (click)="activate($index)"
+      (mouseenter)="setHoverState($index)"
+      (mouseleave)="setHoverState($index)"
+      [ngClass]="link.state"
+    >
+      <a aria-current="page" [href]="link.href">
+        <div class="underline tracking-in-expand">{{ link.title[0] }}</div>
         @if (link.title[1]) {
-        <div class="text-uppercase gold-font underline tracking-in-expand">{{link.title[1]}}</div>
+        <div class="underline tracking-in-expand">{{ link.title[1] }}</div>
         }
       </a>
     </li>
 
     }
-
-
   </ul>
-
-</div>
 </nav>

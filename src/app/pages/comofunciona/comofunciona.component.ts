@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CardInfo, cardInfo } from './comofunciona-data';
 import { LinkBarComponent } from '../../components/link-bar/link-bar.component';
-import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { fade, triggerAnimations } from '../../animations';
 
 @Component({

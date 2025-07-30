@@ -23,7 +23,7 @@ export class HomeComponent {
     //A funtion that toggles the class active and let the other elemetnts without the class active
     // It receives the index of the element to toggle
     toggleClass(index: number | null) {
-        const elements = document.querySelectorAll('.title');
+        const elements = document.querySelectorAll('h3');
         elements.forEach((element, i) => {
             if (i === index) {
                 element.classList.add('active');

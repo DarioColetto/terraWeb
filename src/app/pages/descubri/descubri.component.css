@@ -1,3 +1,6 @@
+:host{
+  background: var(--deep-green);
+}
 
 .box-container{
   height: 100vh;
@@ -97,7 +100,7 @@
 
     .box{
         width: 50%;
-        height: 50vh;
+        height: 30vh;
     }
 
     .content{

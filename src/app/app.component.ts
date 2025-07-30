@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { LoaderComponent } from './pages/loader/loader.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
@@ -11,12 +10,10 @@ import { HomeComponent } from "./pages/home/home.component";
 import { SocialComponent } from './components/social/social.component';
 import { VerticalSeparatorComponent } from './components/vertical-separator/vertical-separator.component';
 import { ViewportObserverDirective } from './app-view-port-oserver.directive';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   imports: [
-    LoaderComponent,
     BackgroundComponent,
     NavbarComponent,
     ServicioComponent,
@@ -26,8 +23,7 @@ import { NgClass } from '@angular/common';
     HomeComponent,
     SocialComponent,
     VerticalSeparatorComponent,
-    ViewportObserverDirective,
-    NgClass
+    ViewportObserverDirective
 ],
   animations: [
     trigger('fade', [

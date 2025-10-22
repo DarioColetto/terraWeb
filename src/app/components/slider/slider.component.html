@@ -1,51 +1,31 @@
-<!-- @if(!this.auxActive){
-<img
-  [src]="SLIDES[indexA].img"
-  [alt]="SLIDES[indexA].alt"
-  [@slideAnimation]="direction"
-  (@slideAnimation.done)="onAnimationDone($event)"
-/>
-}@else {
-<img [src]="SLIDES[indexB].img" [alt]="SLIDES[indexB]" [@slideAnimation]="direction" />
-}
-
-
-<div class="head-container">
-  @if(!this.auxActive){
-  <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">
-    {{ SLIDES[indexA].title }}
-  </h2>
-  }@else{
-  <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">
-    {{ SLIDES[indexB].title }}
-  </h2>
-  }
-</div>
-
-<div class="content">
-  @if(!this.auxActive){
-  <ul [@slideAnimation]="direction">
-    @for (item of SLIDES[indexA].body; track $index) {
-    <li>{{ item }}</li>
-    }
-  </ul>
-  }@else {
-  <ul [@slideAnimation]="direction">
-    @for (item of SLIDES[indexB].body; track $index) {
-    <li>{{ item }}</li>
-    }
-  </ul>
-  }
-</div> -->
-
 <div class="slider">
+  <div class="head-container">
+    <h2 class=" gold-font">
+      {{ SLIDES[index].title }}
+    </h2>
+  </div>
   <div class="view">
-    <div class="slider-container" [ngClass]="animationState()" >
-      @for (slide of SLIDES_; track $index) {
-      <div class="slide" >{{slide}}</div>
-      }
-      
 
+    <div class="slider-container" [ngClass]="animationState()" >
+      @for (slide of SLIDES; track $index) {
+      <div class="slide"  [ngClass]="blurAnimation()">
+        
+        <div class="img-container"  >
+          <img [src]="slide.img" 
+            [alt]="slide.alt"
+           
+          />
+        </div>
+
+        <div class="content">
+          <ul>
+            @for (item of slide.body; track $index) {
+            <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ import {
 import { ProgressbarComponent } from '../progressbar/progressbar.component';
 import { IconComponent } from '../icon/icons.component';
 import { NgClass } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 interface Slide {
   title: string[];
@@ -20,7 +21,7 @@ interface Slide {
 
 @Component({
   standalone: true,
-  imports: [ProgressbarComponent, IconComponent, NgClass],
+  imports: [ProgressbarComponent, IconComponent, NgClass ,NgOptimizedImage],
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
@@ -30,9 +31,10 @@ export class SliderComponent {
 
   fullBar: any;
   animationState = signal<'toLeft' | 'toRight' | 'default'>('default');
+  blurAnimation = signal<'blur' | 'default'>('default');
   animationDone: boolean = true;
 
-  SLIDES_ = ['A', 'B', 'C'];
+  
 
   SLIDES = [
     {
@@ -68,13 +70,13 @@ export class SliderComponent {
   ];
 
   nextSlide = () => {
-    this.SLIDES_.push(this.SLIDES_.shift()!);
+    this.SLIDES.push(this.SLIDES.shift()!);
     this.animationState.set('toRight');
     this.index = (this.index + 1) % this.SLIDES.length;
   };
 
   prevSlide = () => {
-    this.SLIDES_.unshift(this.SLIDES_.pop()!);
+    this.SLIDES.unshift(this.SLIDES.pop()!);
     this.animationState.set('toLeft');
     this.index = (this.index - 1 + this.SLIDES.length) % this.SLIDES.length;
   };
@@ -82,12 +84,14 @@ export class SliderComponent {
   onClickHandler(fn: () => void): void {
     if (!this.animationDone) return;
     this.animationDone = false;
+    this.blurAnimation.set('blur');
     fn();
 
     setTimeout(() => {
       this.animationDone = true;
+      this.blurAnimation.set('default');
       this.animationState.set('default');
-    }, 600);
+    }, 1000);
   }
 
   isBarFull(event: boolean) {

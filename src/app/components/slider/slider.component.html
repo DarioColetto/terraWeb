@@ -1,4 +1,4 @@
-@if(!this.auxActive){
+<!-- @if(!this.auxActive){
 <img
   [src]="SLIDES[indexA].img"
   [alt]="SLIDES[indexA].alt"
@@ -9,7 +9,7 @@
 <img [src]="SLIDES[indexB].img" [alt]="SLIDES[indexB]" [@slideAnimation]="direction" />
 }
 
-<!-- <app-progress-bar (isFull)="isBarFull($event)"></app-progress-bar> -->
+
 <div class="head-container">
   @if(!this.auxActive){
   <h2 class="page-subtitle gold-font" [@slideAnimation]="direction">
@@ -36,12 +36,25 @@
     }
   </ul>
   }
+</div> -->
+
+<div class="slider">
+  <div class="view">
+    <div class="slider-container" [ngClass]="animationState()" >
+      @for (slide of SLIDES_; track $index) {
+      <div class="slide" >{{slide}}</div>
+      }
+      
+
+    </div>
+  </div>
 </div>
+
 
 <div class="arrow-container">
   <button
     id="left-arrow"
-    (click)="prevSlide()"
+    (click)="onClickHandler(prevSlide)"
     role="button"
     aria-label="prevSlide"
   >
@@ -50,12 +63,13 @@
   <button
     id="right-arrow"
     class="slide-left"
-    (click)="nextSlide()"
+    (click)="onClickHandler( nextSlide)"
     role="button"
     aria-label="nextSlide"
   >
     <app-icon [name]="'rightArrow'" [stroke]="'white'"></app-icon>
   </button>
+
 </div>
 
 <div class="counter">

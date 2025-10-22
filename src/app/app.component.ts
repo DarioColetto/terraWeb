@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SocialComponent } from './components/social/social.component';
 import { VerticalSeparatorComponent } from './components/vertical-separator/vertical-separator.component';
 import { ViewportObserverDirective } from './app-view-port-oserver.directive';
+import { IconComponent } from './components/icon/icons.component';
 
 
 @Component({
@@ -25,6 +26,7 @@ import { ViewportObserverDirective } from './app-view-port-oserver.directive';
     SocialComponent,
     VerticalSeparatorComponent,
     ViewportObserverDirective,
+    IconComponent
   ],
   animations: [
     trigger('fade', [

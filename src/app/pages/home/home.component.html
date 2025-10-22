@@ -1,70 +1,59 @@
-<img class="background-img" src="/home.jpg" alt="" [ngClass]="{'contrast': hideLogo}">
-<img class="logoGrande" src="/isologotipo.png" alt="" [ngClass]="{'hide': hideLogo}">
+<section class="home">
+    <img class="background-img" ngSrc="/home.jpg" alt="" fill priority>
+    <div class="logo-container">
+        <img class="logoGrande" ngSrc="/isologotipo.png" alt="Logo" width="600" height="275"  sizes="(max-width: 640px) 30vw, 40vw"
+         priority />
+    </div>
 
+    <div class="content">
+        <div id="pane-0" class="pane">
+            <p>Del griego geo: tierra, y thermos: calor, la geotermia es la energía en forma de calor que proviene
+                del
+                interior de la Tierra y se libera constantemente en la superficie. Géiseres, volcanes y termas son
+                algunas
+                de sus manifestaciones más visibles, pero no las únicas. El ser humano aprendió a aprovechar esta
+                energía
+                renovable, y nosotros a instalarlo para tu confort...</p>
+        </div>
+        <div id="pane-1" class="pane">
+            <p>Nos especializamos en la instalación de sistemas de climatización geotérmica para hogares e
+                industrias.
+                Nuestra tecnología permite brindar calefacción, refrigeración y agua caliente sanitaria en un solo
+                sistema
+                eficiente y sostenible. </p>
+            <br>
+            <p>A diferencia de los sistemas tradicionales, la geotermia utiliza energía termica renovable del
+                subsuelo para
+                funcionar las 24 horas, los 7 días de la semana, con un consumo eléctrico hasta 4 veces menor. Esta
+                eficiencia energética también reduce considerablemente la emisión de CO₂, cuidando el ambiente
+                mientras
+                mejora tu confort.</p>
+        </div>
+        <div id="pane-2" class="pane">
+            <p>En TerraEnergy diseñamos e instalamos sistemas geotérmicos adaptados a cada proyecto. Comenzamos con
+                la
+                realización de perforaciones cuyo número y profundidad dependen de la superficie del edificio y su
+                envolvente térmica (capacidad de conservar temperatura).
+            </p>
+            <br>
+            <p>
+                Por estas perforaciones se instalan sondas geotérmicas, que capturan de forma constante la
+                temperatura
+                estable del subsuelo, generalmente entre 12 y 17°C.
+            </p>
 
-@if (indexSelected !== null) {
-<div class="content">
-    @switch (indexSelected) {
-    @case (0) {
-    <p>Del griego geo: tierra, y thermos: calor, la geotermia es la energía en forma de calor que proviene
-        del
-        interior de la Tierra y se libera constantemente en la superficie. Géiseres, volcanes y termas son
-        algunas
-        de sus manifestaciones más visibles, pero no las únicas. El ser humano aprendió a aprovechar esta
-        energía
-        renovable, y nosotros a instalarlo para tu confort...</p>
-    }
-    @case (1) {
-    <p>Nos especializamos en la instalación de sistemas de climatización geotérmica para hogares e
-        industrias.
-        Nuestra tecnología permite brindar calefacción, refrigeración y agua caliente sanitaria en un solo
-        sistema
-        eficiente y sostenible. </p>
-    <br>
-    <p>A diferencia de los sistemas tradicionales, la geotermia utiliza energía termica renovable del
-        subsuelo para
-        funcionar las 24 horas, los 7 días de la semana, con un consumo eléctrico hasta 4 veces menor. Esta
-        eficiencia energética también reduce considerablemente la emisión de CO₂, cuidando el ambiente
-        mientras
-        mejora tu confort.</p>
-    }
-    @case (2) {
-    <p>En TerraEnergy diseñamos e instalamos sistemas geotérmicos adaptados a cada proyecto. Comenzamos con
-        la
-        realización de perforaciones cuyo número y profundidad dependen de la superficie del edificio y su
-        envolvente térmica (capacidad de conservar temperatura).
-    </p>
-    <br>
-    <p>
-        Por estas perforaciones se instalan sondas geotérmicas, que capturan de forma constante la
-        temperatura
-        estable del subsuelo, generalmente entre 12 y 17°C.
-    </p>
+            <br>
+            <p>
+                Esa energía térmica es utilizada por una bomba de calor geotérmica, ubicada en la sala de máquinas,
+                que
+                ajusta la temperatura según las necesidades del hogar o industria: calefacción, refrigeración y agua
+                caliente sanitaria. Todo desde un sistema integrado, eficiente y sostenible.</p>
+        </div>
+    </div>
 
-    <br>
-    <p>
-        Esa energía térmica es utilizada por una bomba de calor geotérmica, ubicada en la sala de máquinas,
-        que
-        ajusta la temperatura según las necesidades del hogar o industria: calefacción, refrigeración y agua
-        caliente sanitaria. Todo desde un sistema integrado, eficiente y sostenible.</p>
-    }
-    @default {
-    <span style="display: none;"></span>}
-    }
-</div>
-
-}
-
-
-<div class="box-titles" (mouseover)="hideLogoHandler($event, true)" (mouseout)="hideLogoHandler($event, false)">
-
-    <h3 class="" (click)="switchText(0)" (mouseover)="switchText(0)"
-        (mouseout)="switchText(null)">
-        Geotermia</h3>
-    <h3 class="" (click)="switchText(1)" (mouseover)="switchText(1)"
-        (mouseout)="switchText(null)">
-        Climatización</h3>
-    <h3 class="" (click)="switchText(2)" (mouseover)="switchText(2)"
-        (mouseout)="switchText(null)">Asi lo
-        hacemos</h3>
-</div>
+    <nav class="box-titles">
+        <a class="tab" href="#pane-0">Geotermia</a>
+        <a class="tab" href="#pane-1">Climatización</a>
+        <a class="tab" href="#pane-2">Así lo hacemos</a>
+    </nav>
+</section>

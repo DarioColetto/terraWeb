@@ -1,12 +1,12 @@
 @if(!this.auxActive){
 <img
   [src]="SLIDES[indexA].img"
-  alt=""
+  [alt]="SLIDES[indexA].alt"
   [@slideAnimation]="direction"
   (@slideAnimation.done)="onAnimationDone($event)"
 />
 }@else {
-<img [src]="SLIDES[indexB].img" alt="" [@slideAnimation]="direction" />
+<img [src]="SLIDES[indexB].img" [alt]="SLIDES[indexB]" [@slideAnimation]="direction" />
 }
 
 <!-- <app-progress-bar (isFull)="isBarFull($event)"></app-progress-bar> -->
@@ -64,44 +64,3 @@
   </h3>
   <p>0{{ SLIDES.length }}</p>
 </div>
-
-<!-- @for (slide of SLIDES; track $index) {
-  @if(slideIndex === $index){
-    
-    <div class="column">
-      <div class="head-container" >
-      <div class="title" [@slideAnimation]="direction">     
-        <h2 class="page-subtitle gold-font">{{slide.title[0]}}</h2>
-        @if(slide.title[1]){
-          <h2 class="page-subtitle white-font">{{slide.title[1]}}</h2>
-        }
-      </div>
-    </div>
-    <div class="body-container">
-      <p [@slideAnimation]="direction">
-        {{slide.body}}
-      </p>
-    </div>
-  </div>
-    <div class="img-container">
-        <img [@slideAnimation]="direction" [src]="slide.img" alt="garden">
-    </div>
-  }
-}
-
-<div class="arrow-counter-container">
-  <div class="arrow-container">
-    <button id="left-arrow" (click)="prevSlide()" role="button"  aria-label="prevSlide">
-      <app-icon [name]="'leftArrow'" [stroke]="'white'"></app-icon>
-    </button>
-    <button id="right-arrow" class="slide-left" (click)="nextSlide()" role="button"  aria-label="nextSlide">
-      <app-icon [name]="'rightArrow'" [stroke]="'white'"></app-icon>
-    </button>
-  </div>
-  <div class="counter">
-    <h3>
-      <strong>0{{ slideIndex + 1 }} </strong> /
-    </h3>
-    <p>0{{ SLIDES.length }}</p>
-  </div>
-</div>  -->

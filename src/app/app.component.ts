@@ -6,10 +6,11 @@ import { ServicioComponent } from './pages/servicio/servicio.component';
 import { DescubriComponent } from './pages/descubri/descubri.component';
 import { ComofuncionaComponent } from './pages/comofunciona/comofunciona.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
-import { HomeComponent } from "./pages/home/home.component";
+import { HomeComponent } from './pages/home/home.component';
 import { SocialComponent } from './components/social/social.component';
 import { VerticalSeparatorComponent } from './components/vertical-separator/vertical-separator.component';
 import { ViewportObserverDirective } from './app-view-port-oserver.directive';
+
 
 @Component({
   selector: 'app-root',
@@ -23,8 +24,8 @@ import { ViewportObserverDirective } from './app-view-port-oserver.directive';
     HomeComponent,
     SocialComponent,
     VerticalSeparatorComponent,
-    ViewportObserverDirective
-],
+    ViewportObserverDirective,
+  ],
   animations: [
     trigger('fade', [
       transition(':enter', [

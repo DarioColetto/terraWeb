@@ -15,6 +15,7 @@ interface Slide {
   title: string[];
   body: string[];
   img: string;
+  alt: string;
 }
 
 @Component({
@@ -122,6 +123,7 @@ export class SliderComponent {
         'Temperatura máxima recomendada en calor radiante: 21°C',
       ],
       img: '/paisajes/imagen1.jpg',
+      alt: 'Primer Slide: Imagen de calefacción',
     },
     {
       title: ['REFRESCAMIENTO'],
@@ -131,6 +133,7 @@ export class SliderComponent {
         'Temperatura mínima recomendada en Frio aereo: 24°C',
       ],
       img: '/paisajes/imagen2.jpg',
+      alt: 'Imagen de refrescamiento',
     },
     {
       title: ['AGUA CALIENTE SANITARIA'],
@@ -140,6 +143,7 @@ export class SliderComponent {
         'Sistema secundario ante emergencias',
       ],
       img: '/paisajes/imagen3.jpg',
+      alt: 'Tercer Slide: Imagen de agua caliente sanitaria',
     },
   ];
 

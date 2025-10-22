@@ -1,165 +1,146 @@
-:host{
-    position: relative;
-    height: 100vh;
-    display: flex;
-    
+:host {
+  position: relative;
+  height: 100vh;
+  display: flex;
 }
 
-.logoGrande{
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    width: 300px;
-    height: auto;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    transform: translate(-50%, -50%);
+.logo-container {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 100%;
+  max-width: 600px; /* Máximo ancho del contenedor */
+  margin: 0 auto; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%);
 }
 
+.logoGrande {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
 
-
-
-.logoGrande.hide {
-    opacity: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-.background-img{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    z-index: -1;
-    object-fit: cover;
-    transition: filter 0.3s ease;
+.background-img {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+  object-fit: cover;
+  transition: filter 0.3s ease;
 }
 
-h3{
-    color: var(--white);
-    margin: 0px;
-    padding: 0.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+.box-titles {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 70%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  font-size: clamp(1.2rem, 2vw, 3rem);
 }
 
-.content{
-    width: 50%;
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    
-
+p {
+  color: var(--white);
 }
 
-.active{
-         background: var(--cyprus);
-        border-radius: 5px;
-}
-
-.active:hover{
-    
-   
-    animation: background-change 0.3s ease-in-out;
-}
-
-@keyframes background-change {
-    0% {
-        background: transparent;
-        border-radius: 0px;
-    }
-    100% {
-        background: var(--cyprus);
-        border-radius: 5px;
-    }
-  
-}
-
-
-p{
-    color: var(--white);
-  
-}
-
-mark{
-    color: var(--gold);
-    background: transparent;
-    
-}
-
-
-
-.box-titles{
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    width: 70%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-    font-size: clamp(1.2rem, 2vw ,3rem) ;
-
-}
-
-
-
-.background-img.contrast{
-    filter: blur(2px) contrast(105%);
-    
+.tab {
+  color: var(--white);
+  margin: 0px;
+  padding: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .content {
-    opacity: 1;
+  width: 50%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+/* 1) Mostrar/ocultar panes con :target (click accesible/teclado y persistente en la URL) */
+.pane {
+  display: none;
 }
 
 
-
-@media screen and (max-width: 1400px)  {
-
-    .background-img{
-        height: 100%;
-    }
-
-
-
-    
-} 
-
-@media screen and (max-width: 600px)  {
-
-        .logoGrande , .slogan{
-        display: none;
-    }
-
-    .flex-center{
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        display: flex;
-        align-items: flex-end;
-    }
+/* 2) Alternativa “hover” (sin cambiar la URL), usando :has() en el contenedor */
+.home:has(.box-titles a:nth-of-type(1):hover) #pane-0 {
+  display: block;
+}
+.home:has(.box-titles a:nth-of-type(2):hover) #pane-1 {
+  display: block;
+}
+.home:has(.box-titles a:nth-of-type(3):hover) #pane-2 {
+  display: block;
+}
+.home:has(.box-titles:hover) .pane {
+  display: none;
+}
 
 
-    .box-titles{
-        width: 100%;
-   
-        display: flex;
-        flex-direction: column;
-            align-items: center;
-            padding: 0px;
-    }
+/* 3) 
+   - cuando el user pasa por los títulos, oculto logo y aumento contraste del fondo */
+.home:has(.box-titles:hover) .logoGrande {
+  opacity: 0;
+}
+.home:has(.box-titles:hover) .background-img {
+  filter: blur(2px) contrast(105%);
+}
 
-    .content{
+/* 4) Accesibilidad teclado: focus visible en tabs */
+.box-titles .tab:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media screen and (max-width: 1400px) {
+  .background-img {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logoGrande {
+    display: none;
+  }
+
+  .flex-center {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .box-titles {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .content {
     width: 100%;
     left: 0px;
-    padding:2rem;
+    padding: 2rem;
+    position: relative;
+    top: 10%;
+  }
 }
-    
-}
-    

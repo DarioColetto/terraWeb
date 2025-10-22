@@ -9,7 +9,7 @@ import {
 } from '@angular/animations';
 import { ProgressbarComponent } from '../progressbar/progressbar.component';
 import { IconComponent } from '../icon/icons.component';
-
+import { NgClass } from '@angular/common';
 
 interface Slide {
   title: string[];
@@ -20,99 +20,19 @@ interface Slide {
 
 @Component({
   standalone: true,
-  imports: [ProgressbarComponent, IconComponent],
+  imports: [ProgressbarComponent, IconComponent, NgClass],
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
-  animations: [
-    trigger('slideAnimation', [
-      // Estado por defecto
-      state(
-        'default',
-        style({
-          transform: 'translateX(0)',
-          filter: 'none',
-          opacity: 1,
-          zIndex: 1,
-        })
-      ),
-
-      // Transición bidireccional sin cambios
-      transition('* <=> default', animate('0s')),
-
-      // Transición hacia la izquierda
-      transition('* => toLeft', [
-        style({
-          transform: 'translateX(100%)',
-          filter: 'blur(40px)',
-          opacity: 0,
-          zIndex: 2,
-        }),
-        animate(
-          '1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(0)',
-            filter: 'none',
-            opacity: 1,
-            zIndex: 1,
-          })
-        ),
-      ]),
-
-      // Transición hacia la derecha
-      transition('* => toRight', [
-        style({
-          transform: 'translateX(-100%)',
-          filter: 'blur(40px)',
-          opacity: 0,
-          zIndex: 2,
-        }),
-        animate(
-          '1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(0)',
-            filter: 'none',
-            opacity: 1,
-            zIndex: 1,
-          })
-        ),
-      ]),
-
-      // Salida hacia izquierda (cuando cambia a otro estado)
-      transition('toLeft => void', [
-        animate(
-          '1.5s 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(-100%)',
-            filter: 'blur(40px)',
-            opacity: 0,
-            zIndex: 0,
-          })
-        ),
-      ]),
-
-      // Salida hacia derecha (cuando cambia a otro estado)
-      transition('toRight => void', [
-        animate(
-          '1.5s 0.2s cubic-bezier(0.230, 1.000, 0.320, 1.000)',
-          style({
-            transform: 'translateX(100%)',
-            filter: 'blur(40px)',
-            opacity: 0,
-            zIndex: 0,
-          })
-        ),
-      ]),
-    ]),
-  ],
 })
 export class SliderComponent {
   index = 0;
-  indexA = 0;
-  indexB = 0;
+
   fullBar: any;
-  direction: 'toLeft' | 'toRight' | 'default' = 'default';
-  auxActive: boolean = false;
+  animationState = signal<'toLeft' | 'toRight' | 'default'>('default');
+  animationDone: boolean = true;
+
+  SLIDES_ = ['A', 'B', 'C'];
 
   SLIDES = [
     {
@@ -147,55 +67,30 @@ export class SliderComponent {
     },
   ];
 
-  nextSlide() {
-    //Primero suma el index
+  nextSlide = () => {
+    this.SLIDES_.push(this.SLIDES_.shift()!);
+    this.animationState.set('toRight');
     this.index = (this.index + 1) % this.SLIDES.length;
+  };
 
-    
-    if (this.auxActive) {
-      this.indexA = this.index;
-    } else {
-      this.indexB = this.index;
-    }
-
-    this.direction = 'toRight';
-    this.auxActive = !this.auxActive;
-
-    // Actualiza el indexA para que coincida con el index actual
-    if (this.auxActive) {
-      this.indexA = this.index;
-    } else {
-      this.indexB = this.index;
-    }
-  }
-
-  prevSlide() {
-    
-    
+  prevSlide = () => {
+    this.SLIDES_.unshift(this.SLIDES_.pop()!);
+    this.animationState.set('toLeft');
     this.index = (this.index - 1 + this.SLIDES.length) % this.SLIDES.length;
-    
-        if (this.auxActive) {
-      this.indexA = this.index;
-    } else {
-      this.indexB = this.index;
-    }
-    this.direction = 'toLeft';
-    this.auxActive = !this.auxActive;
+  };
 
-        if (this.auxActive) {
-      this.indexA = this.index;
-    } else {
-      this.indexB = this.index;
-    }
+  onClickHandler(fn: () => void): void {
+    if (!this.animationDone) return;
+    this.animationDone = false;
+    fn();
+
+    setTimeout(() => {
+      this.animationDone = true;
+      this.animationState.set('default');
+    }, 600);
   }
 
   isBarFull(event: boolean) {
     this.nextSlide();
-  }
-
-  onAnimationDone(event: AnimationEvent) {
-    if (event.toState === 'toLeft' || event.toState === 'toRight') {
-      this.direction = 'default';
-    }
   }
 }

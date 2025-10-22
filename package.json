@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:terra": "node dist/terra/server/server.mjs"
+      "dev:ssr": "ng run terra:serve-ssr",
+      "build:ssr": "ng run terra:build",
+      "serve:ssr": "node dist/terra/server/server.mjs"
   },
   "private": true,
   "dependencies": {

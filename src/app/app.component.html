@@ -1,9 +1,11 @@
-<app-navbar></app-navbar>
 <app-background></app-background>
 <div class="whatsapp">
   <app-icon [name]="'whatsapp'" color="white" size="46"></app-icon>
 </div>
 
+<header>
+  <app-navbar></app-navbar>
+</header>
 <main>
   <app-social class="social-vertical" colorFill="white" [class.hide]="hideSocial"></app-social>
   <app-home id="home"></app-home>

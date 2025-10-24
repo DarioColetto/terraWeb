@@ -3,28 +3,42 @@
   <app-icon [name]="'whatsapp'" color="white" size="46"></app-icon>
 </div>
 
+<app-social class="social-vertical" colorFill="white" [class.hide]="hideSocial"></app-social>
 <header>
   <app-navbar></app-navbar>
 </header>
 <main>
-  <app-social class="social-vertical" colorFill="white" [class.hide]="hideSocial"></app-social>
   <app-home id="home"></app-home>
-  <app-vertical-separator></app-vertical-separator>
-  <h1>Descubri Geotermia</h1>
-  <app-vertical-separator></app-vertical-separator>
-  <app-descubri id="descubri" class="zIndex-2" appViewportObserver [title]="'descubri'" (isVisible)="onTitleVisible($event)"></app-descubri>
-  <app-vertical-separator></app-vertical-separator>
-  <h1>nuestro servicio</h1>
-  <app-vertical-separator></app-vertical-separator>
-  <app-servicio id="servicio" class="zIndex-2"> </app-servicio>
-  <app-vertical-separator></app-vertical-separator>
-  <h1>como funciona</h1>
-  <div appViewportObserver [title]="'funci'" [rootMargin]="'0px'" [threshold]="0.9" (isVisible)="onHideSocial($event)"></div>
-  <app-vertical-separator ></app-vertical-separator>
-  <app-comofunciona id="comofunciona" class="zIndex-2"></app-comofunciona>
-  <div appViewportObserver [title]="'conta'" [rootMargin]="'0px'" [threshold]="0.9" (isVisible)="onHideSocial($event)"></div>
-  <app-vertical-separator></app-vertical-separator>
-  <h1 >contacto</h1>
+  <div class="separator">
+
+    <app-vertical-separator></app-vertical-separator>
+    <h1>Descubri Geotermia</h1>
+    <app-vertical-separator></app-vertical-separator>
+  </div>
+  <app-descubri id="descubri"  appViewportObserver [title]="'descubri'" (isVisible)="onTitleVisible($event)"></app-descubri>
+  
+  <div class="separator">
+
+
+    <app-vertical-separator></app-vertical-separator>
+    <h1>nuestro servicio</h1>
+    <app-vertical-separator></app-vertical-separator>
+  </div>
+  <app-servicio id="servicio" > </app-servicio>
+  <div class="separator">
+
+    <app-vertical-separator></app-vertical-separator>
+    <h1>como funciona</h1>
+    <div appViewportObserver [title]="'funci'" [rootMargin]="'0px'" [threshold]="0.9" (isVisible)="onHideSocial($event)"></div>
+    <app-vertical-separator ></app-vertical-separator>
+  </div>
+  <app-comofunciona id="comofunciona" ></app-comofunciona>
+  <div class="separator">
+
+    <div appViewportObserver [title]="'conta'" [rootMargin]="'0px'" [threshold]="0.9" (isVisible)="onHideSocial($event)"></div>
+    <app-vertical-separator></app-vertical-separator>
+    <h1 >contacto</h1>
+  </div>
   
     <app-contacto id="contacto"></app-contacto>
  

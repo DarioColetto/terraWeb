@@ -1,5 +1,8 @@
 :host{
+  position: relative;
+  
   background: var(--deep-green);
+
 }
 
 .box-container{

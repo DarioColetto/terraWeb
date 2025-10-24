@@ -15,6 +15,7 @@ const ICONS: IconEntry[] = [
   {name: 'hoja',  src:'/icons/descubri/hoja.svg'},
   {name: 'home' , src:'/icons/descubri/home.svg'},
   {name: 'saving' , src:'/icons/descubri/saving.svg'},
+  {name: 'whatsapp' , src:'/icons/social/whatsapp.svg'},
 
   // agrega los que necesites
 ];

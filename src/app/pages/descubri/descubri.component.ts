@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { IconComponent } from '../../components/icon/icons.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { IconRegistryService } from '../../components/icon/IconRegistryService.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-descubri',
   standalone: true,
-  imports: [IconComponent, AngularSvgIconModule], 
+  imports: [AngularSvgIconModule], 
   templateUrl: './descubri.component.html',
   styleUrl: './descubri.component.css',
 })

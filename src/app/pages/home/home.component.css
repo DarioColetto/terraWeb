@@ -2,31 +2,21 @@
   position: relative;
   height: 100vh;
   display: flex;
-  overflow: hidden;
-
-
 }
 
 .logo-container {
   position: absolute;
   top: 35%;
   left: 50%;
-
-
-  margin: 0 auto; /* Centrar horizontalmente */
+  margin: 0 auto; 
   transform: translate(-50%, -50%);
-
 }
 
 .logoGrande {
   position: relative;
-
   display: block;
-   /* Asegura que no exceda el ancho del contenedor */
-
   opacity: 1;
   transition: opacity 0.3s ease;
-  
 }
 
 .background-img {

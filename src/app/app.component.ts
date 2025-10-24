@@ -11,6 +11,8 @@ import { SocialComponent } from './components/social/social.component';
 import { VerticalSeparatorComponent } from './components/vertical-separator/vertical-separator.component';
 import { ViewportObserverDirective } from './app-view-port-oserver.directive';
 import { IconComponent } from './components/icon/icons.component';
+import { AngularSvgIconModule } from "angular-svg-icon";
+import { IconRegistryService } from './components/icon/IconRegistryService.service';
 
 
 @Component({
@@ -26,8 +28,10 @@ import { IconComponent } from './components/icon/icons.component';
     SocialComponent,
     VerticalSeparatorComponent,
     ViewportObserverDirective,
-    IconComponent
-  ],
+    IconComponent,
+    AngularSvgIconModule
+    
+],
   animations: [
     trigger('fade', [
       transition(':enter', [
@@ -58,6 +62,8 @@ export class AppComponent {
   isDisable = true;
 
   hideSocial: boolean = false;
+
+  constructor( private _icons: IconRegistryService) {}
 
   loaderAnimationDone(done: boolean) {
     this.animationDone = done;

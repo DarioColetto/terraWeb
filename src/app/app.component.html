@@ -1,6 +1,6 @@
 <app-background></app-background>
 <div class="whatsapp">
-  <app-icon [name]="'whatsapp'" color="white" size="46"></app-icon>
+  <svg-icon name="whatsapp" [svgStyle]="{'width.px':50,'fill':'white'}"></svg-icon>
 </div>
 
 <app-social class="social-vertical" colorFill="white" [class.hide]="hideSocial"></app-social>
@@ -12,7 +12,7 @@
   <div class="separator">
 
     <app-vertical-separator></app-vertical-separator>
-    <h1>Descubri Geotermia</h1>
+    <h1 class="page-anim">Descubri Geotermia</h1>
     <app-vertical-separator></app-vertical-separator>
   </div>
   <app-descubri id="descubri"  appViewportObserver [title]="'descubri'" (isVisible)="onTitleVisible($event)"></app-descubri>

@@ -7,9 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-      "dev:ssr": "ng run terra:serve-ssr",
-      "build:ssr": "ng run terra:build",
-      "serve:ssr": "node dist/terra/server/server.mjs"
+    "dev:ssr": "ng run terra:serve-ssr",
+    "build:ssr": "ng run terra:build",
+    "serve:ssr": "node dist/terra/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,7 @@
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.0",
+    "angular-svg-icon": "^19.1.1",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

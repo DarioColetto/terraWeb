@@ -1,11 +1,12 @@
 import { Component, input} from '@angular/core';
 import { IconService } from './icon.service';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-icon',
     standalone:true,
     imports: [],
-    template: `<span [innerHTML]="svgIcon" [style.color]="color()" [style.stroke]="stroke()"></span>`,
+    template: `<span [innerHTML]="svgIcon" [style.color]="color()" [style.stroke]="stroke()" [style.heigth]="heigth()" [style.width]="width()" ></span>`,
     styles: [`
     span {
       display: inline-flex;
@@ -22,12 +23,19 @@ export class IconComponent {
   name = input<string>('');
   color = input<string>('currentColor')
   stroke = input<string>('');
-  svgIcon: any;
+  svgIcon: SafeHtml | null = null;
+  heigth = input<string>('24px');
+  width = input<string>('24px');
 
   constructor(private iconService: IconService) {}
 
   ngOnChanges() {
-    this.svgIcon = this.iconService.getIcon(this.name());
+
+    
+      this.svgIcon = this.iconService.getIcon(this.name());
+    
+    
+   
   }
 
 }

@@ -1,12 +1,16 @@
-:host{
-  height: 10vh;
-}
 
 nav{
-  background: var(--cyprus);
+  background: rgba(255, 255, 255, 0.027);
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.178);
+
+}
+
+nav:hover{
+  background: var(--cyprus);;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .logo-img {

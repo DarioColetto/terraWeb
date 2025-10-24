@@ -2,24 +2,24 @@
   position: relative;
   height: 100vh;
   display: flex;
+  overflow: hidden;
 }
 
 .logo-container {
   position: absolute;
   top: 35%;
   left: 50%;
-  width: 100%;
-  max-width: 600px; /* Máximo ancho del contenedor */
+
+
   margin: 0 auto; /* Centrar horizontalmente */
   transform: translate(-50%, -50%);
 }
 
 .logoGrande {
   position: relative;
-  width: 100%;
-  height: auto;
+
   display: block;
-  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+   /* Asegura que no exceda el ancho del contenedor */
 
   opacity: 1;
   transition: opacity 0.3s ease;
@@ -32,6 +32,18 @@
   z-index: -1;
   object-fit: cover;
   transition: filter 0.3s ease;
+}
+
+.sclae-down-animation {
+  animation: scaleDown 15s ease;
+}
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .box-titles {
@@ -63,6 +75,24 @@ p {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.178);;
+  
+  border-radius: 10px;
+  min-width: 15ch;
+}
+
+.tab:hover{
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.1);
 }
 
 .content {
@@ -107,6 +137,7 @@ p {
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
+
 
 @media screen and (max-width: 1400px) {
   .background-img {

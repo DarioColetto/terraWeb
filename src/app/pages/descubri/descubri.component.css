@@ -1,8 +1,6 @@
 :host{
   position: relative;
-  
-  background: var(--deep-green);
-
+  width: 100vw;
 }
 
 .box-container{
@@ -10,14 +8,15 @@
   display: flex;
   flex-wrap: wrap;
   color: white;
-    background: var(--deep-green);
-
 }
+
+
 
 .box{
   position: relative;
   width: 33.33%;
   height: 50%;
+     
 }
 
 .box:nth-last-child(1){
@@ -28,7 +27,6 @@
   width: 70px; 
   height: 70px;
   fill: var(--white);
-
 }
   
 
@@ -52,7 +50,7 @@
   height: 100%;
   width: 100%;
   
-  
+   background: var(--deep-green); 
   padding: 1em;
   
   

@@ -85,7 +85,7 @@ p{
 
 
 
-.separator > *, #home{
+.separator > *{
   animation: linear animate-in-and-out;
 	animation-timeline: view();
 }

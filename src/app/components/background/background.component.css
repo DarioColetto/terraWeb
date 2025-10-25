@@ -1,5 +1,7 @@
 :host{
     display: none;
+    width: 100%;
+    overflow: hidden;
     
 }
 

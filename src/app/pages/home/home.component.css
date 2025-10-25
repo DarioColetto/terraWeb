@@ -2,6 +2,12 @@
   position: relative;
   height: 100vh;
   display: flex;
+
+}
+
+.section{
+  overflow: hidden;
+  width: 100%;
 }
 
 .logo-container {
@@ -17,6 +23,16 @@
   display: block;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+.img-container{
+  overflow: hidden;
+  width: 100vw;
+  height: 100%;
+    position: absolute;
+  bottom: 0px;
+  right: 0px;
+  
 }
 
 .background-img {

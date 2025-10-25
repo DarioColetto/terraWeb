@@ -1,12 +1,4 @@
 import { Component, signal } from '@angular/core';
-import {
-  animate,
-  AnimationEvent,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { ProgressbarComponent } from '../progressbar/progressbar.component';
 import { IconComponent } from '../icon/icons.component';
 import { NgClass } from '@angular/common';
@@ -36,7 +28,7 @@ export class SliderComponent {
 
   
 
-  SLIDES = [
+  SLIDES:Slide[] = [
     {
       title: ['calefaccion'],
       body: [

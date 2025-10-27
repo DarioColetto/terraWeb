@@ -90,7 +90,7 @@ p{
 	animation-timeline: view();
 }
 
-#home,#descubri, #servicio{
+#home,#descubri, #servicio, #contacto{
     animation: linear fade-out;
 	animation-timeline: view();
 }
